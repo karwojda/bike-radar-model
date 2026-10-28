@@ -37,8 +37,9 @@ Exported by `./scripts/check.sh` with the [SysML v2 Viewer](../sysmlv2_egui).
 ./scripts/check.sh
 ```
 
-Exports every view into `docs/img`, then checks every requirement and
-asserted constraint. Nothing claims to satisfy a requirement yet, so every
+Exports every view into `docs/img`, validates the Model with
+[OpenSysML](https://github.com/Open-MBEE/OpenSysML)'s `sysml` as a second
+opinion, then checks every requirement and asserted constraint. Nothing claims to satisfy a requirement yet, so every
 requirement is Not claimed.
 
 ## Open in the viewer

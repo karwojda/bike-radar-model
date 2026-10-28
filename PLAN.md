@@ -18,7 +18,11 @@ charger are external actors.
 - Diagrams the model keeps are `view`s in `model/views.sysml`; Tool-defined
   Diagrams are for exploring.
 - `./scripts/check.sh` runs the viewer's CLI: `export --all` into
-  `docs/img`, then `check`.
+  `docs/img`, then OpenSysML's `sysml -validate`, then the viewer's
+  `check`. A model one tool accepts and the other rejects is a finding.
+- Claude writes SysML following the OpenSysML skills linked under
+  `.claude/skills/` (from `../OpenSysML-MDK-Skills`), chiefly
+  `opensysml-modeling-best-practices`.
 - Findings go to the viewer repo as one file each under
   `.scratch/dogfood-bike-radar/issues/NN-<slug>.md`, `Status: needs-triage`,
   with the slice, the snippet that triggered it, and expected vs. seen.
