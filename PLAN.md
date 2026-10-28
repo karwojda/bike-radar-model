@@ -15,10 +15,10 @@ charger are external actors.
 
 - Claude writes the SysML; the user opens each slice in the viewer, reacts
   as an engineer would, and decides what counts as friction.
-- Diagrams the model keeps are `view`s in `views.sysml`; Tool-defined
+- Diagrams the model keeps are `view`s in `model/views.sysml`; Tool-defined
   Diagrams are for exploring.
-- `./check.sh` runs the viewer's CLI: `export --all` into `docs/img`, then
-  `check`.
+- `./scripts/check.sh` runs the viewer's CLI: `export --all` into
+  `docs/img`, then `check`.
 - Findings go to the viewer repo as one file each under
   `.scratch/dogfood-bike-radar/issues/NN-<slug>.md`, `Status: needs-triage`,
   with the slice, the snippet that triggered it, and expected vs. seen.
@@ -38,7 +38,7 @@ Each slice is reviewed in the viewer before the next starts.
 3. **Budgets and checks.** Mass and power Model Values, Asserted
    Constraints, Satisfaction Claims. Total mass ≤ 75 g is violated on
    purpose: the battery sized for the runtime requirements is too heavy.
-   `check.sh` exits 1 from here until slice 4.
+   `./scripts/check.sh` exits 1 from here until slice 4.
 
    **Stop:** review the findings and decide whether slices 4–5 are worth it,
    or whether fixing the viewer comes first.

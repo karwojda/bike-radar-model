@@ -7,13 +7,13 @@ realistic. See [PLAN.md](PLAN.md) for why it exists and how it grows.
 
 | File | Contents |
 |---|---|
-| [`requirements.sysml`](requirements.sysml) | Rider needs, system requirements, derivation |
-| [`context.sysml`](context.sysml) | The rear unit as a black box, its ports and external actors |
-| [`views.sysml`](views.sysml) | The Diagrams kept with the Model |
+| [`model/requirements.sysml`](model/requirements.sysml) | Rider needs, system requirements, derivation |
+| [`model/context.sysml`](model/context.sysml) | The rear unit as a black box, its ports and external actors |
+| [`model/views.sysml`](model/views.sysml) | The Diagrams kept with the Model |
 
 ## Diagrams
 
-Exported by `./check.sh` with the [SysML v2 Viewer](../sysmlv2_egui).
+Exported by `./scripts/check.sh` with the [SysML v2 Viewer](../sysmlv2_egui).
 
 ### Rider needs
 
@@ -34,7 +34,7 @@ Exported by `./check.sh` with the [SysML v2 Viewer](../sysmlv2_egui).
 ## Check
 
 ```sh
-./check.sh
+./scripts/check.sh
 ```
 
 Exports every view into `docs/img`, then checks every requirement and
@@ -45,5 +45,5 @@ requirement is Not claimed.
 
 ```sh
 cd ../sysmlv2_egui
-WAYLAND_DISPLAY= cargo run --release -p viewer-app -- ../bike-radar-model
+WAYLAND_DISPLAY= cargo run --release -p viewer-app -- ../bike-radar-model/model
 ```

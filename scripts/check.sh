@@ -6,7 +6,7 @@
 # which is built on demand.
 set -uo pipefail
 
-here="$(cd "$(dirname "$0")" && pwd)"
+root="$(cd "$(dirname "$0")/.." && pwd)"
 repo="${VIEWER_REPO:-$HOME/git/sysmlv2_egui}"
 
 if [[ -n "${SYSML_VIEWER:-}" ]]; then
@@ -15,5 +15,5 @@ else
     viewer=(cargo run -q --release --manifest-path "$repo/Cargo.toml" -p viewer-cli --)
 fi
 
-"${viewer[@]}" export "$here" --all --out-dir "$here/docs/img" || exit $?
-"${viewer[@]}" check "$here"
+"${viewer[@]}" export "$root/model" --all --out-dir "$root/docs/img" || exit $?
+"${viewer[@]}" check "$root/model"
