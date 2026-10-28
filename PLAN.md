@@ -54,7 +54,9 @@ Each slice is reviewed in the viewer before the next starts.
    range from the radar equation, range and speed resolution, and the
    fastest closing speed it can measure (new requirement S12, from N1).
    Analyses for a motorbike's detection range and the rider's warning time.
-6. **Tool Links.** A FreeCAD enclosure and a KiCad board, giving Design
+6. **Mounting tilt.** How the tilt of the mounting (seatpost angle, strap
+   slip, the rider's weight) shortens the radar's reach, against S1.
+7. **Tool Links.** A FreeCAD enclosure and a KiCad board, giving Design
    Values for mass and summed power. Deferred: not the time for the tools
    yet.
 
@@ -74,3 +76,7 @@ Each slice is reviewed in the viewer before the next starts.
 - [x] Slice 5 written; awaiting review in the viewer. S1 narrowed to cars
   (about 187 m) for now; a motorbike is detected at about 125 m, with no
   requirement yet.
+- [x] Slice 6 written. Open: with every tilt at its limit (10°) a car is
+  detected at about 132 m, short of S1's 140 m; added as a root sum of
+  squares (6.2°) it is about 164 m. S1 tolerates 9.1°. Not yet decided how
+  S1 should judge mounting, nor whether the clamp needs adjusting.

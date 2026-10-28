@@ -97,6 +97,8 @@ package BikeRadarArchitecture {
         attribute designTargetRcs : AreaValue default = 10 [m^2] {
             doc /* The radar cross-section of a car seen from the front. */
         }
+        attribute azimuthBeamwidth : PlaneAngleValue default = 60 ['°'];
+        attribute elevationBeamwidth : PlaneAngleValue default = 20 ['°'];
 
         attribute wavelength : LengthValue default = speedOfLight / frequency;
         attribute chirpPeriod : DurationValue default = chirpDuration + chirpIdleTime;
@@ -221,10 +223,14 @@ package BikeRadarArchitecture {
         attribute mass : MassValue default = 18 [g];
     }
     part def SeatpostClamp {
-        doc /* A rubber strap mount for round seatposts. */
+        doc /* A rubber strap mount for round seatposts. It aims the radar level
+             * on a seatpost leaning back at 73°; seatposts lean from 68° to 78°,
+             * and the strap lets the unit rotate a little on the post. */
         attribute mass : MassValue default = 8 [g];
         attribute minDiameter : LengthValue default = 22 [mm];
         attribute maxDiameter : LengthValue default = 35 [mm];
+        attribute seatpostAngleSpread : PlaneAngleValue default = 5 ['°'];
+        attribute slipAngle : PlaneAngleValue default = 3 ['°'];
         port seatpost : SeatpostMount;
     }
 

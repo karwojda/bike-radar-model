@@ -52,6 +52,10 @@ Exported by `./scripts/check.sh` with the [SysML v2 Viewer](../sysmlv2_egui).
 
 ![Radar performance](docs/img/radarPerformance.svg)
 
+### Mounting tilt
+
+![Mounting tilt](docs/img/mountingTilt.svg)
+
 ### Runtimes
 
 ![Runtimes](docs/img/runtimes.svg)

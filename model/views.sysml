@@ -60,6 +60,15 @@ package BikeRadarViews {
         render asTreeDiagram;
     }
 
+    view mountingTilt {
+        doc /* How the mounting's tilt shortens the radar's reach. */
+        expose worstCaseTiltRange;
+        expose likelyTiltRange;
+        expose RearUnitDesign::radarModule;
+        expose RearUnitDesign::clamp;
+        render asTreeDiagram;
+    }
+
     view runtimes {
         doc /* How long the rear unit runs in each mode. */
         expose dayFlashRuntime;
