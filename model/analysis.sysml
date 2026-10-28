@@ -70,35 +70,27 @@ package BikeRadarAnalysis {
 
     // ---- Mounting tilt -----------------------------------------------------
 
-    attribute riderSag : PlaneAngleValue = 2 ['°'] {
-        doc /* How far the bike pitches back under the rider's weight. */
-    }
-
-    analysis def TiltedDetectionRange {
-        doc /* How far away the radar detects a car when its beam is tilted up or
-             * down by the mounting. Each way the beam's gain falls off as a
-             * Gaussian of the tilt over the elevation beamwidth, so the range
-             * falls by 2^(-2 (tilt / beamwidth)^2). S1's 140 m tolerates a tilt
-             * of up to 9.1° with today's radar. */
+    analysis def TiltRange {
+        doc /* How far away the radar detects a car when the mounting tilts its
+             * beam. S1's 140 m tolerates a tilt of up to 9.1° with today's
+             * radar. */
         subject radar : RadarModule;
         in attribute tilt : PlaneAngleValue;
-        return range : LengthValue =
-            DetectionRange(radar, radar.designTargetRcs)
-                * 2 ^ (-2 * (tilt / radar.elevationBeamwidth) ^ 2);
+        return range : LengthValue = TiltedDetectionRange(radar, radar.designTargetRcs, tilt);
     }
 
-    analysis worstCaseTiltRange : TiltedDetectionRange {
-        doc /* Every source of tilt at its limit, in the same direction. */
+    analysis worstCaseTiltRange : TiltRange {
+        doc /* Every source of tilt at its limit, in the same direction: the
+             * case S1 is judged on. */
         subject :>> radar = rearUnit.radarModule;
-        in attribute :>> tilt =
-            rearUnit.clamp.seatpostAngleSpread + rearUnit.clamp.slipAngle + riderSag;
+        in attribute :>> tilt = rearUnit.worstCaseTilt;
     }
-    analysis likelyTiltRange : TiltedDetectionRange {
+    analysis likelyTiltRange : TiltRange {
         doc /* The sources of tilt are independent, so they add as a root sum
              * of squares. */
         subject :>> radar = rearUnit.radarModule;
-        in attribute :>> tilt = (rearUnit.clamp.seatpostAngleSpread ^ 2
-            + rearUnit.clamp.slipAngle ^ 2 + riderSag ^ 2) ^ 0.5;
+        in attribute :>> tilt = (rearUnit.clamp.aimError ^ 2
+            + rearUnit.clamp.slipAngle ^ 2 + rearUnit.riderSag ^ 2) ^ 0.5;
     }
 
     // ---- Battery trade study -----------------------------------------------

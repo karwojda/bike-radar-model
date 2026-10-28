@@ -76,7 +76,8 @@ Each slice is reviewed in the viewer before the next starts.
 - [x] Slice 5 written; awaiting review in the viewer. S1 narrowed to cars
   (about 187 m) for now; a motorbike is detected at about 125 m, with no
   requirement yet.
-- [x] Slice 6 written. Open: with every tilt at its limit (10°) a car is
-  detected at about 132 m, short of S1's 140 m; added as a root sum of
-  squares (6.2°) it is about 164 m. S1 tolerates 9.1°. Not yet decided how
-  S1 should judge mounting, nor whether the clamp needs adjusting.
+- [x] Slice 6 written. A strap mount could tilt the radar 10° and cut the
+  car range to about 132 m, short of S1's 140 m (S1 tolerates 9.1°). Now an
+  adjustable band clamp with a quarter-turn mount: at most 3.75° of tilt,
+  about 178 m, and S1 is judged at that worst case. The clamp is 2 g
+  heavier, so the mass margin is down to about 0.8 g.

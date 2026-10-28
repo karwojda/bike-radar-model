@@ -223,14 +223,16 @@ package BikeRadarArchitecture {
         attribute mass : MassValue default = 18 [g];
     }
     part def SeatpostClamp {
-        doc /* A rubber strap mount for round seatposts. It aims the radar level
-             * on a seatpost leaning back at 73°; seatposts lean from 68° to 78°,
-             * and the strap lets the unit rotate a little on the post. */
-        attribute mass : MassValue default = 8 [g];
+        doc /* A band clamp for round seatposts with a quarter-turn mount for
+             * the unit. Seatposts lean from 68° to 78°, so the mount adjusts in
+             * steps to aim the radar level, leaving at most half a step of aim
+             * error. The quarter-turn lock slips far less than a strap. */
+        attribute mass : MassValue default = 10 [g];
         attribute minDiameter : LengthValue default = 22 [mm];
         attribute maxDiameter : LengthValue default = 35 [mm];
-        attribute seatpostAngleSpread : PlaneAngleValue default = 5 ['°'];
-        attribute slipAngle : PlaneAngleValue default = 3 ['°'];
+        attribute adjustmentStep : PlaneAngleValue default = 2.5 ['°'];
+        attribute aimError : PlaneAngleValue default = adjustmentStep / 2;
+        attribute slipAngle : PlaneAngleValue default = 0.5 ['°'];
         port seatpost : SeatpostMount;
     }
 
@@ -255,6 +257,18 @@ package BikeRadarArchitecture {
             / ((4 * pi) ^ 3 * boltzmann * noiseTemperature
                 * radar.noiseFigure * radar.losses * radar.minSnr)
         ) ^ 0.25;
+    }
+
+    calc def TiltedDetectionRange {
+        doc /* The detection range when the beam is tilted up or down. Each way
+             * the beam's gain falls off as a Gaussian of the tilt over the
+             * elevation beamwidth, so the range falls by
+             * 2^(-2 (tilt / beamwidth)^2). */
+        in radar : RadarModule;
+        in rcs : AreaValue;
+        in tilt : PlaneAngleValue;
+        return : LengthValue = DetectionRange(radar, rcs)
+            * 2 ^ (-2 * (tilt / radar.elevationBeamwidth) ^ 2);
     }
 
     calc def Runtime {
@@ -313,7 +327,13 @@ package BikeRadarArchitecture {
         attribute :>> mass = radarModule.mass + mcu.mass + button.mass + ledDriver.mass
             + leds.mass + regulator.mass + battery.mass + charger.mass
             + usbCReceptacle.mass + enclosure.mass + clamp.mass;
-        attribute :>> detectionRange = radarModule.detectionRange;
+        // Judged with the mounting tilted as far as it can be.
+        attribute riderSag : PlaneAngleValue default = 2 ['°'] {
+            doc /* How far the bike pitches back under the rider's weight. */
+        }
+        attribute worstCaseTilt : PlaneAngleValue = clamp.aimError + clamp.slipAngle + riderSag;
+        attribute :>> detectionRange = TiltedDetectionRange(
+            radarModule, radarModule.designTargetRcs, worstCaseTilt);
         attribute :>> alertLatency = mcu.alertLatency;
         attribute :>> maxTrackedVehicles = mcu.maxTrackedVehicles;
         attribute :>> maxClosingSpeed = radarModule.maxUnambiguousSpeed;

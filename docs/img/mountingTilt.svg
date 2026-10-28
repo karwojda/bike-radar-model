@@ -1,45 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1386" height="458" viewBox="0 0 1386 458" font-family="sans-serif">
-<rect x="0" y="0" width="1386" height="458" fill="#ffffff"/>
-<polyline points="610.27,110 685.49,70" fill="none" stroke="#000000" stroke-dasharray="6 4"/>
-<polyline points="676.88,83.64 685.49,70 669.37,69.51" fill="none" stroke="#000000"/>
-<text x="647.88" y="84" text-anchor="middle" font-size="11">«subject»</text>
-<polyline points="855.26,110 779.71,70" fill="none" stroke="#000000" stroke-dasharray="6 4"/>
-<polyline points="795.83,69.48 779.71,70 788.34,83.62" fill="none" stroke="#000000"/>
-<text x="817.49" y="84" text-anchor="middle" font-size="11">«subject»</text>
-<rect x="20" y="110" width="733" height="238" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="386.5" y="132" text-anchor="middle" font-size="12">«analysis»</text>
-<text x="386.5" y="150" text-anchor="middle" font-size="14">likelyTiltRange:TiltedDetectionRange</text>
-<polyline points="20,160 753,160" fill="none" stroke="#000000"/>
-<text x="386.5" y="181" text-anchor="middle" font-size="11" font-style="italic">parameters</text>
-<text x="30" y="197" text-anchor="start" font-size="12">in tilt = (rearUnit.clamp.seatpostAngleSpread ** 2 + rearUnit.clamp.slipAngle ** 2 + riderSag ** 2) ** 0.5</text>
-<polyline points="20,207 753,207" fill="none" stroke="#000000"/>
-<text x="386.5" y="228" text-anchor="middle" font-size="11" font-style="italic">results</text>
-<text x="30" y="244" text-anchor="start" font-size="12">return range:LengthValue = 163.86513685807358 [m]</text>
-<polyline points="20,254 753,254" fill="none" stroke="#000000"/>
-<text x="386.5" y="275" text-anchor="middle" font-size="11" font-style="italic">attributes</text>
-<text x="30" y="291" text-anchor="start" font-size="12">in tilt = (rearUnit.clamp.seatpostAngleSpread ** 2 + rearUnit.clamp.slipAngle ** 2 + riderSag ** 2) ** 0.5</text>
-<polyline points="20,301 753,301" fill="none" stroke="#000000"/>
-<text x="386.5" y="322" text-anchor="middle" font-size="11" font-style="italic">parts</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1150" height="458" viewBox="0 0 1150 458" font-family="sans-serif">
+<rect x="0" y="0" width="1150" height="458" fill="#ffffff"/>
+<polyline points="565.11,110 627.51,70" fill="none" stroke="#000000" stroke-dasharray="6 4"/>
+<polyline points="620.04,84.29 627.51,70 611.4,70.82" fill="none" stroke="#000000"/>
+<text x="596.31" y="84" text-anchor="middle" font-size="11">«subject»</text>
+<polyline points="780,117.39 705.7,70" fill="none" stroke="#000000" stroke-dasharray="6 4"/>
+<polyline points="721.8,70.78 705.7,70 713.2,84.27" fill="none" stroke="#000000"/>
+<text x="742.85" y="87.69" text-anchor="middle" font-size="11">«subject»</text>
+<rect x="20" y="110" width="719" height="238" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="379.5" y="132" text-anchor="middle" font-size="12">«analysis»</text>
+<text x="379.5" y="150" text-anchor="middle" font-size="14">likelyTiltRange:TiltRange</text>
+<polyline points="20,160 739,160" fill="none" stroke="#000000"/>
+<text x="379.5" y="181" text-anchor="middle" font-size="11" font-style="italic">parameters</text>
+<text x="30" y="197" text-anchor="start" font-size="12">in tilt = (rearUnit.clamp.aimError ** 2 + rearUnit.clamp.slipAngle ** 2 + rearUnit.riderSag ** 2) ** 0.5</text>
+<polyline points="20,207 739,207" fill="none" stroke="#000000"/>
+<text x="379.5" y="228" text-anchor="middle" font-size="11" font-style="italic">results</text>
+<text x="30" y="244" text-anchor="start" font-size="12">return range:LengthValue = 183.20342136895732 [m]</text>
+<polyline points="20,254 739,254" fill="none" stroke="#000000"/>
+<text x="379.5" y="275" text-anchor="middle" font-size="11" font-style="italic">attributes</text>
+<text x="30" y="291" text-anchor="start" font-size="12">in tilt = (rearUnit.clamp.aimError ** 2 + rearUnit.clamp.slipAngle ** 2 + rearUnit.riderSag ** 2) ** 0.5</text>
+<polyline points="20,301 739,301" fill="none" stroke="#000000"/>
+<text x="379.5" y="322" text-anchor="middle" font-size="11" font-style="italic">parts</text>
 <text x="30" y="338" text-anchor="start" font-size="12">radar = rearUnit.radarModule</text>
-<rect x="794" y="110" width="572" height="238" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="1080" y="132" text-anchor="middle" font-size="12">«analysis»</text>
-<text x="1080" y="150" text-anchor="middle" font-size="14">worstCaseTiltRange:TiltedDetectionRange</text>
-<polyline points="794,160 1366,160" fill="none" stroke="#000000"/>
-<text x="1080" y="181" text-anchor="middle" font-size="11" font-style="italic">parameters</text>
-<text x="804" y="197" text-anchor="start" font-size="12">in tilt = rearUnit.clamp.seatpostAngleSpread + rearUnit.clamp.slipAngle + riderSag</text>
-<polyline points="794,207 1366,207" fill="none" stroke="#000000"/>
-<text x="1080" y="228" text-anchor="middle" font-size="11" font-style="italic">results</text>
-<text x="804" y="244" text-anchor="start" font-size="12">return range:LengthValue = 132.18046227037095 [m]</text>
-<polyline points="794,254 1366,254" fill="none" stroke="#000000"/>
-<text x="1080" y="275" text-anchor="middle" font-size="11" font-style="italic">attributes</text>
-<text x="804" y="291" text-anchor="start" font-size="12">in tilt = rearUnit.clamp.seatpostAngleSpread + rearUnit.clamp.slipAngle + riderSag</text>
-<polyline points="794,301 1366,301" fill="none" stroke="#000000"/>
-<text x="1080" y="322" text-anchor="middle" font-size="11" font-style="italic">parts</text>
-<text x="804" y="338" text-anchor="start" font-size="12">radar = rearUnit.radarModule</text>
+<rect x="780" y="110" width="350" height="238" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="955" y="132" text-anchor="middle" font-size="12">«analysis»</text>
+<text x="955" y="150" text-anchor="middle" font-size="14">worstCaseTiltRange:TiltRange</text>
+<polyline points="780,160 1130,160" fill="none" stroke="#000000"/>
+<text x="955" y="181" text-anchor="middle" font-size="11" font-style="italic">parameters</text>
+<text x="790" y="197" text-anchor="start" font-size="12">in tilt = rearUnit.worstCaseTilt</text>
+<polyline points="780,207 1130,207" fill="none" stroke="#000000"/>
+<text x="955" y="228" text-anchor="middle" font-size="11" font-style="italic">results</text>
+<text x="790" y="244" text-anchor="start" font-size="12">return range:LengthValue = 178.03938795554998 [m]</text>
+<polyline points="780,254 1130,254" fill="none" stroke="#000000"/>
+<text x="955" y="275" text-anchor="middle" font-size="11" font-style="italic">attributes</text>
+<text x="790" y="291" text-anchor="start" font-size="12">in tilt = rearUnit.worstCaseTilt</text>
+<polyline points="780,301 1130,301" fill="none" stroke="#000000"/>
+<text x="955" y="322" text-anchor="middle" font-size="11" font-style="italic">parts</text>
+<text x="790" y="338" text-anchor="start" font-size="12">radar = rearUnit.radarModule</text>
 <rect x="20" y="388" width="169" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
 <text x="104.5" y="410" text-anchor="middle" font-size="12">«part»</text>
 <text x="104.5" y="428" text-anchor="middle" font-size="14">clamp:SeatpostClamp</text>
-<rect x="632" y="20" width="201" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="732.5" y="42" text-anchor="middle" font-size="12">«part»</text>
-<text x="732.5" y="60" text-anchor="middle" font-size="14">radarModule:RadarModule</text>
+<rect x="566" y="20" width="201" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="666.5" y="42" text-anchor="middle" font-size="12">«part»</text>
+<text x="666.5" y="60" text-anchor="middle" font-size="14">radarModule:RadarModule</text>
 </svg>
