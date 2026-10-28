@@ -50,8 +50,19 @@ Each slice is reviewed in the viewer before the next starts.
    `ready-for-human`, needs its own spec).
 4. **Analysis.** Runtime per operating mode, and a battery trade study that
    resolves the mass violation.
-5. **Tool Links.** A FreeCAD enclosure and a KiCad board, giving Design
-   Values for mass and summed power.
+5. **Radar performance.** The radar's parameters as Model Values; detection
+   range from the radar equation, range and speed resolution, and the
+   fastest closing speed it can measure (new requirement S12, from N1).
+   Analyses for a motorbike's detection range and the rider's warning time.
+6. **Tool Links.** A FreeCAD enclosure and a KiCad board, giving Design
+   Values for mass and summed power. Deferred: not the time for the tools
+   yet.
+
+## Pending Model changes
+
+- When viewer issue 05 lands, change `partTree` to `expose RearUnitDesign::**;`
+  for a tree of boxes. `rearUnit`'s parts are Inherited Members, shown as `^`
+  rows, not nodes. Until then the view keeps showing the bug.
 
 ## Status
 
@@ -60,3 +71,6 @@ Each slice is reviewed in the viewer before the next starts.
 - [x] Slice 3 written; awaiting review in the viewer. **Stop** here.
 - [x] Slice 4 written; awaiting review in the viewer. `./scripts/check.sh`
   exits 0 again.
+- [x] Slice 5 written; awaiting review in the viewer. Open: S1 says "an
+  approaching vehicle", but a motorbike is detected at about 125 m, short of
+  140 m. Only a car (about 187 m) is claimed.

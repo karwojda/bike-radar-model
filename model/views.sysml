@@ -52,6 +52,14 @@ package BikeRadarViews {
         render asTreeDiagram;
     }
 
+    view radarPerformance {
+        doc /* How far and how fast the radar sees, and how much warning the rider gets. */
+        expose motorbikeDetectionRange;
+        expose fastCarWarningTime;
+        expose RearUnitDesign::radarModule;
+        render asTreeDiagram;
+    }
+
     view runtimes {
         doc /* How long the rear unit runs in each mode. */
         expose dayFlashRuntime;

@@ -5,6 +5,8 @@ package BikeRadarArchitecture {
     private import ISQ::*;
     private import SI::*;
     private import ScalarValues::*;
+    private import Quantities::*;
+    private import TrigFunctions::*;
     private import BikeRadarContext::*;
 
     // ---- Items -------------------------------------------------------------
@@ -68,11 +70,44 @@ package BikeRadarArchitecture {
     // ---- Parts -------------------------------------------------------------
 
     part def RadarModule {
-        doc /* A 77 GHz FMCW radar chip with its antennas in the package. It
-             * chirps in short bursts, so its power is an average over a frame. */
+        doc /* A 77 GHz FMCW radar chip on a small board, with a patch array
+             * antenna for transmit and four for receive, each about 60° wide
+             * and 20° high. Each frame it sends a burst of chirps, then sleeps
+             * until the next frame, so its power is an average over a frame.
+             * Gains, losses and the noise figure are linear: dB values are in
+             * the comments. The beat frequency of a target at the detection
+             * range stays under the 10 MHz IF bandwidth of common chips. */
         attribute mass : MassValue default = 6 [g];
-        attribute power : PowerValue default = 0.12 [W];
-        attribute detectionRange : LengthValue default = 150 [m];
+        attribute activePower : PowerValue default = 1.1 [W];
+        attribute sleepPower : PowerValue default = 0.005 [W];
+        attribute framePeriod : DurationValue default = 0.1 [s];
+
+        attribute frequency : FrequencyValue default = 77e9 [Hz];
+        attribute sweepBandwidth : FrequencyValue default = 150e6 [Hz];
+        attribute txPower : PowerValue default = 0.0158 [W];       // 12 dBm
+        attribute txGain : Real default = 25.0;                     // 14 dBi
+        attribute rxGain : Real default = 25.0;                     // 14 dBi
+        attribute rxChannels : Natural default = 4;
+        attribute noiseFigure : Real default = 15.0;                // 11.8 dB
+        attribute losses : Real default = 10.0;                     // 10 dB: radome, mismatch, processing
+        attribute minSnr : Real default = 31.6;                     // 15 dB to declare a detection
+        attribute chirpDuration : DurationValue default = 20e-6 [s];
+        attribute chirpIdleTime : DurationValue default = 7e-6 [s];
+        attribute chirpsPerFrame : Natural default = 384;
+        attribute designTargetRcs : AreaValue default = 10 [m^2] {
+            doc /* The radar cross-section of a car seen from the front. */
+        }
+
+        attribute wavelength : LengthValue default = speedOfLight / frequency;
+        attribute chirpPeriod : DurationValue default = chirpDuration + chirpIdleTime;
+        attribute observationTime : DurationValue default = chirpsPerFrame * chirpDuration;
+        attribute activeTime : DurationValue default = chirpsPerFrame * chirpPeriod;
+        attribute power : PowerValue default =
+            (activePower * activeTime + sleepPower * (framePeriod - activeTime)) / framePeriod;
+        attribute detectionRange : LengthValue default = DetectionRange(self, designTargetRcs);
+        attribute rangeResolution : LengthValue default = speedOfLight / (2 * sweepBandwidth);
+        attribute maxUnambiguousSpeed : SpeedValue default = wavelength / (4 * chirpPeriod);
+        attribute speedResolution : SpeedValue default = wavelength / (2 * activeTime);
         port antenna : RadarPort;
         port data : RadarDataPort;
         port supply : ~RailPort;
@@ -193,7 +228,28 @@ package BikeRadarArchitecture {
         port seatpost : SeatpostMount;
     }
 
+    // ---- Constants ---------------------------------------------------------
+
+    attribute speedOfLight : SpeedValue = 299792458 [m/s];
+    attribute boltzmann : ScalarQuantityValue = 1.380649e-23 [J/K];
+    attribute noiseTemperature : ThermodynamicTemperatureValue = 290 [K];
+
     // ---- Calculations ------------------------------------------------------
+
+    calc def DetectionRange {
+        doc /* The radar equation for an FMCW radar: the farthest range at
+             * which a target of the given radar cross-section still gives the
+             * minimum signal-to-noise ratio, integrating over a frame's chirps
+             * and every receive channel. */
+        in radar : RadarModule;
+        in rcs : AreaValue;
+        return : LengthValue = (
+            radar.txPower * radar.txGain * radar.rxGain * radar.wavelength ^ 2 * rcs
+                * radar.observationTime * radar.rxChannels
+            / ((4 * pi) ^ 3 * boltzmann * noiseTemperature
+                * radar.noiseFigure * radar.losses * radar.minSnr)
+        ) ^ 0.25;
+    }
 
     calc def Runtime {
         doc /* How long an amount of energy lasts at a steady power. */
@@ -254,6 +310,7 @@ package BikeRadarArchitecture {
         attribute :>> detectionRange = radarModule.detectionRange;
         attribute :>> alertLatency = mcu.alertLatency;
         attribute :>> maxTrackedVehicles = mcu.maxTrackedVehicles;
+        attribute :>> maxClosingSpeed = radarModule.maxUnambiguousSpeed;
         attribute :>> daylightVisibility = leds.daylightVisibility;
         attribute :>> minSeatpostDiameter = clamp.minDiameter;
         attribute :>> maxSeatpostDiameter = clamp.maxDiameter;
@@ -278,6 +335,11 @@ package BikeRadarArchitecture {
         assert constraint regulatorWithinRating {
             doc /* The regulator can supply the radar and the MCU. */
             railPower <= regulator.maxOutputPower
+        }
+        assert constraint alertWithinLatency {
+            doc /* A track is confirmed over two radar frames, which must fit in
+             * the time the MCU has to alert the head unit. */
+            2 * radarModule.framePeriod <= mcu.alertLatency
         }
         assert constraint cellWithinRating {
             doc /* The cell can supply the unit in its hungriest mode. */

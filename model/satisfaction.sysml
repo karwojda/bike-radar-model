@@ -8,6 +8,7 @@ package BikeRadarSatisfaction {
     satisfy systemSpec.detectionRange by rearUnit;
     satisfy systemSpec.alertLatency by rearUnit;
     satisfy systemSpec.trackedVehicles by rearUnit;
+    satisfy systemSpec.closingSpeed by rearUnit;
     satisfy systemSpec.daylightVisibility by rearUnit;
     satisfy systemSpec.totalMass by rearUnit;
     satisfy systemSpec.seatpostFit by rearUnit;

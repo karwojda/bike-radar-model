@@ -62,6 +62,7 @@ package BikeRadarContext {
         attribute detectionRange : LengthValue;
         attribute alertLatency : DurationValue;
         attribute maxTrackedVehicles : Natural;
+        attribute maxClosingSpeed : SpeedValue;
         attribute daylightVisibility : LengthValue;
         attribute runtimeNightSolid : DurationValue;
         attribute runtimeDayFlash : DurationValue;

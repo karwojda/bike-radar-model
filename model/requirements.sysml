@@ -59,6 +59,11 @@ package BikeRadarRequirements {
             doc /* Track at least 8 vehicles at once. */
             require constraint { unit.maxTrackedVehicles >= 8 }
         }
+        requirement <'S12'> closingSpeed : SystemRequirement {
+            doc /* Measure closing speeds up to 120 km/h: a car at 120 km/h
+                 * behind a rider who has stopped. */
+            require constraint { unit.maxClosingSpeed >= 120 [km/h] }
+        }
 
         // Visibility
         requirement <'S4'> daylightVisibility : SystemRequirement {
@@ -113,6 +118,7 @@ package BikeRadarRequirements {
         end #derive ::> systemSpec.detectionRange;
         end #derive ::> systemSpec.alertLatency;
         end #derive ::> systemSpec.trackedVehicles;
+        end #derive ::> systemSpec.closingSpeed;
     }
     #derivation connection {
         end #original ::> riderNeeds.beSeen;

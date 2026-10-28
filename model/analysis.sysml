@@ -1,6 +1,6 @@
 package BikeRadarAnalysis {
-    doc /* How long the rear unit runs in each mode, and the trade study that
-         * chose its cell. */
+    doc /* How far and how fast the radar sees, how long the rear unit runs in
+         * each mode, and the trade study that chose its cell. */
 
     private import ISQ::*;
     private import SI::*;
@@ -32,6 +32,39 @@ package BikeRadarAnalysis {
         doc /* No requirement; riders ask how long the radar lasts alone. */
         subject :>> unit = rearUnit;
         in attribute :>> modePower = rearUnit.radarOnlyPower;
+    }
+
+    // ---- Radar performance -------------------------------------------------
+
+    analysis def TargetDetectionRange {
+        doc /* How far away the radar detects a target of a given radar
+             * cross-section. */
+        subject radar : RadarModule;
+        in attribute rcs : AreaValue;
+        return range : LengthValue = DetectionRange(radar, rcs);
+    }
+
+    analysis motorbikeDetectionRange : TargetDetectionRange {
+        doc /* A motorbike seen from the front reflects about a fifth of what a
+             * car does. */
+        subject :>> radar = rearUnit.radarModule;
+        in attribute :>> rcs = 2 [m^2];
+    }
+
+    analysis def WarningTime {
+        doc /* How long the rider is warned before a vehicle closing at a steady
+             * speed reaches them: from first detection, less the time to alert
+             * the head unit. */
+        subject unit : RearUnitDesign;
+        in attribute closingSpeed : SpeedValue;
+        return warning : DurationValue = unit.detectionRange / closingSpeed - unit.alertLatency;
+    }
+
+    analysis fastCarWarningTime : WarningTime {
+        doc /* A car at 120 km/h behind a rider who has stopped, the fastest
+             * closing speed S12 asks the radar to measure. */
+        subject :>> unit = rearUnit;
+        in attribute :>> closingSpeed = 120 [km/h];
     }
 
     // ---- Battery trade study -----------------------------------------------

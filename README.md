@@ -11,7 +11,7 @@ realistic. See [PLAN.md](PLAN.md) for why it exists and how it grows.
 | [`model/context.sysml`](model/context.sysml) | The rear unit as a black box, its ports and external actors |
 | [`model/architecture.sysml`](model/architecture.sysml) | The parts inside the rear unit, how they are wired, their mass and power, and the budgets they roll up to |
 | [`model/modes.sysml`](model/modes.sysml) | The operating modes, as a state machine |
-| [`model/analysis.sysml`](model/analysis.sysml) | Runtime per operating mode, and the battery trade study |
+| [`model/analysis.sysml`](model/analysis.sysml) | Radar performance, runtime per operating mode, and the battery trade study |
 | [`model/satisfaction.sysml`](model/satisfaction.sysml) | Which system requirements the rear unit as built claims to satisfy |
 | [`model/views.sysml`](model/views.sysml) | The Diagrams kept with the Model |
 | [`model/diagrams/style.json`](model/diagrams/style.json) | The Model Style: requirements green, yellow or red by satisfaction |
@@ -48,6 +48,10 @@ Exported by `./scripts/check.sh` with the [SysML v2 Viewer](../sysmlv2_egui).
 
 ![Satisfaction](docs/img/satisfaction.svg)
 
+### Radar performance
+
+![Radar performance](docs/img/radarPerformance.svg)
+
 ### Runtimes
 
 ![Runtimes](docs/img/runtimes.svg)
@@ -69,7 +73,7 @@ Exports every view into `docs/img`, validates the Model with
 [OpenSysML](https://github.com/Open-MBEE/OpenSysML)'s `sysml` as a second
 opinion, then checks every requirement and asserted constraint.
 
-Ten requirements are satisfied, and the other eight are not claimed: the
+Eleven requirements are satisfied, and the other eight are not claimed: the
 rider needs, the system spec that groups the rest, and ingress protection,
 which waits for a test. The cell was first a 45 g cylindrical one, sized to
 last 16 h of day flash cold and at the end of its life, which made the unit
