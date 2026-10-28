@@ -71,6 +71,6 @@ Each slice is reviewed in the viewer before the next starts.
 - [x] Slice 3 written; awaiting review in the viewer. **Stop** here.
 - [x] Slice 4 written; awaiting review in the viewer. `./scripts/check.sh`
   exits 0 again.
-- [x] Slice 5 written; awaiting review in the viewer. Open: S1 says "an
-  approaching vehicle", but a motorbike is detected at about 125 m, short of
-  140 m. Only a car (about 187 m) is claimed.
+- [x] Slice 5 written; awaiting review in the viewer. S1 narrowed to cars
+  (about 187 m) for now; a motorbike is detected at about 125 m, with no
+  requirement yet.

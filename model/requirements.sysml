@@ -48,7 +48,9 @@ package BikeRadarRequirements {
 
         // Detection
         requirement <'S1'> detectionRange : SystemRequirement {
-            doc /* Detect an approaching vehicle at 140 m or more. */
+            doc /* Detect an approaching car at 140 m or more. Smaller vehicles,
+                 * such as motorbikes, are detected later and have no range
+                 * requirement yet. */
             require constraint { unit.detectionRange >= 140 [m] }
         }
         requirement <'S2'> alertLatency : SystemRequirement {

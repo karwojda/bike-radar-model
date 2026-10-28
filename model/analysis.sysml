@@ -46,7 +46,8 @@ package BikeRadarAnalysis {
 
     analysis motorbikeDetectionRange : TargetDetectionRange {
         doc /* A motorbike seen from the front reflects about a fifth of what a
-             * car does. */
+             * car does. S1 covers only cars, so this range has no requirement
+             * yet. */
         subject :>> radar = rearUnit.radarModule;
         in attribute :>> rcs = 2 [m^2];
     }
