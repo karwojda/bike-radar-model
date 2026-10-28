@@ -1,0 +1,49 @@
+# Bike radar light
+
+A SysML v2 Model of a rear radar light for bicycles: a 77 GHz radar that
+warns the rider of vehicles approaching from behind, and a rear light, in one
+seatpost-mounted unit. The product is fictional; the numbers are meant to be
+realistic. See [PLAN.md](PLAN.md) for why it exists and how it grows.
+
+| File | Contents |
+|---|---|
+| [`requirements.sysml`](requirements.sysml) | Rider needs, system requirements, derivation |
+| [`context.sysml`](context.sysml) | The rear unit as a black box, its ports and external actors |
+| [`views.sysml`](views.sysml) | The Diagrams kept with the Model |
+
+## Diagrams
+
+Exported by `./check.sh` with the [SysML v2 Viewer](../sysmlv2_egui).
+
+### Rider needs
+
+![Rider needs](docs/img/needs.svg)
+
+### System requirements
+
+![System requirements](docs/img/systemRequirements.svg)
+
+### Ride context
+
+![Ride context](docs/img/rideContext.svg)
+
+### Charge context
+
+![Charge context](docs/img/chargeContext.svg)
+
+## Check
+
+```sh
+./check.sh
+```
+
+Exports every view into `docs/img`, then checks every requirement and
+asserted constraint. Nothing claims to satisfy a requirement yet, so every
+requirement is Not claimed.
+
+## Open in the viewer
+
+```sh
+cd ../sysmlv2_egui
+WAYLAND_DISPLAY= cargo run --release -p viewer-app -- ../bike-radar-model
+```
