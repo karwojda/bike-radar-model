@@ -16,6 +16,7 @@ package BikeRadarRequirements {
 
     requirement riderNeeds : StakeholderNeed {
         doc /* What the rider needs from the rear unit. */
+        subject :>> unit;
         stakeholder rider : Rider;
 
         requirement <'N1'> awareness : StakeholderNeed {

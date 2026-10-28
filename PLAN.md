@@ -54,3 +54,4 @@ Each slice is reviewed in the viewer before the next starts.
 ## Status
 
 - [x] Slice 1 written; awaiting review in the viewer.
+- [x] Slice 2 written; awaiting review in the viewer.

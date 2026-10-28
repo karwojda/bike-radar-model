@@ -9,6 +9,8 @@ realistic. See [PLAN.md](PLAN.md) for why it exists and how it grows.
 |---|---|
 | [`model/requirements.sysml`](model/requirements.sysml) | Rider needs, system requirements, derivation |
 | [`model/context.sysml`](model/context.sysml) | The rear unit as a black box, its ports and external actors |
+| [`model/architecture.sysml`](model/architecture.sysml) | The parts inside the rear unit and how they are wired |
+| [`model/modes.sysml`](model/modes.sysml) | The operating modes, as a state machine |
 | [`model/views.sysml`](model/views.sysml) | The Diagrams kept with the Model |
 
 ## Diagrams
@@ -30,6 +32,17 @@ Exported by `./scripts/check.sh` with the [SysML v2 Viewer](../sysmlv2_egui).
 ### Charge context
 
 ![Charge context](docs/img/chargeContext.svg)
+
+### Part tree
+
+![Part tree](docs/img/partTree.svg)
+
+### Internal structure
+
+![Internal structure](docs/img/internalStructure.svg)
+
+The operating modes view is a `StateTransitionView`, which the viewer does
+not export yet.
 
 ## Check
 

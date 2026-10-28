@@ -2,8 +2,11 @@ package BikeRadarViews {
     doc /* The pictures an engineer keeps of the rear radar light. */
 
     private import Views::*;
+    private import StandardViewDefinitions::*;
     private import BikeRadarRequirements::*;
     private import BikeRadarContext::*;
+    private import BikeRadarArchitecture::*;
+    private import BikeRadarModes::*;
 
     view needs {
         doc /* The rider's needs. */
@@ -27,5 +30,22 @@ package BikeRadarViews {
         doc /* The rear unit on its charger. */
         expose charging;
         render asInterconnectionDiagram;
+    }
+
+    view partTree {
+        doc /* What the rear unit is built from. */
+        expose rearUnit::**;
+        render asTreeDiagram;
+    }
+
+    view internalStructure {
+        doc /* How the parts inside the rear unit are wired together. */
+        expose rearUnit;
+        render asInterconnectionDiagram;
+    }
+
+    view operatingModes : StateTransitionView {
+        doc /* Off, and the three modes the button cycles through when on. */
+        expose OperatingModes;
     }
 }

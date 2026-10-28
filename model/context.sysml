@@ -6,6 +6,7 @@ package BikeRadarContext {
     private import ISQ::*;
     private import SI::*;
     private import ScalarValues::*;
+    private import BikeRadarModes::*;
 
     // ---- Items -------------------------------------------------------------
 
@@ -75,6 +76,8 @@ package BikeRadarContext {
         port ble : BlePort;
         port usbC : UsbCPort;
         port mount : SeatpostMount;
+
+        exhibit state modes : OperatingModes;
     }
 
     // ---- External actors ---------------------------------------------------
