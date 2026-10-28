@@ -1,6 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="241" height="90" viewBox="0 0 241 90" font-family="sans-serif">
-<rect x="0" y="0" width="241" height="90" fill="#ffffff"/>
-<rect x="20" y="20" width="201" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="120.5" y="42" text-anchor="middle" font-size="12">«part»</text>
-<text x="120.5" y="60" text-anchor="middle" font-size="14">rearUnit:RearUnitDesign</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="726" height="312" viewBox="0 0 726 312" font-family="sans-serif">
+<rect x="0" y="0" width="726" height="312" fill="#ffffff"/>
+<rect x="20" y="20" width="686" height="272" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="363" y="42" text-anchor="middle" font-size="12">«part»</text>
+<text x="363" y="60" text-anchor="middle" font-size="14">rearUnit:RearUnitDesign</text>
+<polyline points="20,70 706,70" fill="none" stroke="#000000"/>
+<text x="363" y="91" text-anchor="middle" font-size="11" font-style="italic">assert constraints</text>
+<text x="30" y="107" text-anchor="start" font-size="12">^{battery.energy * battery.coldCapacity * battery.endOfLifeCapacity &gt;= dayFlashPower * 16 [hour]} ✓</text>
+<text x="30" y="123" text-anchor="start" font-size="12">^{nightSolidPower &lt;= battery.maxDischargePower} ✓</text>
+<text x="30" y="139" text-anchor="start" font-size="12">^{railPower &lt;= regulator.maxOutputPower} ✓</text>
+<polyline points="20,149 706,149" fill="none" stroke="#000000"/>
+<text x="363" y="170" text-anchor="middle" font-size="11" font-style="italic">requirements</text>
+<text x="30" y="186" text-anchor="start" font-size="12">satisfy detectionRange ✓</text>
+<text x="30" y="202" text-anchor="start" font-size="12">satisfy alertLatency ✓</text>
+<text x="30" y="218" text-anchor="start" font-size="12">satisfy trackedVehicles ✓</text>
+<text x="30" y="234" text-anchor="start" font-size="12">satisfy daylightVisibility ✓</text>
+<text x="30" y="250" text-anchor="start" font-size="12">satisfy totalMass ✗</text>
+<text x="30" y="266" text-anchor="start" font-size="12">satisfy seatpostFit ✓</text>
+<text x="30" y="282" text-anchor="start" font-size="12">satisfy operatingTemperature ✓</text>
 </svg>

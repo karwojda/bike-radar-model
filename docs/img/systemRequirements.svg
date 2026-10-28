@@ -26,7 +26,7 @@
 <text x="2966" y="42" text-anchor="middle" font-size="12">«requirement»</text>
 <text x="2966" y="60" text-anchor="middle" font-size="14">systemSpec:SystemRequirement</text>
 <rect x="3097" y="25" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
-<text x="3105" y="36.67" text-anchor="middle" font-size="11">○</text>
+<text x="3105" y="36.67" text-anchor="middle" font-size="11">✗</text>
 <polyline points="2814,70 3118,70" fill="none" stroke="#000000"/>
 <text x="2966" y="91" text-anchor="middle" font-size="11" font-style="italic">doc</text>
 <text x="2824" y="107" text-anchor="start" font-size="12">The rear unit's system requirements.</text>
@@ -34,7 +34,7 @@
 <text x="5422.5" y="180" text-anchor="middle" font-size="12">«requirement»</text>
 <text x="5422.5" y="198" text-anchor="middle" font-size="14">&lt;S2&gt; alertLatency:SystemRequirement</text>
 <rect x="5577" y="163" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
-<text x="5585" y="174.67" text-anchor="middle" font-size="11">○</text>
+<text x="5585" y="174.67" text-anchor="middle" font-size="11">✓</text>
 <polyline points="5247,208 5598,208" fill="none" stroke="#000000"/>
 <text x="5422.5" y="229" text-anchor="middle" font-size="11" font-style="italic">doc</text>
 <text x="5257" y="245" text-anchor="start" font-size="12">Alert the head unit within 0.5 s of</text>
@@ -58,7 +58,7 @@
 <text x="4629" y="180" text-anchor="middle" font-size="12">«requirement»</text>
 <text x="4629" y="198" text-anchor="middle" font-size="14">&lt;S4&gt; daylightVisibility:SystemRequirement</text>
 <rect x="4814" y="163" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
-<text x="4822" y="174.67" text-anchor="middle" font-size="11">○</text>
+<text x="4822" y="174.67" text-anchor="middle" font-size="11">✓</text>
 <polyline points="4423,208 4835,208" fill="none" stroke="#000000"/>
 <text x="4629" y="229" text-anchor="middle" font-size="11" font-style="italic">doc</text>
 <text x="4433" y="245" text-anchor="start" font-size="12">The light is visible from 1.5 km in</text>
@@ -70,7 +70,7 @@
 <text x="4204" y="180" text-anchor="middle" font-size="12">«requirement»</text>
 <text x="4204" y="198" text-anchor="middle" font-size="14">&lt;S1&gt; detectionRange:SystemRequirement</text>
 <rect x="4362" y="163" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
-<text x="4370" y="174.67" text-anchor="middle" font-size="11">○</text>
+<text x="4370" y="174.67" text-anchor="middle" font-size="11">✓</text>
 <polyline points="4025,208 4383,208" fill="none" stroke="#000000"/>
 <text x="4204" y="229" text-anchor="middle" font-size="11" font-style="italic">doc</text>
 <text x="4035" y="245" text-anchor="start" font-size="12">Detect an approaching vehicle at 140 m</text>
@@ -91,7 +91,7 @@
 <text x="2966.5" y="188" text-anchor="middle" font-size="12">«requirement»</text>
 <text x="2966.5" y="206" text-anchor="middle" font-size="14">&lt;S11&gt; operatingTemperature:SystemRequirement</text>
 <rect x="3541" y="171" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
-<text x="3549" y="182.67" text-anchor="middle" font-size="11">○</text>
+<text x="3549" y="182.67" text-anchor="middle" font-size="11">✓</text>
 <polyline points="2371,216 3562,216" fill="none" stroke="#000000"/>
 <text x="2966.5" y="237" text-anchor="middle" font-size="11" font-style="italic">doc</text>
 <text x="2381" y="253" text-anchor="start" font-size="12">Work from -10 °C to 40 °C.</text>
@@ -126,7 +126,7 @@
 <text x="1144.5" y="180" text-anchor="middle" font-size="12">«requirement»</text>
 <text x="1144.5" y="198" text-anchor="middle" font-size="14">&lt;S9&gt; seatpostFit:SystemRequirement</text>
 <rect x="1494" y="163" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
-<text x="1502" y="174.67" text-anchor="middle" font-size="11">○</text>
+<text x="1502" y="174.67" text-anchor="middle" font-size="11">✓</text>
 <polyline points="774,208 1515,208" fill="none" stroke="#000000"/>
 <text x="1144.5" y="229" text-anchor="middle" font-size="11" font-style="italic">doc</text>
 <text x="784" y="245" text-anchor="start" font-size="12">Mount on round seatposts from 25 mm to</text>
@@ -138,7 +138,7 @@
 <text x="577.5" y="188" text-anchor="middle" font-size="12">«requirement»</text>
 <text x="577.5" y="206" text-anchor="middle" font-size="14">&lt;S8&gt; totalMass:SystemRequirement</text>
 <rect x="713" y="171" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
-<text x="721" y="182.67" text-anchor="middle" font-size="11">○</text>
+<text x="721" y="182.67" text-anchor="middle" font-size="11">✗</text>
 <polyline points="421,216 734,216" fill="none" stroke="#000000"/>
 <text x="577.5" y="237" text-anchor="middle" font-size="11" font-style="italic">doc</text>
 <text x="431" y="253" text-anchor="start" font-size="12">Weigh 75 g or less, mount included.</text>
@@ -149,7 +149,7 @@
 <text x="200" y="188" text-anchor="middle" font-size="12">«requirement»</text>
 <text x="200" y="206" text-anchor="middle" font-size="14">&lt;S3&gt; trackedVehicles:SystemRequirement</text>
 <rect x="359" y="171" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
-<text x="367" y="182.67" text-anchor="middle" font-size="11">○</text>
+<text x="367" y="182.67" text-anchor="middle" font-size="11">✓</text>
 <polyline points="20,216 380,216" fill="none" stroke="#000000"/>
 <text x="200" y="237" text-anchor="middle" font-size="11" font-style="italic">doc</text>
 <text x="30" y="253" text-anchor="start" font-size="12">Track at least 8 vehicles at once.</text>

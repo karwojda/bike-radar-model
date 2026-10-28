@@ -1,0 +1,197 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="5618" height="650" viewBox="0 0 5618 650" font-family="sans-serif">
+<rect x="0" y="0" width="5618" height="650" fill="#ffffff"/>
+<polyline points="3132.99,74.18 5221,144 5251.01,158" fill="none" stroke="#000000"/>
+<polygon points="3115,73.58 3123.79,79.88 3132.99,74.18 3124.2,67.89" fill="#000000" stroke="#000000"/>
+<polyline points="3132.99,88.17 4849,144 4877.67,158" fill="none" stroke="#000000"/>
+<polygon points="3115,87.58 3123.8,93.87 3132.99,88.17 3124.19,81.88" fill="#000000" stroke="#000000"/>
+<polyline points="3132.99,102.18 4397,144 4431.55,158" fill="none" stroke="#000000"/>
+<polygon points="3115,101.58 3123.8,107.88 3132.99,102.18 3124.19,95.88" fill="#000000" stroke="#000000"/>
+<polyline points="3132.97,116.63 3999,167 4025,176" fill="none" stroke="#000000"/>
+<polygon points="3115,115.58 3123.64,122.09 3132.97,116.63 3124.33,110.12" fill="#000000" stroke="#000000"/>
+<polyline points="3132.95,118.36 3576,152 3649.6,181" fill="none" stroke="#000000"/>
+<polygon points="3115,117 3123.52,123.66 3132.95,118.36 3124.43,111.7" fill="#000000" stroke="#000000"/>
+<polyline points="2964.37,135 2965.01,166" fill="none" stroke="#000000"/>
+<polygon points="2964,117 2958.19,126.12 2964.37,135 2970.19,125.87" fill="#000000" stroke="#000000"/>
+<polyline points="2793.05,118.38 2357,152 2330,163.22" fill="none" stroke="#000000"/>
+<polygon points="2811,117 2801.57,111.71 2793.05,118.38 2802.49,123.67" fill="#000000" stroke="#000000"/>
+<polyline points="2793.02,105.59 1956,144 1924.13,158" fill="none" stroke="#000000"/>
+<polygon points="2811,104.76 2801.73,99.18 2793.02,105.59 2802.28,111.17" fill="#000000" stroke="#000000"/>
+<polyline points="2793.01,62.09 2042.61,33.77 1496.3,158" fill="none" stroke="#000000"/>
+<polygon points="2811,62.76 2802.23,56.43 2793.01,62.09 2801.78,68.42" fill="#000000" stroke="#000000"/>
+<polyline points="2793.01,91.23 760,144 717.29,166" fill="none" stroke="#000000"/>
+<polygon points="2811,90.76 2801.85,85 2793.01,91.23 2802.16,97" fill="#000000" stroke="#000000"/>
+<polyline points="2793.01,77.33 407,152 373.3,166" fill="none" stroke="#000000"/>
+<polygon points="2811,76.76 2801.82,71.05 2793.01,77.33 2802.19,83.04" fill="#000000" stroke="#000000"/>
+<polyline points="3309,432.24 3999,308 4025,299.12" fill="none" stroke="#000000"/>
+<polyline points="4014.34,311.22 4025,299.12 4009.17,296.08" fill="none" stroke="#000000"/>
+<text x="4005" y="311.67" text-anchor="start" font-size="11">«satisfy» ✓</text>
+<polyline points="3309,469.36 5221,332 5251.01,318" fill="none" stroke="#000000"/>
+<polyline points="5241.71,331.17 5251.01,318 5234.94,316.67" fill="none" stroke="#000000"/>
+<text x="5227" y="335.67" text-anchor="start" font-size="11">«satisfy» ✓</text>
+<polyline points="2623,482.81 407,324 373.3,310" fill="none" stroke="#000000"/>
+<polyline points="389.3,307.98 373.3,310 383.16,322.76" fill="none" stroke="#000000"/>
+<text x="401" y="327.67" text-anchor="end" font-size="11">«satisfy» ✓</text>
+<polyline points="3309,455.17 4397,332 4431.55,318" fill="none" stroke="#000000"/>
+<polyline points="4421.58,330.67 4431.55,318 4415.57,315.84" fill="none" stroke="#000000"/>
+<text x="4403" y="335.67" text-anchor="start" font-size="11">«satisfy» ✓</text>
+<polyline points="2623,468.81 760,332 717.29,310" fill="none" stroke="#000000"/>
+<polyline points="733.4,309.3 717.29,310 726.07,323.52" fill="none" stroke="#000000"/>
+<text x="754" y="335.67" text-anchor="end" font-size="11">«satisfy» ✗</text>
+<polyline points="2623,496.81 2045.23,437.3 1506.06,318" fill="none" stroke="#000000"/>
+<polyline points="1521.46,313.21 1506.06,318 1518,328.84" fill="none" stroke="#000000"/>
+<text x="2045.23" y="454.3" text-anchor="middle" font-size="11">«satisfy» ✓</text>
+<polyline points="2966.27,358 2966.36,310" fill="none" stroke="#000000"/>
+<polyline points="2974.33,324.02 2966.36,310 2958.33,323.98" fill="none" stroke="#000000"/>
+<text x="2972.31" y="337.67" text-anchor="start" font-size="11">«satisfy» ✓</text>
+<rect x="2623" y="358" width="686" height="272" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="2966" y="380" text-anchor="middle" font-size="12">«part»</text>
+<text x="2966" y="398" text-anchor="middle" font-size="14">rearUnit:RearUnitDesign</text>
+<polyline points="2623,408 3309,408" fill="none" stroke="#000000"/>
+<text x="2966" y="429" text-anchor="middle" font-size="11" font-style="italic">assert constraints</text>
+<text x="2633" y="445" text-anchor="start" font-size="12">^{battery.energy * battery.coldCapacity * battery.endOfLifeCapacity &gt;= dayFlashPower * 16 [hour]} ✓</text>
+<text x="2633" y="461" text-anchor="start" font-size="12">^{nightSolidPower &lt;= battery.maxDischargePower} ✓</text>
+<text x="2633" y="477" text-anchor="start" font-size="12">^{railPower &lt;= regulator.maxOutputPower} ✓</text>
+<polyline points="2623,487 3309,487" fill="none" stroke="#000000"/>
+<text x="2966" y="508" text-anchor="middle" font-size="11" font-style="italic">requirements</text>
+<text x="2633" y="524" text-anchor="start" font-size="12">satisfy detectionRange ✓</text>
+<text x="2633" y="540" text-anchor="start" font-size="12">satisfy alertLatency ✓</text>
+<text x="2633" y="556" text-anchor="start" font-size="12">satisfy trackedVehicles ✓</text>
+<text x="2633" y="572" text-anchor="start" font-size="12">satisfy daylightVisibility ✓</text>
+<text x="2633" y="588" text-anchor="start" font-size="12">satisfy totalMass ✗</text>
+<text x="2633" y="604" text-anchor="start" font-size="12">satisfy seatpostFit ✓</text>
+<text x="2633" y="620" text-anchor="start" font-size="12">satisfy operatingTemperature ✓</text>
+<rect x="2811" y="20" width="304" height="97" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="2963" y="42" text-anchor="middle" font-size="12">«requirement»</text>
+<text x="2963" y="60" text-anchor="middle" font-size="14">systemSpec:SystemRequirement</text>
+<rect x="3094" y="25" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
+<text x="3102" y="36.67" text-anchor="middle" font-size="11">✗</text>
+<polyline points="2811,70 3115,70" fill="none" stroke="#000000"/>
+<text x="2963" y="91" text-anchor="middle" font-size="11" font-style="italic">doc</text>
+<text x="2821" y="107" text-anchor="start" font-size="12">The rear unit's system requirements.</text>
+<rect x="5247" y="158" width="351" height="160" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="5422.5" y="180" text-anchor="middle" font-size="12">«requirement»</text>
+<text x="5422.5" y="198" text-anchor="middle" font-size="14">&lt;S2&gt; alertLatency:SystemRequirement</text>
+<rect x="5577" y="163" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
+<text x="5585" y="174.67" text-anchor="middle" font-size="11">✓</text>
+<polyline points="5247,208 5598,208" fill="none" stroke="#000000"/>
+<text x="5422.5" y="229" text-anchor="middle" font-size="11" font-style="italic">doc</text>
+<text x="5257" y="245" text-anchor="start" font-size="12">Alert the head unit within 0.5 s of</text>
+<text x="5257" y="261" text-anchor="start" font-size="12">first detection.</text>
+<polyline points="5247,271 5598,271" fill="none" stroke="#000000"/>
+<text x="5422.5" y="292" text-anchor="middle" font-size="11" font-style="italic">constraints</text>
+<text x="5257" y="308" text-anchor="start" font-size="12">require {unit.alertLatency &lt;= 0.5 [second]}</text>
+<rect x="4876" y="158" width="331" height="160" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="5041.5" y="180" text-anchor="middle" font-size="12">«requirement»</text>
+<text x="5041.5" y="198" text-anchor="middle" font-size="14">&lt;S7&gt; chargeTime:SystemRequirement</text>
+<rect x="5186" y="163" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
+<text x="5194" y="174.67" text-anchor="middle" font-size="11">○</text>
+<polyline points="4876,208 5207,208" fill="none" stroke="#000000"/>
+<text x="5041.5" y="229" text-anchor="middle" font-size="11" font-style="italic">doc</text>
+<text x="4886" y="245" text-anchor="start" font-size="12">Charge from empty to full in 3 h or less</text>
+<text x="4886" y="261" text-anchor="start" font-size="12">over USB-C.</text>
+<polyline points="4876,271 5207,271" fill="none" stroke="#000000"/>
+<text x="5041.5" y="292" text-anchor="middle" font-size="11" font-style="italic">constraints</text>
+<text x="4886" y="308" text-anchor="start" font-size="12">require {unit.chargeTime &lt;= 3 [hour]}</text>
+<rect x="4423" y="158" width="412" height="160" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="4629" y="180" text-anchor="middle" font-size="12">«requirement»</text>
+<text x="4629" y="198" text-anchor="middle" font-size="14">&lt;S4&gt; daylightVisibility:SystemRequirement</text>
+<rect x="4814" y="163" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
+<text x="4822" y="174.67" text-anchor="middle" font-size="11">✓</text>
+<polyline points="4423,208 4835,208" fill="none" stroke="#000000"/>
+<text x="4629" y="229" text-anchor="middle" font-size="11" font-style="italic">doc</text>
+<text x="4433" y="245" text-anchor="start" font-size="12">The light is visible from 1.5 km in</text>
+<text x="4433" y="261" text-anchor="start" font-size="12">daylight.</text>
+<polyline points="4423,271 4835,271" fill="none" stroke="#000000"/>
+<text x="4629" y="292" text-anchor="middle" font-size="11" font-style="italic">constraints</text>
+<text x="4433" y="308" text-anchor="start" font-size="12">require {unit.daylightVisibility &gt;= 1.5 [kilometre]}</text>
+<rect x="4025" y="158" width="358" height="160" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="4204" y="180" text-anchor="middle" font-size="12">«requirement»</text>
+<text x="4204" y="198" text-anchor="middle" font-size="14">&lt;S1&gt; detectionRange:SystemRequirement</text>
+<rect x="4362" y="163" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
+<text x="4370" y="174.67" text-anchor="middle" font-size="11">✓</text>
+<polyline points="4025,208 4383,208" fill="none" stroke="#000000"/>
+<text x="4204" y="229" text-anchor="middle" font-size="11" font-style="italic">doc</text>
+<text x="4035" y="245" text-anchor="start" font-size="12">Detect an approaching vehicle at 140 m</text>
+<text x="4035" y="261" text-anchor="start" font-size="12">or more.</text>
+<polyline points="4025,271 4383,271" fill="none" stroke="#000000"/>
+<text x="4204" y="292" text-anchor="middle" font-size="11" font-style="italic">constraints</text>
+<text x="4035" y="308" text-anchor="start" font-size="12">require {unit.detectionRange &gt;= 140 [metre]}</text>
+<rect x="3601" y="181" width="384" height="113" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="3793" y="203" text-anchor="middle" font-size="12">«requirement»</text>
+<text x="3793" y="221" text-anchor="middle" font-size="14">&lt;S10&gt; ingressProtection:SystemRequirement</text>
+<rect x="3964" y="186" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
+<text x="3972" y="197.67" text-anchor="middle" font-size="11">○</text>
+<polyline points="3601,231 3985,231" fill="none" stroke="#000000"/>
+<text x="3793" y="252" text-anchor="middle" font-size="11" font-style="italic">doc</text>
+<text x="3611" y="268" text-anchor="start" font-size="12">Rated IP67: dust-tight, and survives</text>
+<text x="3611" y="284" text-anchor="start" font-size="12">immersion to 1 m for 30 min.</text>
+<rect x="2371" y="166" width="1191" height="144" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="2966.5" y="188" text-anchor="middle" font-size="12">«requirement»</text>
+<text x="2966.5" y="206" text-anchor="middle" font-size="14">&lt;S11&gt; operatingTemperature:SystemRequirement</text>
+<rect x="3541" y="171" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
+<text x="3549" y="182.67" text-anchor="middle" font-size="11">✓</text>
+<polyline points="2371,216 3562,216" fill="none" stroke="#000000"/>
+<text x="2966.5" y="237" text-anchor="middle" font-size="11" font-style="italic">doc</text>
+<text x="2381" y="253" text-anchor="start" font-size="12">Work from -10 °C to 40 °C.</text>
+<polyline points="2371,263 3562,263" fill="none" stroke="#000000"/>
+<text x="2966.5" y="284" text-anchor="middle" font-size="11" font-style="italic">constraints</text>
+<text x="2381" y="300" text-anchor="start" font-size="12">require {unit.minOperatingTemperature &lt;= -10 [degree celsius (temperature difference)] and unit.maxOperatingTemperature &gt;= 40 [degree celsius (temperature difference)]}</text>
+<rect x="1970" y="158" width="360" height="160" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="2150" y="180" text-anchor="middle" font-size="12">«requirement»</text>
+<text x="2150" y="198" text-anchor="middle" font-size="14">&lt;S6&gt; runtimeDayFlash:SystemRequirement</text>
+<rect x="2309" y="163" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
+<text x="2317" y="174.67" text-anchor="middle" font-size="11">○</text>
+<polyline points="1970,208 2330,208" fill="none" stroke="#000000"/>
+<text x="2150" y="229" text-anchor="middle" font-size="11" font-style="italic">doc</text>
+<text x="1980" y="245" text-anchor="start" font-size="12">Run at least 16 h with radar on and the</text>
+<text x="1980" y="261" text-anchor="start" font-size="12">light flashing.</text>
+<polyline points="1970,271 2330,271" fill="none" stroke="#000000"/>
+<text x="2150" y="292" text-anchor="middle" font-size="11" font-style="italic">constraints</text>
+<text x="1980" y="308" text-anchor="start" font-size="12">require {unit.runtimeDayFlash &gt;= 16 [hour]}</text>
+<rect x="1554" y="158" width="376" height="160" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="1742" y="180" text-anchor="middle" font-size="12">«requirement»</text>
+<text x="1742" y="198" text-anchor="middle" font-size="14">&lt;S5&gt; runtimeNightSolid:SystemRequirement</text>
+<rect x="1909" y="163" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
+<text x="1917" y="174.67" text-anchor="middle" font-size="11">○</text>
+<polyline points="1554,208 1930,208" fill="none" stroke="#000000"/>
+<text x="1742" y="229" text-anchor="middle" font-size="11" font-style="italic">doc</text>
+<text x="1564" y="245" text-anchor="start" font-size="12">Run at least 8 h with radar on and the</text>
+<text x="1564" y="261" text-anchor="start" font-size="12">light solid.</text>
+<polyline points="1554,271 1930,271" fill="none" stroke="#000000"/>
+<text x="1742" y="292" text-anchor="middle" font-size="11" font-style="italic">constraints</text>
+<text x="1564" y="308" text-anchor="start" font-size="12">require {unit.runtimeNightSolid &gt;= 8 [hour]}</text>
+<rect x="774" y="158" width="741" height="160" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="1144.5" y="180" text-anchor="middle" font-size="12">«requirement»</text>
+<text x="1144.5" y="198" text-anchor="middle" font-size="14">&lt;S9&gt; seatpostFit:SystemRequirement</text>
+<rect x="1494" y="163" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
+<text x="1502" y="174.67" text-anchor="middle" font-size="11">✓</text>
+<polyline points="774,208 1515,208" fill="none" stroke="#000000"/>
+<text x="1144.5" y="229" text-anchor="middle" font-size="11" font-style="italic">doc</text>
+<text x="784" y="245" text-anchor="start" font-size="12">Mount on round seatposts from 25 mm to</text>
+<text x="784" y="261" text-anchor="start" font-size="12">35 mm in diameter.</text>
+<polyline points="774,271 1515,271" fill="none" stroke="#000000"/>
+<text x="1144.5" y="292" text-anchor="middle" font-size="11" font-style="italic">constraints</text>
+<text x="784" y="308" text-anchor="start" font-size="12">require {unit.minSeatpostDiameter &lt;= 25 [millimetre] and unit.maxSeatpostDiameter &gt;= 35 [millimetre]}</text>
+<rect x="421" y="166" width="313" height="144" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="577.5" y="188" text-anchor="middle" font-size="12">«requirement»</text>
+<text x="577.5" y="206" text-anchor="middle" font-size="14">&lt;S8&gt; totalMass:SystemRequirement</text>
+<rect x="713" y="171" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
+<text x="721" y="182.67" text-anchor="middle" font-size="11">✗</text>
+<polyline points="421,216 734,216" fill="none" stroke="#000000"/>
+<text x="577.5" y="237" text-anchor="middle" font-size="11" font-style="italic">doc</text>
+<text x="431" y="253" text-anchor="start" font-size="12">Weigh 75 g or less, mount included.</text>
+<polyline points="421,263 734,263" fill="none" stroke="#000000"/>
+<text x="577.5" y="284" text-anchor="middle" font-size="11" font-style="italic">constraints</text>
+<text x="431" y="300" text-anchor="start" font-size="12">require {unit.mass &lt;= 75 [gram]}</text>
+<rect x="20" y="166" width="360" height="144" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="200" y="188" text-anchor="middle" font-size="12">«requirement»</text>
+<text x="200" y="206" text-anchor="middle" font-size="14">&lt;S3&gt; trackedVehicles:SystemRequirement</text>
+<rect x="359" y="171" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
+<text x="367" y="182.67" text-anchor="middle" font-size="11">✓</text>
+<polyline points="20,216 380,216" fill="none" stroke="#000000"/>
+<text x="200" y="237" text-anchor="middle" font-size="11" font-style="italic">doc</text>
+<text x="30" y="253" text-anchor="start" font-size="12">Track at least 8 vehicles at once.</text>
+<polyline points="20,263 380,263" fill="none" stroke="#000000"/>
+<text x="200" y="284" text-anchor="middle" font-size="11" font-style="italic">constraints</text>
+<text x="30" y="300" text-anchor="start" font-size="12">require {unit.maxTrackedVehicles &gt;= 8}</text>
+</svg>

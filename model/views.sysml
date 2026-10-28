@@ -44,6 +44,13 @@ package BikeRadarViews {
         render asInterconnectionDiagram;
     }
 
+    view satisfaction {
+        doc /* The system requirements, and the rear unit as built claiming to satisfy them. */
+        expose systemSpec::**;
+        expose rearUnit;
+        render asTreeDiagram;
+    }
+
     view operatingModes : StateTransitionView {
         doc /* Off, and the three modes the button cycles through when on. */
         expose OperatingModes;

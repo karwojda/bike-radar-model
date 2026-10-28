@@ -2,6 +2,9 @@ package BikeRadarArchitecture {
     doc /* Inside the rear unit: the parts it is built from and how they are
          * wired together. */
 
+    private import ISQ::*;
+    private import SI::*;
+    private import ScalarValues::*;
     private import BikeRadarContext::*;
 
     // ---- Items -------------------------------------------------------------
@@ -65,7 +68,11 @@ package BikeRadarArchitecture {
     // ---- Parts -------------------------------------------------------------
 
     part def RadarModule {
-        doc /* A 77 GHz FMCW radar chip with its antennas in the package. */
+        doc /* A 77 GHz FMCW radar chip with its antennas in the package. It
+             * chirps in short bursts, so its power is an average over a frame. */
+        attribute mass : MassValue default = 6 [g];
+        attribute power : PowerValue default = 0.12 [W];
+        attribute detectionRange : LengthValue default = 150 [m];
         port antenna : RadarPort;
         port data : RadarDataPort;
         port supply : ~RailPort;
@@ -73,6 +80,10 @@ package BikeRadarArchitecture {
     part def Mcu {
         doc /* A microcontroller with Bluetooth Low Energy: tracks vehicles from
              * the radar's detections, alerts the head unit and runs the modes. */
+        attribute mass : MassValue default = 2 [g];
+        attribute power : PowerValue default = 0.015 [W];
+        attribute alertLatency : DurationValue default = 0.25 [s];
+        attribute maxTrackedVehicles : Natural default = 8;
         port radarData : ~RadarDataPort;
         port ble : BlePort;
         port led : LedControlPort;
@@ -82,45 +93,75 @@ package BikeRadarArchitecture {
     }
     part def Button {
         doc /* A sealed push button on the back of the unit. */
+        attribute mass : MassValue default = 1 [g];
         port press : ButtonPort;
     }
     part def LedDriver {
-        doc /* A constant-current boost driver for the LED string, fed from the cell. */
+        doc /* A constant-current boost driver for the LED string, fed from the
+             * cell. Its power is what it loses, about a tenth of the LEDs' power. */
+        attribute mass : MassValue default = 1 [g];
+        attribute dayFlashPower : PowerValue default = 0.01 [W];
+        attribute nightSolidPower : PowerValue default = 0.015 [W];
         port control : ~LedControlPort;
         port drive : LedDrivePort;
         port supply : ~CellPort;
     }
     part def RearLeds {
-        doc /* Red high-power LEDs behind a lens. */
+        doc /* Red high-power LEDs behind a lens. Day flash averages the bright
+             * pulses; night solid is steady at lower brightness. */
+        attribute mass : MassValue default = 4 [g];
+        attribute dayFlashPower : PowerValue default = 0.08 [W];
+        attribute nightSolidPower : PowerValue default = 0.12 [W];
+        attribute daylightVisibility : LengthValue default = 1.6 [km];
         port drive : ~LedDrivePort;
         port light : LightPort;
     }
     part def Regulator {
-        doc /* A buck-boost converter making 3.3 V from the cell. */
+        doc /* A buck-boost converter making 3.3 V from the cell. Its power is
+             * what it loses at the radar's and MCU's load. */
+        attribute mass : MassValue default = 1 [g];
+        attribute power : PowerValue default = 0.015 [W];
+        attribute maxOutputPower : PowerValue default = 0.5 [W];
         port input : ~CellPort;
         port output : RailPort;
     }
     part def Battery {
-        doc /* A single Li-ion cell. */
+        doc /* A single cylindrical Li-ion cell. Its mass follows from its
+             * energy. It must still last 16 h of day flash at -10 °C at the end
+             * of its life, so it keeps only part of its rated energy. */
+        attribute energy : EnergyValue default = 10 [W*h];
+        attribute specificEnergy : SpecificEnergyValue default = 220 [W*h/kg];
+        attribute mass : MassValue default = energy / specificEnergy;
+        attribute coldCapacity : Real default = 0.5;
+        attribute endOfLifeCapacity : Real default = 0.8;
+        attribute maxDischargePower : PowerValue default = 10 [W];
+        attribute minDischargeTemperature : TemperatureValue default = -20 ['°C'];
+        attribute maxDischargeTemperature : TemperatureValue default = 60 ['°C'];
         port charge : ~ChargePort;
         port supply : CellPort;
         port sense : CellSensePort;
     }
     part def Charger {
         doc /* A Li-ion charge controller fed from USB-C. */
+        attribute mass : MassValue default = 1 [g];
         port input : UsbCPort;
         port charge : ChargePort;
     }
     part def UsbCReceptacle {
         doc /* A sealed USB-C socket, power pins only. */
+        attribute mass : MassValue default = 1 [g];
         port plug : UsbCPort;
         port board : ~UsbCPort;
     }
     part def Enclosure {
         doc /* The IP67 housing and the light's lens. */
+        attribute mass : MassValue default = 18 [g];
     }
     part def SeatpostClamp {
         doc /* A rubber strap mount for round seatposts. */
+        attribute mass : MassValue default = 8 [g];
+        attribute minDiameter : LengthValue default = 22 [mm];
+        attribute maxDiameter : LengthValue default = 35 [mm];
         port seatpost : SeatpostMount;
     }
 
@@ -167,6 +208,42 @@ package BikeRadarArchitecture {
         flow ledSupply of CellPower from battery.supply.power to ledDriver.supply.power;
         flow radarSupply of RailPower from regulator.output.power to radarModule.supply.power;
         flow mcuSupply of RailPower from regulator.output.power to mcu.supply.power;
+
+        // Budgets: the black box's attributes, from the parts' Model Values.
+        attribute :>> mass = radarModule.mass + mcu.mass + button.mass + ledDriver.mass
+            + leds.mass + regulator.mass + battery.mass + charger.mass
+            + usbCReceptacle.mass + enclosure.mass + clamp.mass;
+        attribute :>> detectionRange = radarModule.detectionRange;
+        attribute :>> alertLatency = mcu.alertLatency;
+        attribute :>> maxTrackedVehicles = mcu.maxTrackedVehicles;
+        attribute :>> daylightVisibility = leds.daylightVisibility;
+        attribute :>> minSeatpostDiameter = clamp.minDiameter;
+        attribute :>> maxSeatpostDiameter = clamp.maxDiameter;
+        // The cell is the part with the narrowest temperature range.
+        attribute :>> minOperatingTemperature = battery.minDischargeTemperature;
+        attribute :>> maxOperatingTemperature = battery.maxDischargeTemperature;
+
+        // Power drawn from the cell in each mode that is on.
+        attribute railPower : PowerValue = radarModule.power + mcu.power;
+        attribute radarOnlyPower : PowerValue = railPower + regulator.power;
+        attribute dayFlashPower : PowerValue =
+            radarOnlyPower + ledDriver.dayFlashPower + leds.dayFlashPower;
+        attribute nightSolidPower : PowerValue =
+            radarOnlyPower + ledDriver.nightSolidPower + leds.nightSolidPower;
+
+        assert constraint regulatorWithinRating {
+            doc /* The regulator can supply the radar and the MCU. */
+            railPower <= regulator.maxOutputPower
+        }
+        assert constraint cellSizedForRuntime {
+            doc /* A cold, aged cell still lasts the 16 h of day flash S6 asks for. */
+            battery.energy * battery.coldCapacity * battery.endOfLifeCapacity
+                >= dayFlashPower * 16 [h]
+        }
+        assert constraint cellWithinRating {
+            doc /* The cell can supply the unit in its hungriest mode. */
+            nightSolidPower <= battery.maxDischargePower
+        }
     }
 
     part rearUnit : RearUnitDesign;

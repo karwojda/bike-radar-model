@@ -9,8 +9,9 @@ realistic. See [PLAN.md](PLAN.md) for why it exists and how it grows.
 |---|---|
 | [`model/requirements.sysml`](model/requirements.sysml) | Rider needs, system requirements, derivation |
 | [`model/context.sysml`](model/context.sysml) | The rear unit as a black box, its ports and external actors |
-| [`model/architecture.sysml`](model/architecture.sysml) | The parts inside the rear unit and how they are wired |
+| [`model/architecture.sysml`](model/architecture.sysml) | The parts inside the rear unit, how they are wired, their mass and power, and the budgets they roll up to |
 | [`model/modes.sysml`](model/modes.sysml) | The operating modes, as a state machine |
+| [`model/satisfaction.sysml`](model/satisfaction.sysml) | Which system requirements the rear unit as built claims to satisfy |
 | [`model/views.sysml`](model/views.sysml) | The Diagrams kept with the Model |
 
 ## Diagrams
@@ -41,6 +42,10 @@ Exported by `./scripts/check.sh` with the [SysML v2 Viewer](../sysmlv2_egui).
 
 ![Internal structure](docs/img/internalStructure.svg)
 
+### Satisfaction
+
+![Satisfaction](docs/img/satisfaction.svg)
+
 The operating modes view is a `StateTransitionView`, which the viewer does
 not export yet.
 
@@ -52,8 +57,12 @@ not export yet.
 
 Exports every view into `docs/img`, validates the Model with
 [OpenSysML](https://github.com/Open-MBEE/OpenSysML)'s `sysml` as a second
-opinion, then checks every requirement and asserted constraint. Nothing claims to satisfy a requirement yet, so every
-requirement is Not claimed.
+opinion, then checks every requirement and asserted constraint.
+
+It exits 1 on purpose: the rear unit weighs about 88 g against the 75 g of
+S8. The cell is sized to last 16 h of day flash even cold and at the end of
+its life, and that cell alone weighs about 45 g. The runtime analysis and
+battery trade study of slice 4 resolve it.
 
 ## Open in the viewer
 
