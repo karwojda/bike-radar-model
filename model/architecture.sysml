@@ -126,14 +126,17 @@ package BikeRadarArchitecture {
         port output : RailPort;
     }
     part def Battery {
-        doc /* A single cylindrical Li-ion cell. Its mass follows from its
-             * energy. It must still last 16 h of day flash at -10 °C at the end
-             * of its life, so it keeps only part of its rated energy. */
-        attribute energy : EnergyValue default = 10 [W*h];
-        attribute specificEnergy : SpecificEnergyValue default = 220 [W*h/kg];
+        doc /* A single Li-ion cell. Its mass follows from its energy. It must
+             * still last 16 h of day flash at -10 °C at the end of its life, so
+             * only part of its rated energy counts: the share it keeps in the
+             * cold, and the share it keeps when aged. */
+        attribute energy : EnergyValue;
+        attribute specificEnergy : SpecificEnergyValue;
         attribute mass : MassValue default = energy / specificEnergy;
-        attribute coldCapacity : Real default = 0.5;
+        attribute coldCapacity : Real;
         attribute endOfLifeCapacity : Real default = 0.8;
+        attribute usableEnergy : EnergyValue default =
+            energy * coldCapacity * endOfLifeCapacity;
         attribute maxDischargePower : PowerValue default = 10 [W];
         attribute minDischargeTemperature : TemperatureValue default = -20 ['°C'];
         attribute maxDischargeTemperature : TemperatureValue default = 60 ['°C'];
@@ -141,9 +144,34 @@ package BikeRadarArchitecture {
         port supply : CellPort;
         port sense : CellSensePort;
     }
+    part def CylindricalCell :> Battery {
+        doc /* A 10 Wh cylindrical cell: robust and cheap, but heavy, and it keeps
+             * only half its energy in the cold. */
+        attribute :>> energy default = 10 [W*h];
+        attribute :>> specificEnergy default = 220 [W*h/kg];
+        attribute :>> coldCapacity default = 0.5;
+    }
+    part def PouchCell :> Battery {
+        doc /* A 5 Wh pouch cell: light, but it keeps only half its energy in
+             * the cold. */
+        attribute :>> energy default = 5 [W*h];
+        attribute :>> specificEnergy default = 250 [W*h/kg];
+        attribute :>> coldCapacity default = 0.5;
+    }
+    part def LowTemperaturePouchCell :> Battery {
+        doc /* A 7 Wh pouch cell with a low-temperature electrolyte: it keeps
+             * three quarters of its energy in the cold. */
+        attribute :>> energy default = 7 [W*h];
+        attribute :>> specificEnergy default = 240 [W*h/kg];
+        attribute :>> coldCapacity default = 0.75;
+    }
     part def Charger {
-        doc /* A Li-ion charge controller fed from USB-C. */
+        doc /* A Li-ion charge controller fed from USB-C, charging at 1 A, about
+             * 3.7 W into the cell. The constant-voltage phase at the end of a
+             * charge stretches it by about a third. */
         attribute mass : MassValue default = 1 [g];
+        attribute chargePower : PowerValue default = 3.7 [W];
+        attribute constantVoltageStretch : Real default = 1.3;
         port input : UsbCPort;
         port charge : ChargePort;
     }
@@ -165,6 +193,15 @@ package BikeRadarArchitecture {
         port seatpost : SeatpostMount;
     }
 
+    // ---- Calculations ------------------------------------------------------
+
+    calc def Runtime {
+        doc /* How long an amount of energy lasts at a steady power. */
+        in energy : EnergyValue;
+        in power : PowerValue;
+        return : DurationValue = energy / power;
+    }
+
     // ---- The rear unit, opened up ------------------------------------------
 
     part def RearUnitDesign :> RearUnit {
@@ -176,7 +213,8 @@ package BikeRadarArchitecture {
         part ledDriver : LedDriver;
         part leds : RearLeds;
         part regulator : Regulator;
-        part battery : Battery;
+        // The cell the battery trade study chose.
+        part battery : LowTemperaturePouchCell;
         part charger : Charger;
         part usbCReceptacle : UsbCReceptacle;
         part enclosure : Enclosure;
@@ -231,14 +269,15 @@ package BikeRadarArchitecture {
         attribute nightSolidPower : PowerValue =
             radarOnlyPower + ledDriver.nightSolidPower + leds.nightSolidPower;
 
+        // Runtime in each mode on a cold, aged cell, and the time to charge it.
+        attribute :>> runtimeDayFlash = Runtime(battery.usableEnergy, dayFlashPower);
+        attribute :>> runtimeNightSolid = Runtime(battery.usableEnergy, nightSolidPower);
+        attribute :>> chargeTime =
+            Runtime(battery.energy, charger.chargePower) * charger.constantVoltageStretch;
+
         assert constraint regulatorWithinRating {
             doc /* The regulator can supply the radar and the MCU. */
             railPower <= regulator.maxOutputPower
-        }
-        assert constraint cellSizedForRuntime {
-            doc /* A cold, aged cell still lasts the 16 h of day flash S6 asks for. */
-            battery.energy * battery.coldCapacity * battery.endOfLifeCapacity
-                >= dayFlashPower * 16 [h]
         }
         assert constraint cellWithinRating {
             doc /* The cell can supply the unit in its hungriest mode. */

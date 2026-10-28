@@ -7,6 +7,7 @@ package BikeRadarViews {
     private import BikeRadarContext::*;
     private import BikeRadarArchitecture::*;
     private import BikeRadarModes::*;
+    private import BikeRadarAnalysis::*;
 
     view needs {
         doc /* The rider's needs. */
@@ -48,6 +49,24 @@ package BikeRadarViews {
         doc /* The system requirements, and the rear unit as built claiming to satisfy them. */
         expose systemSpec::**;
         expose rearUnit;
+        render asTreeDiagram;
+    }
+
+    view runtimes {
+        doc /* How long the rear unit runs in each mode. */
+        expose dayFlashRuntime;
+        expose nightSolidRuntime;
+        expose radarOnlyRuntime;
+        expose rearUnit;
+        render asTreeDiagram;
+    }
+
+    view tradeStudy {
+        doc /* The cells weighed against each other, and the one chosen. */
+        expose batteryTradeStudy;
+        expose cylindricalCell;
+        expose pouchCell;
+        expose lowTemperaturePouchCell;
         render asTreeDiagram;
     }
 

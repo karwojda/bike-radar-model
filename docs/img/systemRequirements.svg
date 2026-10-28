@@ -26,11 +26,11 @@
 <text x="2966" y="42" text-anchor="middle" font-size="12">«requirement»</text>
 <text x="2966" y="60" text-anchor="middle" font-size="14">systemSpec:SystemRequirement</text>
 <rect x="3097" y="25" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
-<text x="3105" y="36.67" text-anchor="middle" font-size="11">✗</text>
+<text x="3105" y="36.67" text-anchor="middle" font-size="11">○</text>
 <polyline points="2814,70 3118,70" fill="none" stroke="#000000"/>
 <text x="2966" y="91" text-anchor="middle" font-size="11" font-style="italic">doc</text>
 <text x="2824" y="107" text-anchor="start" font-size="12">The rear unit's system requirements.</text>
-<rect x="5247" y="158" width="351" height="160" rx="10" fill="#ffffff" stroke="#000000"/>
+<rect x="5247" y="158" width="351" height="160" rx="10" fill="#d9ead3" stroke="#000000"/>
 <text x="5422.5" y="180" text-anchor="middle" font-size="12">«requirement»</text>
 <text x="5422.5" y="198" text-anchor="middle" font-size="14">&lt;S2&gt; alertLatency:SystemRequirement</text>
 <rect x="5577" y="163" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
@@ -42,11 +42,11 @@
 <polyline points="5247,271 5598,271" fill="none" stroke="#000000"/>
 <text x="5422.5" y="292" text-anchor="middle" font-size="11" font-style="italic">constraints</text>
 <text x="5257" y="308" text-anchor="start" font-size="12">require {unit.alertLatency &lt;= 0.5 [second]}</text>
-<rect x="4876" y="158" width="331" height="160" rx="10" fill="#ffffff" stroke="#000000"/>
+<rect x="4876" y="158" width="331" height="160" rx="10" fill="#d9ead3" stroke="#000000"/>
 <text x="5041.5" y="180" text-anchor="middle" font-size="12">«requirement»</text>
 <text x="5041.5" y="198" text-anchor="middle" font-size="14">&lt;S7&gt; chargeTime:SystemRequirement</text>
 <rect x="5186" y="163" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
-<text x="5194" y="174.67" text-anchor="middle" font-size="11">○</text>
+<text x="5194" y="174.67" text-anchor="middle" font-size="11">✓</text>
 <polyline points="4876,208 5207,208" fill="none" stroke="#000000"/>
 <text x="5041.5" y="229" text-anchor="middle" font-size="11" font-style="italic">doc</text>
 <text x="4886" y="245" text-anchor="start" font-size="12">Charge from empty to full in 3 h or less</text>
@@ -54,7 +54,7 @@
 <polyline points="4876,271 5207,271" fill="none" stroke="#000000"/>
 <text x="5041.5" y="292" text-anchor="middle" font-size="11" font-style="italic">constraints</text>
 <text x="4886" y="308" text-anchor="start" font-size="12">require {unit.chargeTime &lt;= 3 [hour]}</text>
-<rect x="4423" y="158" width="412" height="160" rx="10" fill="#ffffff" stroke="#000000"/>
+<rect x="4423" y="158" width="412" height="160" rx="10" fill="#d9ead3" stroke="#000000"/>
 <text x="4629" y="180" text-anchor="middle" font-size="12">«requirement»</text>
 <text x="4629" y="198" text-anchor="middle" font-size="14">&lt;S4&gt; daylightVisibility:SystemRequirement</text>
 <rect x="4814" y="163" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
@@ -66,7 +66,7 @@
 <polyline points="4423,271 4835,271" fill="none" stroke="#000000"/>
 <text x="4629" y="292" text-anchor="middle" font-size="11" font-style="italic">constraints</text>
 <text x="4433" y="308" text-anchor="start" font-size="12">require {unit.daylightVisibility &gt;= 1.5 [kilometre]}</text>
-<rect x="4025" y="158" width="358" height="160" rx="10" fill="#ffffff" stroke="#000000"/>
+<rect x="4025" y="158" width="358" height="160" rx="10" fill="#d9ead3" stroke="#000000"/>
 <text x="4204" y="180" text-anchor="middle" font-size="12">«requirement»</text>
 <text x="4204" y="198" text-anchor="middle" font-size="14">&lt;S1&gt; detectionRange:SystemRequirement</text>
 <rect x="4362" y="163" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
@@ -87,7 +87,7 @@
 <text x="3793" y="252" text-anchor="middle" font-size="11" font-style="italic">doc</text>
 <text x="3611" y="268" text-anchor="start" font-size="12">Rated IP67: dust-tight, and survives</text>
 <text x="3611" y="284" text-anchor="start" font-size="12">immersion to 1 m for 30 min.</text>
-<rect x="2371" y="166" width="1191" height="144" rx="10" fill="#ffffff" stroke="#000000"/>
+<rect x="2371" y="166" width="1191" height="144" rx="10" fill="#d9ead3" stroke="#000000"/>
 <text x="2966.5" y="188" text-anchor="middle" font-size="12">«requirement»</text>
 <text x="2966.5" y="206" text-anchor="middle" font-size="14">&lt;S11&gt; operatingTemperature:SystemRequirement</text>
 <rect x="3541" y="171" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
@@ -98,11 +98,11 @@
 <polyline points="2371,263 3562,263" fill="none" stroke="#000000"/>
 <text x="2966.5" y="284" text-anchor="middle" font-size="11" font-style="italic">constraints</text>
 <text x="2381" y="300" text-anchor="start" font-size="12">require {unit.minOperatingTemperature &lt;= -10 [degree celsius (temperature difference)] and unit.maxOperatingTemperature &gt;= 40 [degree celsius (temperature difference)]}</text>
-<rect x="1970" y="158" width="360" height="160" rx="10" fill="#ffffff" stroke="#000000"/>
+<rect x="1970" y="158" width="360" height="160" rx="10" fill="#d9ead3" stroke="#000000"/>
 <text x="2150" y="180" text-anchor="middle" font-size="12">«requirement»</text>
 <text x="2150" y="198" text-anchor="middle" font-size="14">&lt;S6&gt; runtimeDayFlash:SystemRequirement</text>
 <rect x="2309" y="163" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
-<text x="2317" y="174.67" text-anchor="middle" font-size="11">○</text>
+<text x="2317" y="174.67" text-anchor="middle" font-size="11">✓</text>
 <polyline points="1970,208 2330,208" fill="none" stroke="#000000"/>
 <text x="2150" y="229" text-anchor="middle" font-size="11" font-style="italic">doc</text>
 <text x="1980" y="245" text-anchor="start" font-size="12">Run at least 16 h with radar on and the</text>
@@ -110,11 +110,11 @@
 <polyline points="1970,271 2330,271" fill="none" stroke="#000000"/>
 <text x="2150" y="292" text-anchor="middle" font-size="11" font-style="italic">constraints</text>
 <text x="1980" y="308" text-anchor="start" font-size="12">require {unit.runtimeDayFlash &gt;= 16 [hour]}</text>
-<rect x="1554" y="158" width="376" height="160" rx="10" fill="#ffffff" stroke="#000000"/>
+<rect x="1554" y="158" width="376" height="160" rx="10" fill="#d9ead3" stroke="#000000"/>
 <text x="1742" y="180" text-anchor="middle" font-size="12">«requirement»</text>
 <text x="1742" y="198" text-anchor="middle" font-size="14">&lt;S5&gt; runtimeNightSolid:SystemRequirement</text>
 <rect x="1909" y="163" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
-<text x="1917" y="174.67" text-anchor="middle" font-size="11">○</text>
+<text x="1917" y="174.67" text-anchor="middle" font-size="11">✓</text>
 <polyline points="1554,208 1930,208" fill="none" stroke="#000000"/>
 <text x="1742" y="229" text-anchor="middle" font-size="11" font-style="italic">doc</text>
 <text x="1564" y="245" text-anchor="start" font-size="12">Run at least 8 h with radar on and the</text>
@@ -122,7 +122,7 @@
 <polyline points="1554,271 1930,271" fill="none" stroke="#000000"/>
 <text x="1742" y="292" text-anchor="middle" font-size="11" font-style="italic">constraints</text>
 <text x="1564" y="308" text-anchor="start" font-size="12">require {unit.runtimeNightSolid &gt;= 8 [hour]}</text>
-<rect x="774" y="158" width="741" height="160" rx="10" fill="#ffffff" stroke="#000000"/>
+<rect x="774" y="158" width="741" height="160" rx="10" fill="#d9ead3" stroke="#000000"/>
 <text x="1144.5" y="180" text-anchor="middle" font-size="12">«requirement»</text>
 <text x="1144.5" y="198" text-anchor="middle" font-size="14">&lt;S9&gt; seatpostFit:SystemRequirement</text>
 <rect x="1494" y="163" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
@@ -134,18 +134,18 @@
 <polyline points="774,271 1515,271" fill="none" stroke="#000000"/>
 <text x="1144.5" y="292" text-anchor="middle" font-size="11" font-style="italic">constraints</text>
 <text x="784" y="308" text-anchor="start" font-size="12">require {unit.minSeatpostDiameter &lt;= 25 [millimetre] and unit.maxSeatpostDiameter &gt;= 35 [millimetre]}</text>
-<rect x="421" y="166" width="313" height="144" rx="10" fill="#ffffff" stroke="#000000"/>
+<rect x="421" y="166" width="313" height="144" rx="10" fill="#d9ead3" stroke="#000000"/>
 <text x="577.5" y="188" text-anchor="middle" font-size="12">«requirement»</text>
 <text x="577.5" y="206" text-anchor="middle" font-size="14">&lt;S8&gt; totalMass:SystemRequirement</text>
 <rect x="713" y="171" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
-<text x="721" y="182.67" text-anchor="middle" font-size="11">✗</text>
+<text x="721" y="182.67" text-anchor="middle" font-size="11">✓</text>
 <polyline points="421,216 734,216" fill="none" stroke="#000000"/>
 <text x="577.5" y="237" text-anchor="middle" font-size="11" font-style="italic">doc</text>
 <text x="431" y="253" text-anchor="start" font-size="12">Weigh 75 g or less, mount included.</text>
 <polyline points="421,263 734,263" fill="none" stroke="#000000"/>
 <text x="577.5" y="284" text-anchor="middle" font-size="11" font-style="italic">constraints</text>
 <text x="431" y="300" text-anchor="start" font-size="12">require {unit.mass &lt;= 75 [gram]}</text>
-<rect x="20" y="166" width="360" height="144" rx="10" fill="#ffffff" stroke="#000000"/>
+<rect x="20" y="166" width="360" height="144" rx="10" fill="#d9ead3" stroke="#000000"/>
 <text x="200" y="188" text-anchor="middle" font-size="12">«requirement»</text>
 <text x="200" y="206" text-anchor="middle" font-size="14">&lt;S3&gt; trackedVehicles:SystemRequirement</text>
 <rect x="359" y="171" width="16" height="16" rx="8" fill="none" stroke="#000000"/>

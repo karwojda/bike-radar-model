@@ -45,7 +45,9 @@ Each slice is reviewed in the viewer before the next starts.
    `./scripts/check.sh` exits 1 from here until slice 4.
 
    **Stop:** review the findings and decide whether slices 4–5 are worth it,
-   or whether fixing the viewer comes first.
+   or whether fixing the viewer comes first. Among them: a state machine
+   Diagram Kind, so `operatingModes` can be drawn (viewer issue 02,
+   `ready-for-human`, needs its own spec).
 4. **Analysis.** Runtime per operating mode, and a battery trade study that
    resolves the mass violation.
 5. **Tool Links.** A FreeCAD enclosure and a KiCad board, giving Design
@@ -56,3 +58,5 @@ Each slice is reviewed in the viewer before the next starts.
 - [x] Slice 1 written; awaiting review in the viewer.
 - [x] Slice 2 written; awaiting review in the viewer.
 - [x] Slice 3 written; awaiting review in the viewer. **Stop** here.
+- [x] Slice 4 written; awaiting review in the viewer. `./scripts/check.sh`
+  exits 0 again.

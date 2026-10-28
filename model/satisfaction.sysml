@@ -1,7 +1,6 @@
 package BikeRadarSatisfaction {
     doc /* Which system requirements the rear unit as built claims to satisfy.
-         * Runtime and charge time wait for the runtime analysis; ingress
-         * protection waits for a test. */
+         * Ingress protection waits for a test. */
 
     private import BikeRadarRequirements::*;
     private import BikeRadarArchitecture::*;
@@ -12,5 +11,8 @@ package BikeRadarSatisfaction {
     satisfy systemSpec.daylightVisibility by rearUnit;
     satisfy systemSpec.totalMass by rearUnit;
     satisfy systemSpec.seatpostFit by rearUnit;
+    satisfy systemSpec.runtimeNightSolid by rearUnit;
+    satisfy systemSpec.runtimeDayFlash by rearUnit;
+    satisfy systemSpec.chargeTime by rearUnit;
     satisfy systemSpec.operatingTemperature by rearUnit;
 }

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1109" height="622" viewBox="0 0 1109 622" font-family="sans-serif">
+<rect x="0" y="0" width="1109" height="622" fill="#ffffff"/>
+<polyline points="317.09,364 377,315.04" fill="none" stroke="#000000" stroke-dasharray="6 4"/>
+<polyline points="371.22,330.09 377,315.04 361.1,317.7" fill="none" stroke="#000000"/>
+<text x="347.05" y="333.52" text-anchor="middle" font-size="11">«subject»</text>
+<polyline points="551.69,364 551.76,324" fill="none" stroke="#000000" stroke-dasharray="6 4"/>
+<polyline points="559.73,338.01 551.76,324 543.73,337.99" fill="none" stroke="#000000"/>
+<text x="557.72" y="347.67" text-anchor="start" font-size="11">«subject»</text>
+<polyline points="788.14,364 727,314.29" fill="none" stroke="#000000" stroke-dasharray="6 4"/>
+<polyline points="742.91,316.91 727,314.29 732.82,329.33" fill="none" stroke="#000000"/>
+<text x="757.57" y="333.14" text-anchor="middle" font-size="11">«subject»</text>
+<rect x="20" y="364" width="303" height="238" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="171.5" y="386" text-anchor="middle" font-size="12">«analysis»</text>
+<text x="171.5" y="404" text-anchor="middle" font-size="14">dayFlashRuntime:ModeRuntime</text>
+<polyline points="20,414 323,414" fill="none" stroke="#000000"/>
+<text x="171.5" y="435" text-anchor="middle" font-size="11" font-style="italic">parameters</text>
+<text x="30" y="451" text-anchor="start" font-size="12">in modePower = rearUnit.dayFlashPower</text>
+<polyline points="20,461 323,461" fill="none" stroke="#000000"/>
+<text x="171.5" y="482" text-anchor="middle" font-size="11" font-style="italic">results</text>
+<text x="30" y="498" text-anchor="start" font-size="12">return runtime:DurationValue = 63000.0 [s]</text>
+<polyline points="20,508 323,508" fill="none" stroke="#000000"/>
+<text x="171.5" y="529" text-anchor="middle" font-size="11" font-style="italic">attributes</text>
+<text x="30" y="545" text-anchor="start" font-size="12">in modePower = rearUnit.dayFlashPower</text>
+<polyline points="20,555 323,555" fill="none" stroke="#000000"/>
+<text x="171.5" y="576" text-anchor="middle" font-size="11" font-style="italic">parts</text>
+<text x="30" y="592" text-anchor="start" font-size="12">unit = rearUnit</text>
+<rect x="363" y="364" width="377" height="238" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="551.5" y="386" text-anchor="middle" font-size="12">«analysis»</text>
+<text x="551.5" y="404" text-anchor="middle" font-size="14">nightSolidRuntime:ModeRuntime</text>
+<polyline points="363,414 740,414" fill="none" stroke="#000000"/>
+<text x="551.5" y="435" text-anchor="middle" font-size="11" font-style="italic">parameters</text>
+<text x="373" y="451" text-anchor="start" font-size="12">in modePower = rearUnit.nightSolidPower</text>
+<polyline points="363,461 740,461" fill="none" stroke="#000000"/>
+<text x="551.5" y="482" text-anchor="middle" font-size="11" font-style="italic">results</text>
+<text x="373" y="498" text-anchor="start" font-size="12">return runtime:DurationValue = 53052.631578947374 [s]</text>
+<polyline points="363,508 740,508" fill="none" stroke="#000000"/>
+<text x="551.5" y="529" text-anchor="middle" font-size="11" font-style="italic">attributes</text>
+<text x="373" y="545" text-anchor="start" font-size="12">in modePower = rearUnit.nightSolidPower</text>
+<polyline points="363,555 740,555" fill="none" stroke="#000000"/>
+<text x="551.5" y="576" text-anchor="middle" font-size="11" font-style="italic">parts</text>
+<text x="373" y="592" text-anchor="start" font-size="12">unit = rearUnit</text>
+<rect x="780" y="364" width="309" height="238" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="934.5" y="386" text-anchor="middle" font-size="12">«analysis»</text>
+<text x="934.5" y="404" text-anchor="middle" font-size="14">radarOnlyRuntime:ModeRuntime</text>
+<polyline points="780,414 1089,414" fill="none" stroke="#000000"/>
+<text x="934.5" y="435" text-anchor="middle" font-size="11" font-style="italic">parameters</text>
+<text x="790" y="451" text-anchor="start" font-size="12">in modePower = rearUnit.radarOnlyPower</text>
+<polyline points="780,461 1089,461" fill="none" stroke="#000000"/>
+<text x="934.5" y="482" text-anchor="middle" font-size="11" font-style="italic">results</text>
+<text x="790" y="498" text-anchor="start" font-size="12">return runtime:DurationValue = 100800.0 [s]</text>
+<polyline points="780,508 1089,508" fill="none" stroke="#000000"/>
+<text x="934.5" y="529" text-anchor="middle" font-size="11" font-style="italic">attributes</text>
+<text x="790" y="545" text-anchor="start" font-size="12">in modePower = rearUnit.radarOnlyPower</text>
+<polyline points="780,555 1089,555" fill="none" stroke="#000000"/>
+<text x="934.5" y="576" text-anchor="middle" font-size="11" font-style="italic">parts</text>
+<text x="790" y="592" text-anchor="start" font-size="12">unit = rearUnit</text>
+<rect x="377" y="20" width="350" height="304" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="552" y="42" text-anchor="middle" font-size="12">«part»</text>
+<text x="552" y="60" text-anchor="middle" font-size="14">rearUnit:RearUnitDesign</text>
+<polyline points="377,70 727,70" fill="none" stroke="#000000"/>
+<text x="552" y="91" text-anchor="middle" font-size="11" font-style="italic">assert constraints</text>
+<text x="387" y="107" text-anchor="start" font-size="12">^{nightSolidPower &lt;= battery.maxDischargePower} ✓</text>
+<text x="387" y="123" text-anchor="start" font-size="12">^{railPower &lt;= regulator.maxOutputPower} ✓</text>
+<polyline points="377,133 727,133" fill="none" stroke="#000000"/>
+<text x="552" y="154" text-anchor="middle" font-size="11" font-style="italic">requirements</text>
+<text x="387" y="170" text-anchor="start" font-size="12">satisfy detectionRange ✓</text>
+<text x="387" y="186" text-anchor="start" font-size="12">satisfy alertLatency ✓</text>
+<text x="387" y="202" text-anchor="start" font-size="12">satisfy trackedVehicles ✓</text>
+<text x="387" y="218" text-anchor="start" font-size="12">satisfy daylightVisibility ✓</text>
+<text x="387" y="234" text-anchor="start" font-size="12">satisfy totalMass ✓</text>
+<text x="387" y="250" text-anchor="start" font-size="12">satisfy seatpostFit ✓</text>
+<text x="387" y="266" text-anchor="start" font-size="12">satisfy runtimeNightSolid ✓</text>
+<text x="387" y="282" text-anchor="start" font-size="12">satisfy runtimeDayFlash ✓</text>
+<text x="387" y="298" text-anchor="start" font-size="12">satisfy chargeTime ✓</text>
+<text x="387" y="314" text-anchor="start" font-size="12">satisfy operatingTemperature ✓</text>
+</svg>
