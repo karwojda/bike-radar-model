@@ -1,75 +1,80 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2119" height="306" viewBox="0 0 2119 306" font-family="sans-serif">
-<rect x="0" y="0" width="2119" height="306" fill="#ffffff"/>
-<polyline points="1073.92,94.25 1743,159 1802.45,181" fill="none" stroke="#000000"/>
-<polygon points="1056,92.52 1064.38,99.36 1073.92,94.25 1065.54,87.41" fill="#000000" stroke="#000000"/>
-<polyline points="1073.71,110.03 1385,167 1411,175.78" fill="none" stroke="#000000"/>
-<polygon points="1056,106.79 1063.77,114.31 1073.71,110.03 1065.93,102.51" fill="#000000" stroke="#000000"/>
-<polyline points="1033.79,140.32 1125.11,181" fill="none" stroke="#000000"/>
-<polygon points="1017.35,133 1023.13,142.14 1033.79,140.32 1028.01,131.18" fill="#000000" stroke="#000000"/>
-<polyline points="890.5,151 890.5,173" fill="none" stroke="#000000"/>
-<polygon points="890.5,133 884.5,142 890.5,151 896.5,142" fill="#000000" stroke="#000000"/>
-<polyline points="751.21,140.52 711,159 655.93,205" fill="none" stroke="#000000"/>
-<polygon points="767.57,133 756.89,131.31 751.21,140.52 761.9,142.21" fill="#000000" stroke="#000000"/>
-<polyline points="717.32,139.12 526,208.3" fill="none" stroke="#000000"/>
-<polygon points="734.25,133 723.75,130.42 717.32,139.12 727.83,141.7" fill="#000000" stroke="#000000"/>
-<polyline points="707.42,116.63 365,191.69" fill="none" stroke="#000000"/>
-<polygon points="725,112.78 714.92,108.84 707.42,116.63 717.49,120.57" fill="#000000" stroke="#000000"/>
-<rect x="725" y="20" width="331" height="113" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="890.5" y="42" text-anchor="middle" font-size="12">«requirement»</text>
-<text x="890.5" y="60" text-anchor="middle" font-size="14">riderNeeds:StakeholderNeed</text>
-<text x="890.5" y="76" text-anchor="middle" font-size="12">subject @1</text>
-<rect x="1035" y="25" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
-<text x="1043" y="36.67" text-anchor="middle" font-size="11">○</text>
-<polyline points="725,86 1056,86" fill="none" stroke="#000000"/>
-<text x="890.5" y="107" text-anchor="middle" font-size="11" font-style="italic">doc</text>
-<text x="735" y="123" text-anchor="start" font-size="12">What the rider needs from the rear unit.</text>
-<rect x="1768" y="181" width="331" height="97" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="1933.5" y="203" text-anchor="middle" font-size="12">«requirement»</text>
-<text x="1933.5" y="221" text-anchor="middle" font-size="14">&lt;N5&gt; allWeather:StakeholderNeed</text>
-<rect x="2078" y="186" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
-<text x="2086" y="197.67" text-anchor="middle" font-size="11">○</text>
-<polyline points="1768,231 2099,231" fill="none" stroke="#000000"/>
-<text x="1933.5" y="252" text-anchor="middle" font-size="11" font-style="italic">doc</text>
-<text x="1778" y="268" text-anchor="start" font-size="12">It keeps working in rain, cold and heat.</text>
-<rect x="1411" y="173" width="318" height="113" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="1570" y="195" text-anchor="middle" font-size="12">«requirement»</text>
-<text x="1570" y="213" text-anchor="middle" font-size="14">&lt;N1&gt; awareness:StakeholderNeed</text>
-<rect x="1708" y="178" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
-<text x="1716" y="189.67" text-anchor="middle" font-size="11">○</text>
-<polyline points="1411,223 1729,223" fill="none" stroke="#000000"/>
-<text x="1570" y="244" text-anchor="middle" font-size="11" font-style="italic">doc</text>
-<text x="1421" y="260" text-anchor="start" font-size="12">I know a vehicle is coming from behind</text>
-<text x="1421" y="276" text-anchor="start" font-size="12">before I can hear it.</text>
-<rect x="1097" y="181" width="274" height="97" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="1234" y="203" text-anchor="middle" font-size="12">«requirement»</text>
-<text x="1234" y="221" text-anchor="middle" font-size="14">&lt;N2&gt; beSeen:StakeholderNeed</text>
-<rect x="1350" y="186" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
-<text x="1358" y="197.67" text-anchor="middle" font-size="11">○</text>
-<polyline points="1097,231 1371,231" fill="none" stroke="#000000"/>
-<text x="1234" y="252" text-anchor="middle" font-size="11" font-style="italic">doc</text>
-<text x="1107" y="268" text-anchor="start" font-size="12">Drivers see me, day and night.</text>
-<rect x="725" y="173" width="331" height="113" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="890.5" y="195" text-anchor="middle" font-size="12">«requirement»</text>
-<text x="890.5" y="213" text-anchor="middle" font-size="14">&lt;N3&gt; lastsTheRide:StakeholderNeed</text>
-<rect x="1035" y="178" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
-<text x="1043" y="189.67" text-anchor="middle" font-size="11">○</text>
-<polyline points="725,223 1056,223" fill="none" stroke="#000000"/>
-<text x="890.5" y="244" text-anchor="middle" font-size="11" font-style="italic">doc</text>
-<text x="735" y="260" text-anchor="start" font-size="12">It lasts a long day's ride and recharges</text>
-<text x="735" y="276" text-anchor="start" font-size="12">overnight.</text>
-<rect x="566" y="205" width="120" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="626" y="227" text-anchor="middle" font-size="12">«part»</text>
-<text x="626" y="245" text-anchor="middle" font-size="14">rider:Rider</text>
-<rect x="406" y="205" width="120" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="466" y="227" text-anchor="middle" font-size="12">«part»</text>
-<text x="466" y="245" text-anchor="middle" font-size="14">unit</text>
-<rect x="20" y="173" width="345" height="113" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="192.5" y="195" text-anchor="middle" font-size="12">«requirement»</text>
-<text x="192.5" y="213" text-anchor="middle" font-size="14">&lt;N4&gt; unnoticedOnBike:StakeholderNeed</text>
-<rect x="344" y="178" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
-<text x="352" y="189.67" text-anchor="middle" font-size="11">○</text>
-<polyline points="20,223 365,223" fill="none" stroke="#000000"/>
-<text x="192.5" y="244" text-anchor="middle" font-size="11" font-style="italic">doc</text>
-<text x="30" y="260" text-anchor="start" font-size="12">I don't notice its weight, and it fits</text>
-<text x="30" y="276" text-anchor="start" font-size="12">my bike.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="574" height="1051" viewBox="0 0 574 1051" font-family="sans-serif">
+<rect x="0" y="0" width="574" height="1051" fill="#ffffff"/>
+<polygon points="185.5,133 179.5,142 185.5,151 191.5,142" fill="#000000" stroke="#000000"/>
+<polyline points="185.5,151 185.5,974.5" fill="none" stroke="#000000"/>
+<polyline points="185.5,199 210,199" fill="none" stroke="#000000"/>
+<polyline points="185.5,265 210,265" fill="none" stroke="#000000"/>
+<polyline points="185.5,361.5 210,361.5" fill="none" stroke="#000000"/>
+<polyline points="185.5,482.5 210,482.5" fill="none" stroke="#000000"/>
+<polyline points="185.5,603.5 209,603.5" fill="none" stroke="#000000"/>
+<polyline points="185.5,732.5 209,732.5" fill="none" stroke="#000000"/>
+<polyline points="185.5,853.5 209,853.5" fill="none" stroke="#000000"/>
+<polyline points="185.5,974.5 209,974.5" fill="none" stroke="#000000"/>
+<rect x="20" y="20" width="331" height="113" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="185.5" y="42" text-anchor="middle" font-size="12">«requirement»</text>
+<text x="185.5" y="60" text-anchor="middle" font-size="14">riderNeeds:StakeholderNeed</text>
+<text x="185.5" y="76" text-anchor="middle" font-size="12">subject unit</text>
+<rect x="330" y="25" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
+<text x="338" y="36.67" text-anchor="middle" font-size="11">○</text>
+<polyline points="20,86 351,86" fill="none" stroke="#000000"/>
+<text x="185.5" y="107" text-anchor="middle" font-size="11" font-style="italic">doc</text>
+<text x="30" y="123" text-anchor="start" font-size="12">What the rider needs from the rear unit.</text>
+<rect x="210" y="174" width="120" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="270" y="196" text-anchor="middle" font-size="12">«part»</text>
+<text x="270" y="214" text-anchor="middle" font-size="14">unit</text>
+<rect x="210" y="240" width="120" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="270" y="262" text-anchor="middle" font-size="12">«part»</text>
+<text x="270" y="280" text-anchor="middle" font-size="14">rider:Rider</text>
+<rect x="210" y="305" width="318" height="113" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="369" y="327" text-anchor="middle" font-size="12">«requirement»</text>
+<text x="369" y="345" text-anchor="middle" font-size="14">&lt;N1&gt; awareness:StakeholderNeed</text>
+<rect x="507" y="310" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
+<text x="515" y="321.67" text-anchor="middle" font-size="11">○</text>
+<polyline points="210,355 528,355" fill="none" stroke="#000000"/>
+<text x="369" y="376" text-anchor="middle" font-size="11" font-style="italic">doc</text>
+<text x="220" y="392" text-anchor="start" font-size="12">I know a vehicle is coming from behind</text>
+<text x="220" y="408" text-anchor="start" font-size="12">before I can hear it.</text>
+<rect x="210" y="434" width="274" height="97" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="347" y="456" text-anchor="middle" font-size="12">«requirement»</text>
+<text x="347" y="474" text-anchor="middle" font-size="14">&lt;N2&gt; beSeen:StakeholderNeed</text>
+<rect x="463" y="439" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
+<text x="471" y="450.67" text-anchor="middle" font-size="11">○</text>
+<polyline points="210,484 484,484" fill="none" stroke="#000000"/>
+<text x="347" y="505" text-anchor="middle" font-size="11" font-style="italic">doc</text>
+<text x="220" y="521" text-anchor="start" font-size="12">Drivers see me, day and night.</text>
+<rect x="209" y="547" width="331" height="113" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="374.5" y="569" text-anchor="middle" font-size="12">«requirement»</text>
+<text x="374.5" y="587" text-anchor="middle" font-size="14">&lt;N3&gt; lastsTheRide:StakeholderNeed</text>
+<rect x="519" y="552" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
+<text x="527" y="563.67" text-anchor="middle" font-size="11">○</text>
+<polyline points="209,597 540,597" fill="none" stroke="#000000"/>
+<text x="374.5" y="618" text-anchor="middle" font-size="11" font-style="italic">doc</text>
+<text x="219" y="634" text-anchor="start" font-size="12">It lasts a long day's ride and recharges</text>
+<text x="219" y="650" text-anchor="start" font-size="12">overnight.</text>
+<rect x="209" y="676" width="345" height="113" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="381.5" y="698" text-anchor="middle" font-size="12">«requirement»</text>
+<text x="381.5" y="716" text-anchor="middle" font-size="14">&lt;N4&gt; unnoticedOnBike:StakeholderNeed</text>
+<rect x="533" y="681" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
+<text x="541" y="692.67" text-anchor="middle" font-size="11">○</text>
+<polyline points="209,726 554,726" fill="none" stroke="#000000"/>
+<text x="381.5" y="747" text-anchor="middle" font-size="11" font-style="italic">doc</text>
+<text x="219" y="763" text-anchor="start" font-size="12">I don't notice its weight, and it fits</text>
+<text x="219" y="779" text-anchor="start" font-size="12">my bike.</text>
+<rect x="209" y="805" width="331" height="97" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="374.5" y="827" text-anchor="middle" font-size="12">«requirement»</text>
+<text x="374.5" y="845" text-anchor="middle" font-size="14">&lt;N5&gt; allWeather:StakeholderNeed</text>
+<rect x="519" y="810" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
+<text x="527" y="821.67" text-anchor="middle" font-size="11">○</text>
+<polyline points="209,855 540,855" fill="none" stroke="#000000"/>
+<text x="374.5" y="876" text-anchor="middle" font-size="11" font-style="italic">doc</text>
+<text x="219" y="892" text-anchor="start" font-size="12">It keeps working in rain, cold and heat.</text>
+<rect x="209" y="918" width="337" height="113" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="377.5" y="940" text-anchor="middle" font-size="12">«requirement»</text>
+<text x="377.5" y="958" text-anchor="middle" font-size="14">&lt;N6&gt; legalOnTheRoad:StakeholderNeed</text>
+<rect x="525" y="923" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
+<text x="533" y="934.67" text-anchor="middle" font-size="11">○</text>
+<polyline points="209,968 546,968" fill="none" stroke="#000000"/>
+<text x="377.5" y="989" text-anchor="middle" font-size="11" font-style="italic">doc</text>
+<text x="219" y="1005" text-anchor="start" font-size="12">I can use it on the road anywhere in</text>
+<text x="219" y="1021" text-anchor="start" font-size="12">Europe.</text>
 </svg>

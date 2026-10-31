@@ -87,6 +87,15 @@ package BikeRadarViews {
         render asTreeDiagram;
     }
 
+    view radarTradeStudy {
+        doc /* The radar chips weighed against each other, one per band. */
+        expose BikeRadarAnalysis::radarTradeStudy;
+        expose awrl6432Radar;
+        expose awrl1432Radar;
+        expose bgt24Mtr12Radar;
+        render asTreeDiagram;
+    }
+
     view operatingModes : StateTransitionView {
         doc /* Off, and the three modes the button cycles through when on. */
         expose OperatingModes;

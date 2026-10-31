@@ -11,7 +11,7 @@ package BikeRadarContext {
     // ---- Items -------------------------------------------------------------
 
     item def RadarSignal {
-        doc /* 77 GHz FMCW radar chirps out, and their reflections back. */
+        doc /* 60 GHz FMCW radar chirps out, and their reflections back. */
     }
     item def RearLight {
         doc /* Visible red light emitted rearward. */
@@ -63,6 +63,12 @@ package BikeRadarContext {
         attribute alertLatency : DurationValue;
         attribute maxTrackedVehicles : Natural;
         attribute maxClosingSpeed : SpeedValue;
+        attribute rangeResolution : LengthValue;
+        attribute speedResolution : SpeedValue;
+        attribute radarEirp : PowerValue;
+        attribute radarMaxEirp : PowerValue;
+        attribute radarOutputPower : PowerValue;
+        attribute radarMaxOutputPower : PowerValue;
         attribute daylightVisibility : LengthValue;
         attribute runtimeNightSolid : DurationValue;
         attribute runtimeDayFlash : DurationValue;

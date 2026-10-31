@@ -1,6 +1,6 @@
 # Bike radar light
 
-A SysML v2 Model of a rear radar light for bicycles: a 77 GHz radar that
+A SysML v2 Model of a rear radar light for bicycles: a 60 GHz radar that
 warns the rider of vehicles approaching from behind, and a rear light, in one
 seatpost-mounted unit. The product is fictional; the numbers are meant to be
 realistic. See [PLAN.md](PLAN.md) for why it exists and how it grows.
@@ -52,6 +52,10 @@ Exported by `./scripts/check.sh` with the [SysML v2 Viewer](../sysmlv2_egui).
 
 ![Radar performance](docs/img/radarPerformance.svg)
 
+### Radar trade study
+
+![Radar trade study](docs/img/radarTradeStudy.svg)
+
 ### Mounting tilt
 
 ![Mounting tilt](docs/img/mountingTilt.svg)
@@ -77,12 +81,16 @@ Exports every view into `docs/img`, validates the Model with
 [OpenSysML](https://github.com/Open-MBEE/OpenSysML)'s `sysml` as a second
 opinion, then checks every requirement and asserted constraint.
 
-Eleven requirements are satisfied, and the other eight are not claimed: the
-rider needs, the system spec that groups the rest, and ingress protection,
-which waits for a test. The cell was first a 45 g cylindrical one, sized to
+Fourteen requirements are satisfied, and the other ten are not claimed: the
+rider needs, the system spec that groups the rest, ingress protection, which
+waits for a test, and the head unit protocols, which wait for firmware. The cell was first a 45 g cylindrical one, sized to
 last 16 h of day flash cold and at the end of its life, which made the unit
 88 g against the 75 g of S8. The battery trade study chose a 29 g
-low-temperature pouch cell instead, and the unit now weighs about 72 g.
+low-temperature pouch cell instead, and the unit now weighs about 74 g. The
+radar trade study chose a 60 GHz radar chip, turned down to the band's
+European limit, which leaves S1 a margin of only 3.5 m. The regulator cannot supply the
+radar's chirp burst, so one constraint is violated until the power chain is
+chosen.
 
 ## Open in the viewer
 

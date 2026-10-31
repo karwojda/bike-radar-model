@@ -1,60 +1,60 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="858" height="534" viewBox="0 0 858 534" font-family="sans-serif">
-<rect x="0" y="0" width="858" height="534" fill="#ffffff"/>
-<rect x="20" y="20" width="818" height="494" rx="20" fill="#ffffff" stroke="#000000"/>
-<text x="429" y="42" text-anchor="middle" font-size="12">«part»</text>
-<text x="429" y="60" text-anchor="middle" font-size="14">ride:RideContext</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="974" height="534" viewBox="0 0 974 534" font-family="sans-serif">
+<rect x="0" y="0" width="974" height="534" fill="#ffffff"/>
+<rect x="20" y="20" width="934" height="494" rx="20" fill="#ffffff" stroke="#000000"/>
+<text x="487" y="42" text-anchor="middle" font-size="12">«part»</text>
+<text x="487" y="60" text-anchor="middle" font-size="14">ride:RideContext</text>
 <rect x="50" y="275" width="138" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
 <text x="119" y="297" text-anchor="middle" font-size="12">«part»</text>
 <text x="119" y="315" text-anchor="middle" font-size="14">bicycle:Bicycle</text>
 <rect x="228" y="275" width="122" height="50" rx="10" fill="#ffffff" stroke="#000000" stroke-dasharray="6 4"/>
 <text x="289" y="297" text-anchor="middle" font-size="12">«part»</text>
 <text x="289" y="315" text-anchor="middle" font-size="14">driver:Driver</text>
-<rect x="390" y="275" width="154" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="467" y="297" text-anchor="middle" font-size="12">«part»</text>
-<text x="467" y="315" text-anchor="middle" font-size="14">headUnit:HeadUnit</text>
-<rect x="331" y="123" width="154" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="408" y="145" text-anchor="middle" font-size="12">«part»</text>
-<text x="408" y="163" text-anchor="middle" font-size="14">rearUnit:RearUnit</text>
+<rect x="455" y="275" width="154" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="532" y="297" text-anchor="middle" font-size="12">«part»</text>
+<text x="532" y="315" text-anchor="middle" font-size="14">headUnit:HeadUnit</text>
+<rect x="249" y="123" width="413" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="455.5" y="145" text-anchor="middle" font-size="12">«part»</text>
+<text x="455.5" y="163" text-anchor="middle" font-size="14">rearUnit:RearUnit</text>
 <rect x="50" y="411" width="120" height="50" rx="10" fill="#ffffff" stroke="#000000" stroke-dasharray="6 4"/>
 <text x="110" y="433" text-anchor="middle" font-size="12">«part»</text>
 <text x="110" y="451" text-anchor="middle" font-size="14">rider:Rider</text>
-<rect x="584" y="275" width="224" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="696" y="297" text-anchor="middle" font-size="12">«part»</text>
-<text x="696" y="315" text-anchor="middle" font-size="14">vehicle:ApproachingVehicle</text>
-<polyline points="357,173 357,189 357,224 119,224 119,259 119,275" fill="none" stroke="#000000"/>
-<polygon points="443.5,224 431.5,230 431.5,218" fill="#000000" stroke="#000000"/>
-<polyline points="408,173 408,189 408,224 467,224 467,259 467,275" fill="none" stroke="#000000"/>
-<text x="437.5" y="218" text-anchor="middle" font-size="11">alerts:ThreatAlert</text>
-<polyline points="408,173 408,189 408,224 467,224 467,259 467,275" fill="none" stroke="#000000"/>
-<text x="437.5" y="234.3" text-anchor="middle" font-size="11">bleLink:BleLink</text>
-<polygon points="571,224 559,230 559,218" fill="#000000" stroke="#000000"/>
-<polyline points="434,173 434,189 434,224 696,224 696,259 696,275" fill="none" stroke="#000000"/>
-<text x="565" y="218" text-anchor="middle" font-size="11">chirps:RadarSignal</text>
-<polygon points="431.5,224 443.5,218 443.5,230" fill="#000000" stroke="#000000"/>
-<polyline points="467,275 467,259 467,224 408,224 408,189 408,173" fill="none" stroke="#000000"/>
-<text x="437.5" y="250.6" text-anchor="middle" font-size="11">commands:ModeCommand</text>
-<polygon points="559,224 571,218 571,230" fill="#000000" stroke="#000000"/>
-<polyline points="696,275 696,259 696,224 434,224 434,189 434,173" fill="none" stroke="#000000"/>
-<text x="565" y="234.3" text-anchor="middle" font-size="11">echoes:RadarSignal</text>
-<polygon points="329.5,224 341.5,218 341.5,230" fill="#000000" stroke="#000000"/>
-<polyline points="382,173 382,189 382,224 289,224 289,259 289,275" fill="none" stroke="#000000"/>
-<text x="335.5" y="218" text-anchor="middle" font-size="11">light:RearLight</text>
+<rect x="700" y="275" width="224" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="812" y="297" text-anchor="middle" font-size="12">«part»</text>
+<text x="812" y="315" text-anchor="middle" font-size="14">vehicle:ApproachingVehicle</text>
+<polyline points="259,173 259,224 119,224 119,275" fill="none" stroke="#000000"/>
+<polygon points="532,270 526,258 538,258" fill="#000000" stroke="#000000"/>
+<polyline points="554,173 554,224 532,224 532,275" fill="none" stroke="#000000"/>
+<text x="538" y="253.17" text-anchor="start" font-size="11">alerts:ThreatAlert</text>
+<polyline points="554,173 554,189 562,189 562,232 540,232 540,259 532,259 532,275" fill="none" stroke="#000000"/>
+<text x="568" y="214.17" text-anchor="start" font-size="11">bleLink:BleLink</text>
+<polygon points="812,270 806,258 818,258" fill="#000000" stroke="#000000"/>
+<polyline points="652,173 652,224 812,224 812,275" fill="none" stroke="#000000"/>
+<text x="732" y="218" text-anchor="middle" font-size="11">chirps:RadarSignal</text>
+<polygon points="554,177 560,189 548,189" fill="#000000" stroke="#000000"/>
+<polyline points="532,275 532,259 524,259 524,216 546,216 546,189 554,189 554,173" fill="none" stroke="#000000"/>
+<text x="530" y="338.97" text-anchor="start" font-size="11">commands:ModeCommand</text>
+<polygon points="652,177 658,189 646,189" fill="#000000" stroke="#000000"/>
+<polyline points="812,275 812,259 820,259 820,232 660,232 660,189 652,189 652,173" fill="none" stroke="#000000"/>
+<text x="740" y="242.3" text-anchor="middle" font-size="11">echoes:RadarSignal</text>
+<polygon points="289,270 283,258 295,258" fill="#000000" stroke="#000000"/>
+<polyline points="406,173 406,224 289,224 289,275" fill="none" stroke="#000000"/>
+<text x="347.5" y="218" text-anchor="middle" font-size="11">light:RearLight</text>
 <rect x="114" y="270" width="10" height="10" fill="#ffffff" stroke="#000000"/>
 <text x="127" y="269" text-anchor="start" font-size="11">seatpost : ~SeatpostMount</text>
 <rect x="284" y="270" width="10" height="10" fill="#ffffff" stroke="#000000"/>
 <text x="297" y="269" text-anchor="start" font-size="11">eyes : ~LightPort</text>
-<rect x="462" y="270" width="10" height="10" fill="#ffffff" stroke="#000000"/>
-<text x="475" y="269" text-anchor="start" font-size="11">ble : ~BlePort</text>
-<rect x="403" y="168" width="10" height="10" fill="#ffffff" stroke="#000000"/>
-<text x="416" y="190" text-anchor="start" font-size="11">ble : BlePort</text>
-<rect x="352" y="168" width="10" height="10" fill="#ffffff" stroke="#000000"/>
-<text x="365" y="190" text-anchor="start" font-size="11">mount : SeatpostMount</text>
-<rect x="429" y="168" width="10" height="10" fill="#ffffff" stroke="#000000"/>
-<text x="442" y="190" text-anchor="start" font-size="11">radar : RadarPort</text>
-<rect x="377" y="168" width="10" height="10" fill="#ffffff" stroke="#000000"/>
-<text x="390" y="190" text-anchor="start" font-size="11">rearLight : LightPort</text>
-<rect x="454" y="168" width="10" height="10" fill="#ffffff" stroke="#000000"/>
-<text x="467" y="190" text-anchor="start" font-size="11">usbC : UsbCPort</text>
-<rect x="691" y="270" width="10" height="10" fill="#ffffff" stroke="#000000"/>
-<text x="704" y="269" text-anchor="start" font-size="11">reflector : ~RadarPort</text>
+<rect x="527" y="270" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="540" y="269" text-anchor="start" font-size="11">ble : ~BlePort</text>
+<rect x="549" y="168" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="562" y="190" text-anchor="start" font-size="11">ble : BlePort</text>
+<rect x="254" y="168" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="267" y="190" text-anchor="start" font-size="11">mount : SeatpostMount</text>
+<rect x="647" y="168" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="660" y="190" text-anchor="start" font-size="11">radar : RadarPort</text>
+<rect x="401" y="168" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="414" y="190" text-anchor="start" font-size="11">rearLight : LightPort</text>
+<rect x="657" y="143" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="670" y="142" text-anchor="start" font-size="11">usbC : UsbCPort</text>
+<rect x="807" y="270" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="820" y="269" text-anchor="start" font-size="11">reflector : ~RadarPort</text>
 </svg>

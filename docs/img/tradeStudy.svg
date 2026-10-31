@@ -1,23 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="638" height="274" viewBox="0 0 638 274" font-family="sans-serif">
-<rect x="0" y="0" width="638" height="274" fill="#ffffff"/>
-<rect x="20" y="20" width="282" height="144" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="161" y="42" text-anchor="middle" font-size="12">«analysis»</text>
-<text x="161" y="60" text-anchor="middle" font-size="14">batteryTradeStudy:TradeStudy</text>
-<rect x="281" y="25" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
-<text x="289" y="36.67" text-anchor="middle" font-size="11">✓</text>
-<polyline points="20,70 302,70" fill="none" stroke="#000000"/>
-<text x="161" y="91" text-anchor="middle" font-size="11" font-style="italic">parameters</text>
-<text x="30" y="107" text-anchor="start" font-size="12">out selectedAlternative:Battery</text>
-<polyline points="20,117 302,117" fill="none" stroke="#000000"/>
-<text x="161" y="138" text-anchor="middle" font-size="11" font-style="italic">parts</text>
-<text x="30" y="154" text-anchor="start" font-size="12">out selectedAlternative:Battery</text>
-<rect x="342" y="20" width="264" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="474" y="42" text-anchor="middle" font-size="12">«part»</text>
-<text x="474" y="60" text-anchor="middle" font-size="14">cylindricalCell:CylindricalCell</text>
-<rect x="20" y="204" width="389" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="214.5" y="226" text-anchor="middle" font-size="12">«part»</text>
-<text x="214.5" y="244" text-anchor="middle" font-size="14">lowTemperaturePouchCell:LowTemperaturePouchCell</text>
-<rect x="449" y="204" width="169" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="533.5" y="226" text-anchor="middle" font-size="12">«part»</text>
-<text x="533.5" y="244" text-anchor="middle" font-size="14">pouchCell:PouchCell</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="846" height="864" viewBox="0 0 846 864" font-family="sans-serif">
+<rect x="0" y="0" width="846" height="864" fill="#ffffff"/>
+<rect x="20" y="20" width="383" height="384" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="211.5" y="42" text-anchor="middle" font-size="12">«part»</text>
+<text x="211.5" y="60" text-anchor="middle" font-size="14">cylindricalCell:CylindricalCell</text>
+<polyline points="20,70 403,70" fill="none" stroke="#000000"/>
+<text x="211.5" y="91" text-anchor="middle" font-size="11" font-style="italic">attributes</text>
+<text x="30" y="107" text-anchor="start" font-size="12" font-style="italic">^coldCapacity default 0.5</text>
+<text x="30" y="123" text-anchor="start" font-size="12" font-style="italic">^energy default 10 [W * h]</text>
+<text x="30" y="139" text-anchor="start" font-size="12" font-style="italic">^specificEnergy default 220 [W * h / kg]</text>
+<text x="30" y="155" text-anchor="start" font-size="12" font-style="italic">^endOfLifeCapacity:Real default 0.8</text>
+<text x="30" y="171" text-anchor="start" font-size="12" font-style="italic">^mass:MassValue default energy /</text>
+<text x="30" y="187" text-anchor="start" font-size="12">  specificEnergy</text>
+<text x="30" y="203" text-anchor="start" font-size="12" font-style="italic">^maxDischargePower:PowerValue default</text>
+<text x="30" y="219" text-anchor="start" font-size="12">  10 [W]</text>
+<text x="30" y="235" text-anchor="start" font-size="12" font-style="italic">^maxDischargeTemperature:ThermodynamicTemperatureValue</text>
+<text x="30" y="251" text-anchor="start" font-size="12">  default 60 ['°C']</text>
+<text x="30" y="267" text-anchor="start" font-size="12" font-style="italic">^minDischargeTemperature:ThermodynamicTemperatureValue</text>
+<text x="30" y="283" text-anchor="start" font-size="12">  default -20 ['°C']</text>
+<text x="30" y="299" text-anchor="start" font-size="12" font-style="italic">^usableEnergy:EnergyValue default energy</text>
+<text x="30" y="315" text-anchor="start" font-size="12">  * coldCapacity * endOfLifeCapacity</text>
+<polyline points="20,325 403,325" fill="none" stroke="#000000"/>
+<text x="211.5" y="346" text-anchor="middle" font-size="11" font-style="italic">ports</text>
+<text x="30" y="362" text-anchor="start" font-size="12" font-style="italic">^charge:~ChargePort</text>
+<text x="30" y="378" text-anchor="start" font-size="12" font-style="italic">^sense:CellSensePort</text>
+<text x="30" y="394" text-anchor="start" font-size="12" font-style="italic">^supply:CellPort</text>
+<rect x="443" y="20" width="383" height="384" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="634.5" y="42" text-anchor="middle" font-size="12">«part»</text>
+<text x="634.5" y="60" text-anchor="middle" font-size="14">pouchCell:PouchCell</text>
+<polyline points="443,70 826,70" fill="none" stroke="#000000"/>
+<text x="634.5" y="91" text-anchor="middle" font-size="11" font-style="italic">attributes</text>
+<text x="453" y="107" text-anchor="start" font-size="12" font-style="italic">^coldCapacity default 0.5</text>
+<text x="453" y="123" text-anchor="start" font-size="12" font-style="italic">^energy default 5 [W * h]</text>
+<text x="453" y="139" text-anchor="start" font-size="12" font-style="italic">^specificEnergy default 250 [W * h / kg]</text>
+<text x="453" y="155" text-anchor="start" font-size="12" font-style="italic">^endOfLifeCapacity:Real default 0.8</text>
+<text x="453" y="171" text-anchor="start" font-size="12" font-style="italic">^mass:MassValue default energy /</text>
+<text x="453" y="187" text-anchor="start" font-size="12">  specificEnergy</text>
+<text x="453" y="203" text-anchor="start" font-size="12" font-style="italic">^maxDischargePower:PowerValue default</text>
+<text x="453" y="219" text-anchor="start" font-size="12">  10 [W]</text>
+<text x="453" y="235" text-anchor="start" font-size="12" font-style="italic">^maxDischargeTemperature:ThermodynamicTemperatureValue</text>
+<text x="453" y="251" text-anchor="start" font-size="12">  default 60 ['°C']</text>
+<text x="453" y="267" text-anchor="start" font-size="12" font-style="italic">^minDischargeTemperature:ThermodynamicTemperatureValue</text>
+<text x="453" y="283" text-anchor="start" font-size="12">  default -20 ['°C']</text>
+<text x="453" y="299" text-anchor="start" font-size="12" font-style="italic">^usableEnergy:EnergyValue default energy</text>
+<text x="453" y="315" text-anchor="start" font-size="12">  * coldCapacity * endOfLifeCapacity</text>
+<polyline points="443,325 826,325" fill="none" stroke="#000000"/>
+<text x="634.5" y="346" text-anchor="middle" font-size="11" font-style="italic">ports</text>
+<text x="453" y="362" text-anchor="start" font-size="12" font-style="italic">^charge:~ChargePort</text>
+<text x="453" y="378" text-anchor="start" font-size="12" font-style="italic">^sense:CellSensePort</text>
+<text x="453" y="394" text-anchor="start" font-size="12" font-style="italic">^supply:CellPort</text>
+<rect x="20" y="444" width="389" height="400" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="214.5" y="466" text-anchor="middle" font-size="12">«part»</text>
+<text x="214.5" y="484" text-anchor="middle" font-size="14">lowTemperaturePouchCell:LowTemperaturePouchCell</text>
+<polyline points="20,494 409,494" fill="none" stroke="#000000"/>
+<text x="214.5" y="515" text-anchor="middle" font-size="11" font-style="italic">attributes</text>
+<text x="30" y="531" text-anchor="start" font-size="12" font-style="italic">^coldCapacity default 0.75</text>
+<text x="30" y="547" text-anchor="start" font-size="12" font-style="italic">^energy default 7 [W * h] = 7 [W*h]</text>
+<text x="30" y="563" text-anchor="start" font-size="12" font-style="italic">^specificEnergy default 240 [W * h / kg]</text>
+<text x="30" y="579" text-anchor="start" font-size="12">  = 240 [W*h/kg]</text>
+<text x="30" y="595" text-anchor="start" font-size="12" font-style="italic">^endOfLifeCapacity:Real default 0.8</text>
+<text x="30" y="611" text-anchor="start" font-size="12" font-style="italic">^mass:MassValue default energy /</text>
+<text x="30" y="627" text-anchor="start" font-size="12">  specificEnergy</text>
+<text x="30" y="643" text-anchor="start" font-size="12" font-style="italic">^maxDischargePower:PowerValue default</text>
+<text x="30" y="659" text-anchor="start" font-size="12">  10 [W]</text>
+<text x="30" y="675" text-anchor="start" font-size="12" font-style="italic">^maxDischargeTemperature:ThermodynamicTemperatureValue</text>
+<text x="30" y="691" text-anchor="start" font-size="12">  default 60 ['°C']</text>
+<text x="30" y="707" text-anchor="start" font-size="12" font-style="italic">^minDischargeTemperature:ThermodynamicTemperatureValue</text>
+<text x="30" y="723" text-anchor="start" font-size="12">  default -20 ['°C']</text>
+<text x="30" y="739" text-anchor="start" font-size="12" font-style="italic">^usableEnergy:EnergyValue default energy</text>
+<text x="30" y="755" text-anchor="start" font-size="12">  * coldCapacity * endOfLifeCapacity</text>
+<polyline points="20,765 409,765" fill="none" stroke="#000000"/>
+<text x="214.5" y="786" text-anchor="middle" font-size="11" font-style="italic">ports</text>
+<text x="30" y="802" text-anchor="start" font-size="12" font-style="italic">^charge:~ChargePort</text>
+<text x="30" y="818" text-anchor="start" font-size="12" font-style="italic">^sense:CellSensePort</text>
+<text x="30" y="834" text-anchor="start" font-size="12" font-style="italic">^supply:CellPort</text>
+<rect x="449" y="444" width="291" height="144" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="594.5" y="466" text-anchor="middle" font-size="12">«analysis»</text>
+<text x="594.5" y="484" text-anchor="middle" font-size="14">batteryTradeStudy:TradeStudy</text>
+<rect x="719" y="449" width="16" height="16" rx="8" fill="none" stroke="#000000"/>
+<text x="727" y="460.67" text-anchor="middle" font-size="11">✓</text>
+<polyline points="449,494 740,494" fill="none" stroke="#000000"/>
+<text x="594.5" y="515" text-anchor="middle" font-size="11" font-style="italic">parameters</text>
+<text x="459" y="531" text-anchor="start" font-size="12">return selectedAlternative:Battery</text>
+<polyline points="449,541 740,541" fill="none" stroke="#000000"/>
+<text x="594.5" y="562" text-anchor="middle" font-size="11" font-style="italic">parts</text>
+<text x="459" y="578" text-anchor="start" font-size="12">return selectedAlternative:Battery</text>
 </svg>

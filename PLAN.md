@@ -56,7 +56,21 @@ Each slice is reviewed in the viewer before the next starts.
    Analyses for a motorbike's detection range and the rider's warning time.
 6. **Mounting tilt.** How the tilt of the mounting (seatpost angle, strap
    slip, the rider's weight) shortens the radar's reach, against S1.
-7. **Tool Links.** A FreeCAD enclosure and a KiCad board, giving Design
+7. **Hardware requirements and band trade study.** ANT+ and BLE to the
+   head unit (S13, unclaimed until firmware), range and speed resolution
+   (S14, S15), S7 relaxed to 3.5 h for an 800 mA charger, and radio
+   emissions within Europe's limits for the band (S16, from a new need N6). One radar chip per
+   band (24, 60, 77 GHz) with datasheet values and marked assumptions, the
+   IF bandwidth limit on range, and a constraint that the regulator covers
+   the radar's chirp burst. The study picks the radar.
+8. **Electronics bill of materials.** nRF54L15 module (Zephyr/NCS, Rust
+   application via zephyr-lang-rust; Embassy rejected for want of ANT),
+   nPM1300 for charging, the MCU rail and the fuel gauge, discrete bucks for
+   the radar's rails, LED driver, LEDs, button and USB-C, with real values.
+   Linux rejected: nothing needs it, and it would eat the runtime.
+9. **Bring-up rig.** `BikeRadarBringUp`: a bench rig of dev kits, each
+   standing in for a production part.
+10. **Tool Links.** A FreeCAD enclosure and a KiCad board, giving Design
    Values for mass and summed power. Deferred: not the time for the tools
    yet.
 
@@ -81,3 +95,12 @@ Each slice is reviewed in the viewer before the next starts.
   adjustable band clamp with a quarter-turn mount: at most 3.75° of tilt,
   about 178 m, and S1 is judged at that worst case. The clamp is 2 g
   heavier, so the mass margin is down to about 0.8 g.
+- [x] Slice 7 written. The band trade study, scored on power first and mass
+  second, picks the 60 GHz AWRL6432 at 124 mW. 77 GHz draws 168 mW and
+  breaks S6 on the chosen cell; 24 GHz draws 138 mW but is 5 g heavier and
+  breaks S8. The
+  57-64 GHz band's 100 mW e.i.r.p. cap (S16) turns its transmitter down to
+  6 dBm, so it reaches about 143 m at the worst-case tilt, 3.5 m past S1. The TI chips' 5 MHz IF caps range at
+  200 m with 40 us chirps, and one-sided Doppler is assumed. The new
+  `regulatorCoversBurst` is violated on purpose (a 0.96 W burst on a 0.5 W
+  regulator), so `./scripts/check.sh` exits 1 until slice 8.

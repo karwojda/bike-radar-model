@@ -34,6 +34,9 @@ package BikeRadarRequirements {
         requirement <'N5'> allWeather : StakeholderNeed {
             doc /* It keeps working in rain, cold and heat. */
         }
+        requirement <'N6'> legalOnTheRoad : StakeholderNeed {
+            doc /* I can use it on the road anywhere in Europe. */
+        }
     }
 
     // ---- System requirements -----------------------------------------------
@@ -62,10 +65,25 @@ package BikeRadarRequirements {
             doc /* Track at least 8 vehicles at once. */
             require constraint { unit.maxTrackedVehicles >= 8 }
         }
+        requirement <'S14'> rangeResolution : SystemRequirement {
+            doc /* Tell apart two vehicles 1 m apart in range: a car tailgating
+                 * another. */
+            require constraint { unit.rangeResolution <= 1 [m] }
+        }
+        requirement <'S15'> speedResolution : SystemRequirement {
+            doc /* Tell apart two vehicles whose closing speeds differ by 2.5 km/h. */
+            require constraint { unit.speedResolution <= 2.5 [km/h] }
+        }
         requirement <'S12'> closingSpeed : SystemRequirement {
             doc /* Measure closing speeds up to 120 km/h: a car at 120 km/h
                  * behind a rider who has stopped. */
             require constraint { unit.maxClosingSpeed >= 120 [km/h] }
+        }
+
+        requirement <'S13'> headUnitProtocols : SystemRequirement {
+            doc /* Send alerts to the head unit over the ANT+ Bike Radar profile
+                 * and over Bluetooth Low Energy, so that common bike computers
+                 * show them. */
         }
 
         // Visibility
@@ -84,8 +102,10 @@ package BikeRadarRequirements {
             require constraint { unit.runtimeDayFlash >= 16 [h] }
         }
         requirement <'S7'> chargeTime : SystemRequirement {
-            doc /* Charge from empty to full in 3 h or less over USB-C. */
-            require constraint { unit.chargeTime <= 3 [h] }
+            doc /* Charge from empty to full in 3.5 h or less over USB-C. Relaxed
+                 * from 3 h for a power management chip that charges at 800 mA,
+                 * which still recharges overnight. */
+            require constraint { unit.chargeTime <= 3.5 [h] }
         }
 
         // Physical
@@ -98,6 +118,17 @@ package BikeRadarRequirements {
             require constraint {
                 unit.minSeatpostDiameter <= 25 [mm] and
                 unit.maxSeatpostDiameter >= 35 [mm]
+            }
+        }
+
+        // Regulation
+        requirement <'S16'> radioEmissions : SystemRequirement {
+            doc /* Keep the radar within the European limits for short-range
+                 * devices in its band, from ERC/REC 70-03: radiated power, and
+                 * transmitter output where the band caps it too. */
+            require constraint {
+                unit.radarEirp <= unit.radarMaxEirp and
+                unit.radarOutputPower <= unit.radarMaxOutputPower
             }
         }
 
@@ -122,6 +153,9 @@ package BikeRadarRequirements {
         end #derive ::> systemSpec.alertLatency;
         end #derive ::> systemSpec.trackedVehicles;
         end #derive ::> systemSpec.closingSpeed;
+        end #derive ::> systemSpec.headUnitProtocols;
+        end #derive ::> systemSpec.rangeResolution;
+        end #derive ::> systemSpec.speedResolution;
     }
     #derivation connection {
         end #original ::> riderNeeds.beSeen;
@@ -142,5 +176,9 @@ package BikeRadarRequirements {
         end #original ::> riderNeeds.allWeather;
         end #derive ::> systemSpec.ingressProtection;
         end #derive ::> systemSpec.operatingTemperature;
+    }
+    #derivation connection {
+        end #original ::> riderNeeds.legalOnTheRoad;
+        end #derive ::> systemSpec.radioEmissions;
     }
 }

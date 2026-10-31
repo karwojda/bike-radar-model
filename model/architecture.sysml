@@ -9,6 +9,19 @@ package BikeRadarArchitecture {
     private import TrigFunctions::*;
     private import BikeRadarContext::*;
 
+    // ---- Provenance --------------------------------------------------------
+
+    metadata def Assumption {
+        doc /* A value chosen for the design, not measured nor read from a
+             * datasheet. */
+    }
+    metadata def Datasheet {
+        doc /* The part's values come from its datasheet, except those marked
+             * as assumptions. */
+        attribute source : String;
+        attribute preliminary : Boolean;
+    }
+
     // ---- Items -------------------------------------------------------------
 
     item def RadarConfig {
@@ -70,30 +83,63 @@ package BikeRadarArchitecture {
     // ---- Parts -------------------------------------------------------------
 
     part def RadarModule {
-        doc /* A 77 GHz FMCW radar chip on a small board, with a patch array
-             * antenna for transmit and four for receive, each about 60° wide
-             * and 20° high. Each frame it sends a burst of chirps, then sleeps
-             * until the next frame, so its power is an average over a frame.
-             * Gains, losses and the noise figure are linear: dB values are in
-             * the comments. The beat frequency of a target at the detection
-             * range stays under the 10 MHz IF bandwidth of common chips. */
-        attribute mass : MassValue default = 6 [g];
-        attribute activePower : PowerValue default = 1.1 [W];
-        attribute sleepPower : PowerValue default = 0.005 [W];
-        attribute framePeriod : DurationValue default = 0.1 [s];
+        doc /* A radar chip on a small board, with patch antennas: one to
+         * transmit and one per receive channel, each about 60° wide and 20°
+         * high. Each frame it sends a burst of chirps, processes them, then
+         * idles until the next frame, so its power is an average over a frame.
+         * Gains, losses and the noise figure are linear: dB values are in the
+         * comments. The chip's own values come from its datasheet; the board's
+         * are design assumptions, the same for every chip. */
 
-        attribute frequency : FrequencyValue default = 77e9 [Hz];
-        attribute sweepBandwidth : FrequencyValue default = 150e6 [Hz];
-        attribute txPower : PowerValue default = 0.0158 [W];       // 12 dBm
-        attribute txGain : Real default = 25.0;                     // 14 dBi
-        attribute rxGain : Real default = 25.0;                     // 14 dBi
-        attribute rxChannels : Natural default = 4;
-        attribute noiseFigure : Real default = 15.0;                // 11.8 dB
-        attribute losses : Real default = 10.0;                     // 10 dB: radome, mismatch, processing
-        attribute minSnr : Real default = 31.6;                     // 15 dB to declare a detection
-        attribute chirpDuration : DurationValue default = 20e-6 [s];
-        attribute chirpIdleTime : DurationValue default = 7e-6 [s];
-        attribute chirpsPerFrame : Natural default = 384;
+        // The chip, from its datasheet
+        attribute frequency : FrequencyValue;
+        attribute chipTxPower : PowerValue {
+            doc /* The most the chip's transmitter puts out. */
+        }
+        attribute rxChannels : Natural;
+        attribute noiseFigure : Real;
+        attribute maxIfBandwidth : FrequencyValue {
+            doc /* The widest beat frequency the receiver passes. A target
+                 * farther away than the IF carries is not seen at all. */
+        }
+        attribute activePower : PowerValue;
+        attribute processingPower : PowerValue;
+        attribute idlePower : PowerValue;
+
+        // The band's limits in Europe, from ERC/REC 70-03
+        attribute bandMaxEirp : PowerValue;
+        attribute bandMaxOutputPower : PowerValue default = bandMaxEirp {
+            doc /* Bands that cap only radiated power cap output power by the
+                 * same, since the antenna has gain. */
+        }
+
+        // The board
+        #Assumption attribute boardMass : MassValue {
+            doc /* The board, chip and shield, without the antennas. */
+        }
+        #Assumption attribute txGain : Real default = 25.0;                 // 14 dBi
+        #Assumption attribute rxGain : Real default = 25.0;                 // 14 dBi
+        #Assumption attribute losses : Real default = 10.0;                 // 10 dB: radome, mismatch, processing
+        #Assumption attribute minSnr : Real default = 31.6;                 // 15 dB to declare a detection
+        #Assumption attribute apertureEfficiency : Real default = 0.6;
+        #Assumption attribute antennaArealMass : ScalarQuantityValue default = 3 [kg/m^2] {
+            doc /* Board, radome and housing face per area of antenna. */
+        }
+        attribute antennaArea : AreaValue default =
+            (1 + rxChannels) * txGain * wavelength ^ 2 / (4 * pi * apertureEfficiency);
+        attribute mass : MassValue default = boardMass + antennaArea * antennaArealMass;
+
+        // The waveform: the same rules for every chip, each its own chirps.
+        // Every chip sweeps 150 MHz for S14 and sends a burst of about 10.4 ms
+        // every 100 ms; each chirp is long enough that the IF carries 200 m.
+        #Assumption attribute framePeriod : DurationValue default = 0.1 [s];
+        #Assumption attribute sweepBandwidth : FrequencyValue default = 150e6 [Hz];
+        attribute chirpDuration : DurationValue;
+        #Assumption attribute chirpIdleTime : DurationValue default = 7e-6 [s];
+        attribute chirpsPerFrame : Natural;
+        #Assumption attribute processingTime : DurationValue default = 0.01 [s] {
+            doc /* Range and Doppler FFTs, detection and clustering of a frame. */
+        }
         attribute designTargetRcs : AreaValue default = 10 [m^2] {
             doc /* The radar cross-section of a car seen from the front. */
         }
@@ -101,18 +147,105 @@ package BikeRadarArchitecture {
         attribute elevationBeamwidth : PlaneAngleValue default = 20 ['°'];
 
         attribute wavelength : LengthValue default = speedOfLight / frequency;
+        attribute txPower : PowerValue default = LowerOf(LowerOf(chipTxPower, bandMaxOutputPower),
+            bandMaxEirp / txGain) {
+            doc /* The transmitter turned down as far as the band requires. */
+        }
+        attribute eirp : PowerValue default = txPower * txGain;
         attribute chirpPeriod : DurationValue default = chirpDuration + chirpIdleTime;
         attribute observationTime : DurationValue default = chirpsPerFrame * chirpDuration;
         attribute activeTime : DurationValue default = chirpsPerFrame * chirpPeriod;
         attribute power : PowerValue default =
-            (activePower * activeTime + sleepPower * (framePeriod - activeTime)) / framePeriod;
+            (activePower * activeTime + processingPower * processingTime
+                + idlePower * (framePeriod - activeTime - processingTime)) / framePeriod;
+        attribute ifLimitedRange : LengthValue default =
+            maxIfBandwidth * speedOfLight * chirpDuration / (2 * sweepBandwidth);
         attribute detectionRange : LengthValue default = DetectionRange(self, designTargetRcs);
         attribute rangeResolution : LengthValue default = speedOfLight / (2 * sweepBandwidth);
-        attribute maxUnambiguousSpeed : SpeedValue default = wavelength / (4 * chirpPeriod);
+        #Assumption attribute maxClosingSpeed : SpeedValue default = wavelength / (2 * chirpPeriod) {
+            doc /* One-sided Doppler: every target is taken to be closing, so
+                 * the whole unambiguous Doppler span counts towards closing
+                 * speed, twice what a radar that also measures receding
+                 * targets gets. A vehicle pulling away from the rider, rare
+                 * behind a bike, would be read as closing fast. */
+        }
         attribute speedResolution : SpeedValue default = wavelength / (2 * activeTime);
         port antenna : RadarPort;
         port data : RadarDataPort;
         port supply : ~RailPort;
+    }
+    part def Awrl6432Radar :> RadarModule {
+        doc /* TI AWRL6432: a 57-64 GHz radar chip with an Arm Cortex-M4F and a
+             * hardware FFT accelerator, so the radar finds the targets itself
+             * and hands the MCU detections. Two transmitters, of which one is
+             * used, and three receivers. Its power figures are those of its
+             * industrial twin, the IWRL6432. */
+        @Datasheet {
+            source = "TI AWRL6432 datasheet SWRS295B; power from IWRL6432 SWRS298A";
+            preliminary = false;
+        }
+        attribute :>> frequency default = 60.5e9 [Hz];
+        attribute :>> bandMaxEirp default = 0.1 [W];                // 57-64 GHz, Annex 1 n1
+        attribute :>> bandMaxOutputPower default = 0.01 [W];
+        attribute :>> chipTxPower default = 0.0126 [W];                // 11 dBm
+        attribute :>> rxChannels default = 3;
+        attribute :>> noiseFigure default = 12.6;                   // 11 dB
+        attribute :>> maxIfBandwidth default = 5e6 [Hz];
+        attribute :>> activePower default = 0.96 [W];               // 2 TX, 3 RX
+        attribute :>> processingPower default = 0.159 [W];          // the AWRL1432's figure
+        attribute :>> idlePower default = 0.011 [W];
+        #Assumption attribute :>> boardMass default = 5 [g];
+        attribute :>> chirpDuration default = 40e-6 [s];
+        attribute :>> chirpsPerFrame default = 221;
+    }
+    part def Awrl1432Radar :> RadarModule {
+        doc /* TI AWRL1432: the 76-81 GHz sibling of the AWRL6432, with the same
+             * processor and accelerator, but a noisier receiver. */
+        @Datasheet {
+            source = "TI AWRL1432 datasheet SWRS296B, initial silicon";
+            preliminary = true;
+        }
+        attribute :>> frequency default = 77e9 [Hz];
+        attribute :>> bandMaxEirp default = 316 [W];                // 76-77 GHz, Annex 5 e1: 55 dBm peak
+        attribute :>> chipTxPower default = 0.0126 [W];                // 11 dBm
+        attribute :>> rxChannels default = 3;
+        attribute :>> noiseFigure default = 25.1;                   // 14 dB
+        attribute :>> maxIfBandwidth default = 5e6 [Hz];
+        attribute :>> activePower default = 1.36 [W];               // 2 TX, 3 RX
+        attribute :>> processingPower default = 0.159 [W];
+        attribute :>> idlePower default = 0.0138 [W];
+        #Assumption attribute :>> boardMass default = 5 [g];
+        attribute :>> chirpDuration default = 40e-6 [s];
+        attribute :>> chirpsPerFrame default = 221;
+    }
+    part def Bgt24Mtr12Radar :> RadarModule {
+        doc /* Infineon BGT24MTR12: a 24.0-24.25 GHz transceiver with one
+             * transmitter and two receivers, and analog IF outputs. It has no
+             * ADC and no processor, so a DSP-class MCU (a Cortex-M7) samples
+             * the IF and runs the FFTs; its mass and power are counted here,
+             * and the IF bandwidth is what its ADCs are set up for. */
+        @Datasheet {
+            source = "Infineon BGT24MTR12 product page and datasheet rev 3.2";
+            preliminary = false;
+        }
+        attribute :>> frequency default = 24.125e9 [Hz];
+        attribute :>> bandMaxEirp default = 0.1 [W];                // 24.05-24.25 GHz, Annex 1 m
+        attribute :>> chipTxPower default = 0.0063 [W];                // 8 dBm
+        attribute :>> rxChannels default = 2;
+        attribute :>> noiseFigure default = 15.8;                   // 12 dB
+        #Assumption attribute :>> maxIfBandwidth default = 2e6 [Hz];
+        #Assumption attribute :>> activePower default = 0.99 [W] {
+            doc /* 0.66 W for the transceiver, 0.33 W for the DSP MCU sampling. */
+        }
+        #Assumption attribute :>> processingPower default = 0.33 [W];
+        #Assumption attribute :>> idlePower default = 0.003 [W] {
+            doc /* The transceiver off, the DSP MCU stopped. */
+        }
+        #Assumption attribute :>> boardMass default = 6.5 [g] {
+            doc /* 5 g as for the other chips, and 1.5 g for the DSP MCU. */
+        }
+        attribute :>> chirpDuration default = 100e-6 [s];
+        attribute :>> chirpsPerFrame default = 97;
     }
     part def Mcu {
         doc /* A microcontroller with Bluetooth Low Energy: tracks vehicles from
@@ -244,7 +377,7 @@ package BikeRadarArchitecture {
 
     // ---- Calculations ------------------------------------------------------
 
-    calc def DetectionRange {
+    calc def RadarEquationRange {
         doc /* The radar equation for an FMCW radar: the farthest range at
              * which a target of the given radar cross-section still gives the
              * minimum signal-to-noise ratio, integrating over a frame's chirps
@@ -259,16 +392,37 @@ package BikeRadarArchitecture {
         ) ^ 0.25;
     }
 
+    calc def ShorterOf {
+        in a : LengthValue;
+        in b : LengthValue;
+        return : LengthValue = if a <= b ? a else b;
+    }
+
+    calc def LowerOf {
+        in a : PowerValue;
+        in b : PowerValue;
+        return : PowerValue = if a <= b ? a else b;
+    }
+
     calc def TiltedDetectionRange {
         doc /* The detection range when the beam is tilted up or down. Each way
              * the beam's gain falls off as a Gaussian of the tilt over the
-             * elevation beamwidth, so the range falls by
-             * 2^(-2 (tilt / beamwidth)^2). */
+             * elevation beamwidth, so the range from the radar equation falls
+             * by 2^(-2 (tilt / beamwidth)^2). No tilt lets the radar see past
+             * what its IF carries. */
         in radar : RadarModule;
         in rcs : AreaValue;
         in tilt : PlaneAngleValue;
-        return : LengthValue = DetectionRange(radar, rcs)
-            * 2 ^ (-2 * (tilt / radar.elevationBeamwidth) ^ 2);
+        return : LengthValue = ShorterOf(
+            RadarEquationRange(radar, rcs) * 2 ^ (-2 * (tilt / radar.elevationBeamwidth) ^ 2),
+            radar.ifLimitedRange);
+    }
+
+    calc def DetectionRange {
+        doc /* The detection range with the beam level. */
+        in radar : RadarModule;
+        in rcs : AreaValue;
+        return : LengthValue = TiltedDetectionRange(radar, rcs, 0 ['°']);
     }
 
     calc def Runtime {
@@ -283,7 +437,8 @@ package BikeRadarArchitecture {
     part def RearUnitDesign :> RearUnit {
         doc /* The rear unit as it is built. */
 
-        part radarModule : RadarModule;
+        // The radar the band trade study chose.
+        part radarModule : Awrl6432Radar;
         part mcu : Mcu;
         part button : Button;
         part ledDriver : LedDriver;
@@ -336,7 +491,13 @@ package BikeRadarArchitecture {
             radarModule, radarModule.designTargetRcs, worstCaseTilt);
         attribute :>> alertLatency = mcu.alertLatency;
         attribute :>> maxTrackedVehicles = mcu.maxTrackedVehicles;
-        attribute :>> maxClosingSpeed = radarModule.maxUnambiguousSpeed;
+        attribute :>> maxClosingSpeed = radarModule.maxClosingSpeed;
+        attribute :>> rangeResolution = radarModule.rangeResolution;
+        attribute :>> radarEirp = radarModule.eirp;
+        attribute :>> radarMaxEirp = radarModule.bandMaxEirp;
+        attribute :>> radarOutputPower = radarModule.txPower;
+        attribute :>> radarMaxOutputPower = radarModule.bandMaxOutputPower;
+        attribute :>> speedResolution = radarModule.speedResolution;
         attribute :>> daylightVisibility = leds.daylightVisibility;
         attribute :>> minSeatpostDiameter = clamp.minDiameter;
         attribute :>> maxSeatpostDiameter = clamp.maxDiameter;
@@ -361,6 +522,11 @@ package BikeRadarArchitecture {
         assert constraint regulatorWithinRating {
             doc /* The regulator can supply the radar and the MCU. */
             railPower <= regulator.maxOutputPower
+        }
+        assert constraint regulatorCoversBurst {
+            doc /* The regulator can supply the radar's chirp burst and the MCU
+             * at once, not just their average over a frame. */
+            radarModule.activePower + mcu.power <= regulator.maxOutputPower
         }
         assert constraint alertWithinLatency {
             doc /* A track is confirmed over two radar frames, which must fit in
