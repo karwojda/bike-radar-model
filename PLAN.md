@@ -80,6 +80,18 @@ Each slice is reviewed in the viewer before the next starts.
   for a tree of boxes. `rearUnit`'s parts are Inherited Members, shown as `^`
   rows, not nodes. Until then the view keeps showing the bug.
 
+## Follow-ups
+
+- **Cross-check the radar numbers in NumPy.** A short open FMCW script
+  (chirps, beat signal, range-Doppler FFT, SNR) to check the model's range
+  resolution (1.0 m), speed resolution (0.86 km/h), IF-limited range (200 m)
+  and worst-case range (about 143 m) against the AWRL6432 datasheet's
+  "typically up to 25 m", which is likely for people with the EVM's antennas.
+  S1 holds by only 3.5 m. See
+  [docs/research/simulation-models.md](docs/research/simulation-models.md)
+  for the wider tool chain: TI's mmWave Sensing Estimator, openEMS for the
+  antenna, and AWRL6432BOOST + DCA1000EVM captures.
+
 ## Status
 
 - [x] Slice 1 written; awaiting review in the viewer.
