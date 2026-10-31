@@ -111,3 +111,8 @@ Each slice is reviewed in the viewer before the next starts.
   LUXEON Rebel reds, three because two would glow from a full cell; C&K KSC
   button; GCT USB4715 socket. Losses now follow from efficiencies. The unit
   weighs about 73.1 g, 1.9 g under S8, and `./scripts/check.sh` exits 0.
+- [x] Slice 9 written. `BikeRadarBringUp`: AWRL6432BOOST, nRF54L15-DK (its
+  buttons stand in for the unit's), nPM1300-EK with the production cell,
+  TPS62088AEVM-187 and TPS62840-1DLCEVM55 (on an electronic load, since the
+  radar EVM powers itself) and TPS61160EVM-243 with the three red LEDs. A
+  `dependency` ties each kit to the production part it stands in for.

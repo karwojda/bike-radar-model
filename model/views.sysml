@@ -8,6 +8,7 @@ package BikeRadarViews {
     private import BikeRadarArchitecture::*;
     private import BikeRadarModes::*;
     private import BikeRadarAnalysis::*;
+    private import BikeRadarBringUp::*;
 
     view needs {
         doc /* The rider's needs. */
@@ -94,6 +95,12 @@ package BikeRadarViews {
         expose awrl1432Radar;
         expose bgt24Mtr12Radar;
         render asTreeDiagram;
+    }
+
+    view benchRigView {
+        doc /* The dev kits on the bench, wired as the rear unit is. */
+        expose BikeRadarBringUp::benchRig;
+        render asInterconnectionDiagram;
     }
 
     view operatingModes : StateTransitionView {

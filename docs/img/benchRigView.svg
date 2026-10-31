@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="906" height="790" viewBox="0 0 906 790" font-family="sans-serif">
+<rect x="0" y="0" width="906" height="790" fill="#ffffff"/>
+<rect x="20" y="20" width="803" height="750" rx="20" fill="#ffffff" stroke="#000000"/>
+<text x="421.5" y="42" text-anchor="middle" font-size="12">«part»</text>
+<text x="421.5" y="60" text-anchor="middle" font-size="14">benchRig:BenchRig</text>
+<rect x="50" y="259" width="264" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="182" y="281" text-anchor="middle" font-size="12">«part»</text>
+<text x="182" y="299" text-anchor="middle" font-size="14">battery:LowTemperaturePouchCell</text>
+<rect x="159" y="395" width="216" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="267" y="417" text-anchor="middle" font-size="12">«part»</text>
+<text x="267" y="435" text-anchor="middle" font-size="14">ledDriverEvm:LedDriverEvm</text>
+<rect x="206" y="531" width="122" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="267" y="553" text-anchor="middle" font-size="12">«part»</text>
+<text x="267" y="571" text-anchor="middle" font-size="14">leds:RearLeds</text>
+<rect x="492" y="259" width="199" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="591.5" y="281" text-anchor="middle" font-size="12">«part»</text>
+<text x="591.5" y="299" text-anchor="middle" font-size="14">mcuDk:McuDk</text>
+<rect x="287" y="123" width="506" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="540" y="145" text-anchor="middle" font-size="12">«part»</text>
+<text x="540" y="163" text-anchor="middle" font-size="14">powerManagerEk:PowerManagerEk</text>
+<rect x="50" y="667" width="279" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="189.5" y="689" text-anchor="middle" font-size="12">«part»</text>
+<text x="189.5" y="707" text-anchor="middle" font-size="14">radarCoreBuckEvm:RadarCoreBuckEvm</text>
+<rect x="514" y="395" width="154" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="591" y="417" text-anchor="middle" font-size="12">«part»</text>
+<text x="591" y="435" text-anchor="middle" font-size="14">radarEvm:RadarEvm</text>
+<rect x="369" y="667" width="248" height="50" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="493" y="689" text-anchor="middle" font-size="12">«part»</text>
+<text x="493" y="707" text-anchor="middle" font-size="14">radarIoBuckEvm:RadarIoBuckEvm</text>
+<polygon points="297,178 303,190 291,190" fill="#000000" stroke="#000000"/>
+<polyline points="253,259 253,216 297,216 297,173" fill="none" stroke="#000000"/>
+<text x="275" y="210" text-anchor="middle" font-size="11">cellVoltage:CellVoltage</text>
+<polygon points="111,254 105,242 117,242" fill="#000000" stroke="#000000"/>
+<polyline points="476,173 476,224 111,224 111,259" fill="none" stroke="#000000"/>
+<text x="293.5" y="234.3" text-anchor="middle" font-size="11">chargeCurrent:ChargeCurrent</text>
+<polygon points="662,314 668,326 656,326" fill="#000000" stroke="#000000"/>
+<polyline points="591,395 591,352 662,352 662,309" fill="none" stroke="#000000"/>
+<text x="626.5" y="346" text-anchor="middle" font-size="11">detections:Detections</text>
+<polygon points="502,254 496,242 508,242" fill="#000000" stroke="#000000"/>
+<polyline points="611,173 611,216 502,216 502,259" fill="none" stroke="#000000"/>
+<text x="556.5" y="210" text-anchor="middle" font-size="11">fuelGauge:FuelGauge</text>
+<polygon points="267,390 261,378 273,378" fill="#000000" stroke="#000000"/>
+<polyline points="521,309 521,352 267,352 267,395" fill="none" stroke="#000000"/>
+<text x="394" y="346" text-anchor="middle" font-size="11">ledControl:LedControl</text>
+<polygon points="267,526 261,514 273,514" fill="#000000" stroke="#000000"/>
+<polyline points="267,445 267,531" fill="none" stroke="#000000"/>
+<text x="273" y="491.67" text-anchor="start" font-size="11">ledCurrent:LedCurrent</text>
+<polygon points="681,254 675,242 687,242" fill="#000000" stroke="#000000"/>
+<polyline points="783,173 783,216 681,216 681,259" fill="none" stroke="#000000"/>
+<text x="732" y="210" text-anchor="middle" font-size="11">mcuRail:RailPower</text>
+<polygon points="591,391 585,379 597,379" fill="#000000" stroke="#000000"/>
+<polyline points="662,309 662,325 670,325 670,360 599,360 599,379 591,379 591,395" fill="none" stroke="#000000"/>
+<text x="634.5" y="458.5" text-anchor="middle" font-size="11">radarConfig:RadarConfig</text>
+<rect x="106" y="254" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="119" y="253" text-anchor="start" font-size="11">charge : ~ChargePort</text>
+<rect x="248" y="254" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="261" y="253" text-anchor="start" font-size="11">sense : CellSensePort</text>
+<rect x="177" y="304" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="190" y="326" text-anchor="start" font-size="11">supply : CellPort</text>
+<rect x="262" y="390" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="275" y="389" text-anchor="start" font-size="11">control : ~LedControlPort</text>
+<rect x="262" y="440" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="275" y="462" text-anchor="start" font-size="11">drive : LedDrivePort</text>
+<rect x="262" y="526" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="275" y="525" text-anchor="start" font-size="11">drive : ~LedDrivePort</text>
+<rect x="262" y="576" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="275" y="598" text-anchor="start" font-size="11">light : LightPort</text>
+<rect x="686" y="279" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="699" y="278" text-anchor="start" font-size="11">ble : BlePort</text>
+<rect x="497" y="254" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="510" y="253" text-anchor="start" font-size="11">fuelGauge : ~FuelGaugePort</text>
+<rect x="516" y="304" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="529" y="326" text-anchor="start" font-size="11">led : LedControlPort</text>
+<rect x="657" y="304" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="670" y="326" text-anchor="start" font-size="11">radarData : ~RadarDataPort</text>
+<rect x="676" y="254" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="689" y="253" text-anchor="start" font-size="11">supply : ~RailPort</text>
+<rect x="292" y="168" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="305" y="190" text-anchor="start" font-size="11">cellSense : ~CellSensePort</text>
+<rect x="471" y="168" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="484" y="190" text-anchor="start" font-size="11">charge : ChargePort</text>
+<rect x="606" y="168" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="619" y="190" text-anchor="start" font-size="11">fuelGauge : FuelGaugePort</text>
+<rect x="778" y="168" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="791" y="190" text-anchor="start" font-size="11">mcuRail : RailPort</text>
+<rect x="185" y="712" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="198" y="734" text-anchor="start" font-size="11">output : RailPort</text>
+<rect x="586" y="390" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="599" y="389" text-anchor="start" font-size="11">data : RadarDataPort</text>
+<rect x="488" y="712" width="10" height="10" fill="#ffffff" stroke="#000000"/>
+<text x="501" y="734" text-anchor="start" font-size="11">output : RailPort</text>
+</svg>

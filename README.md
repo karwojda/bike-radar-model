@@ -13,6 +13,7 @@ realistic. See [PLAN.md](PLAN.md) for why it exists and how it grows.
 | [`model/modes.sysml`](model/modes.sysml) | The operating modes, as a state machine |
 | [`model/analysis.sysml`](model/analysis.sysml) | Radar performance, runtime per operating mode, and the battery trade study |
 | [`model/satisfaction.sysml`](model/satisfaction.sysml) | Which system requirements the rear unit as built claims to satisfy |
+| [`model/bringup.sysml`](model/bringup.sysml) | The bench of dev kits the firmware is brought up on, and the production part each stands in for |
 | [`model/views.sysml`](model/views.sysml) | The Diagrams kept with the Model |
 | [`model/diagrams/style.json`](model/diagrams/style.json) | The Model Style: requirements green, yellow or red by satisfaction |
 
@@ -67,6 +68,10 @@ Exported by `./scripts/check.sh` with the [SysML v2 Viewer](../sysmlv2_egui).
 ### Battery trade study
 
 ![Battery trade study](docs/img/tradeStudy.svg)
+
+### Bench rig
+
+![Bench rig](docs/img/benchRigView.svg)
 
 The operating modes view is a `StateTransitionView`, which the viewer does
 not export yet.
