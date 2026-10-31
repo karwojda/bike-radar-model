@@ -97,10 +97,17 @@ Each slice is reviewed in the viewer before the next starts.
   heavier, so the mass margin is down to about 0.8 g.
 - [x] Slice 7 written. The band trade study, scored on power first and mass
   second, picks the 60 GHz AWRL6432 at 124 mW. 77 GHz draws 168 mW and
-  breaks S6 on the chosen cell; 24 GHz draws 138 mW but is 5 g heavier and
+  breaks S6 on the chosen cell (14.1 h, with the slice 8 losses); 24 GHz draws 138 mW but is 5 g heavier and
   breaks S8. The
   57-64 GHz band's 100 mW e.i.r.p. cap (S16) turns its transmitter down to
   6 dBm, so it reaches about 143 m at the worst-case tilt, 3.5 m past S1. The TI chips' 5 MHz IF caps range at
   200 m with 40 us chirps, and one-sided Doppler is assumed. The new
   `regulatorCoversBurst` is violated on purpose (a 0.96 W burst on a 0.5 W
   regulator), so `./scripts/check.sh` exits 1 until slice 8.
+- [x] Slice 8 written. Raytac AN54L15Q (nRF54L15) for the MCU; nPM1300 for
+  charging at 800 mA (3.1 h, within the relaxed S7), the MCU's 1.8 V rail and
+  the fuel gauge; TPS62088 (1.2 V, 3 A) and TPS62840 (1.8 V, 750 mA) for the
+  radar's rails, against peaks of 1.1 A and 360 mA; TPS61160A driving three
+  LUXEON Rebel reds, three because two would glow from a full cell; C&K KSC
+  button; GCT USB4715 socket. Losses now follow from efficiencies. The unit
+  weighs about 73.1 g, 1.9 g under S8, and `./scripts/check.sh` exits 0.

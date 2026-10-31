@@ -43,10 +43,14 @@ package BikeRadarArchitecture {
         doc /* 3.0 V to 4.2 V from the cell. */
     }
     item def RailPower {
-        doc /* A regulated 3.3 V rail for the radar and the MCU. */
+        doc /* A regulated supply rail: 1.8 V for the MCU and for the radar's
+             * analog and I/O, 1.2 V for the radar's core and RF. */
     }
     item def CellVoltage {
         doc /* The cell voltage, sensed by the MCU to detect an empty battery. */
+    }
+    item def FuelGauge {
+        doc /* The cell's state of charge and health, read by the MCU over I2C. */
     }
     item def ButtonPress {
         doc /* A short or long press of the button. */
@@ -75,6 +79,9 @@ package BikeRadarArchitecture {
     }
     port def CellSensePort {
         out item voltage : CellVoltage;
+    }
+    port def FuelGaugePort {
+        out item reading : FuelGauge;
     }
     port def ButtonPort {
         out item press : ButtonPress;
@@ -105,6 +112,10 @@ package BikeRadarArchitecture {
         attribute activePower : PowerValue;
         attribute processingPower : PowerValue;
         attribute idlePower : PowerValue;
+        attribute ioVoltage : ElectricPotentialDifferenceValue;
+        attribute ioPeakCurrent : ElectricCurrentValue;
+        attribute coreVoltage : ElectricPotentialDifferenceValue;
+        attribute corePeakCurrent : ElectricCurrentValue;
 
         // The band's limits in Europe, from ERC/REC 70-03
         attribute bandMaxEirp : PowerValue;
@@ -172,14 +183,16 @@ package BikeRadarArchitecture {
         attribute speedResolution : SpeedValue default = wavelength / (2 * activeTime);
         port antenna : RadarPort;
         port data : RadarDataPort;
-        port supply : ~RailPort;
+        port ioSupply : ~RailPort;
+        port coreSupply : ~RailPort;
     }
     part def Awrl6432Radar :> RadarModule {
         doc /* TI AWRL6432: a 57-64 GHz radar chip with an Arm Cortex-M4F and a
              * hardware FFT accelerator, so the radar finds the targets itself
              * and hands the MCU detections. Two transmitters, of which one is
-             * used, and three receivers. Its power figures are those of its
-             * industrial twin, the IWRL6432. */
+             * used, and three receivers. Its power figures, and the 1.2 V
+             * rail's peak current, are those of its industrial twin, the
+             * IWRL6432. */
         @Datasheet {
             source = "TI AWRL6432 datasheet SWRS295B; power from IWRL6432 SWRS298A";
             preliminary = false;
@@ -194,6 +207,11 @@ package BikeRadarArchitecture {
         attribute :>> activePower default = 0.96 [W];               // 2 TX, 3 RX
         attribute :>> processingPower default = 0.159 [W];          // the AWRL1432's figure
         attribute :>> idlePower default = 0.011 [W];
+        // Power optimized, 1.8 V I/O: two rails.
+        attribute :>> ioVoltage default = 1.8 [V];
+        attribute :>> ioPeakCurrent default = 0.36 [A];
+        attribute :>> coreVoltage default = 1.2 [V];
+        attribute :>> corePeakCurrent default = 1.1 [A];            // the IWRL6432's figure
         #Assumption attribute :>> boardMass default = 5 [g];
         attribute :>> chirpDuration default = 40e-6 [s];
         attribute :>> chirpsPerFrame default = 221;
@@ -223,7 +241,8 @@ package BikeRadarArchitecture {
              * transmitter and two receivers, and analog IF outputs. It has no
              * ADC and no processor, so a DSP-class MCU (a Cortex-M7) samples
              * the IF and runs the FFTs; its mass and power are counted here,
-             * and the IF bandwidth is what its ADCs are set up for. */
+             * and the IF bandwidth is what its ADCs are set up for. It runs
+             * from a single 3.3 V rail, which was not weighed. */
         @Datasheet {
             source = "Infineon BGT24MTR12 product page and datasheet rev 3.2";
             preliminary = false;
@@ -248,37 +267,59 @@ package BikeRadarArchitecture {
         attribute :>> chirpsPerFrame default = 97;
     }
     part def Mcu {
-        doc /* A microcontroller with Bluetooth Low Energy: tracks vehicles from
-             * the radar's detections, alerts the head unit and runs the modes. */
-        attribute mass : MassValue default = 2 [g];
-        attribute power : PowerValue default = 0.015 [W];
+        doc /* Raytac AN54L15Q: a pre-certified module around Nordic's nRF54L15,
+             * a Cortex-M33 with a radio for Bluetooth Low Energy and ANT. It
+             * tracks vehicles from the radar's detections, alerts the head
+             * unit and runs the modes. The firmware is a Rust application on
+             * Zephyr, in Nordic's nRF Connect SDK: the only place ANT is
+             * offered. */
+        @Datasheet {
+            source = "Raytac AN54L15Q announcement: 9.5 x 13.7 x 2.1 mm";
+            preliminary = false;
+        }
+        #Assumption attribute mass : MassValue default = 1 [g];
+        #Assumption attribute power : PowerValue default = 0.015 [W] {
+            doc /* Tracking at 10 frames a second and a radio link to the
+                 * head unit, averaged. */
+        }
+        #Assumption attribute peakCurrent : ElectricCurrentValue default = 0.02 [A] {
+            doc /* The radio transmitting while the processor runs. */
+        }
         attribute alertLatency : DurationValue default = 0.25 [s];
         attribute maxTrackedVehicles : Natural default = 8;
         port radarData : ~RadarDataPort;
         port ble : BlePort;
         port led : LedControlPort;
         port button : ~ButtonPort;
-        port cellSense : ~CellSensePort;
+        port fuelGauge : ~FuelGaugePort;
         port supply : ~RailPort;
     }
     part def Button {
-        doc /* A sealed push button on the back of the unit. */
+        doc /* C&K KSC: a sealed IP67 tactile switch on the back of the unit. */
         attribute mass : MassValue default = 1 [g];
         port press : ButtonPort;
     }
     part def LedDriver {
-        doc /* A constant-current boost driver for the LED string, fed from the
-             * cell. Its power is what it loses, about a tenth of the LEDs' power. */
+        doc /* TI TPS61160A: a constant-current boost driver for the LED
+             * string, fed from the cell. The string's forward voltage must stay
+             * above the full cell's 4.2 V, or the LEDs glow when the driver is
+             * off; so three red LEDs, not two. */
+        @Datasheet {
+            source = "TI TPS61160A datasheet SLVS937";
+            preliminary = false;
+        }
         attribute mass : MassValue default = 1 [g];
-        attribute dayFlashPower : PowerValue default = 0.01 [W];
-        attribute nightSolidPower : PowerValue default = 0.015 [W];
+        #Assumption attribute efficiency : Real default = 0.85 {
+            doc /* TI quotes up to 90 %, for longer strings than ours. */
+        }
         port control : ~LedControlPort;
         port drive : LedDrivePort;
         port supply : ~CellPort;
     }
     part def RearLeds {
-        doc /* Red high-power LEDs behind a lens. Day flash averages the bright
-             * pulses; night solid is steady at lower brightness. */
+        doc /* Three Lumileds LUXEON Rebel red LEDs in series behind a lens. Day
+             * flash averages the bright pulses; night solid is steady at lower
+             * brightness. */
         attribute mass : MassValue default = 4 [g];
         attribute dayFlashPower : PowerValue default = 0.08 [W];
         attribute nightSolidPower : PowerValue default = 0.12 [W];
@@ -286,14 +327,38 @@ package BikeRadarArchitecture {
         port drive : ~LedDrivePort;
         port light : LightPort;
     }
-    part def Regulator {
-        doc /* A buck-boost converter making 3.3 V from the cell. Its power is
-             * what it loses at the radar's and MCU's load. */
-        attribute mass : MassValue default = 1 [g];
-        attribute power : PowerValue default = 0.015 [W];
-        attribute maxOutputPower : PowerValue default = 0.5 [W];
+    part def BuckRegulator {
+        doc /* A step-down converter making one of the radar's rails from the
+             * cell. The MCU can switch it off with the radar. */
+        attribute outputVoltage : ElectricPotentialDifferenceValue;
+        attribute maxOutputCurrent : ElectricCurrentValue;
+        #Assumption attribute efficiency : Real default = 0.9 {
+            doc /* At the radar's load, averaged over a frame. */
+        }
+        #Assumption attribute mass : MassValue default = 0.5 [g] {
+            doc /* The converter, its inductor and capacitors. */
+        }
         port input : ~CellPort;
         port output : RailPort;
+    }
+    part def RadarCoreBuck :> BuckRegulator {
+        doc /* TI TPS62088: 3 A in a 1.2 mm x 0.8 mm package, 4 uA quiescent,
+             * from 2.4 V to 5.5 V in. */
+        @Datasheet {
+            source = "TI TPS62088 datasheet SLVSD94";
+            preliminary = false;
+        }
+        attribute :>> outputVoltage default = 1.2 [V];
+        attribute :>> maxOutputCurrent default = 3 [A];
+    }
+    part def RadarIoBuck :> BuckRegulator {
+        doc /* TI TPS62840: 750 mA, 60 nA quiescent, from 1.8 V to 6.5 V in. */
+        @Datasheet {
+            source = "TI TPS62840 datasheet SLVSEC6";
+            preliminary = false;
+        }
+        attribute :>> outputVoltage default = 1.8 [V];
+        attribute :>> maxOutputCurrent default = 0.75 [A];
     }
     part def Battery {
         doc /* A single Li-ion cell. Its mass follows from its energy. It must
@@ -335,18 +400,36 @@ package BikeRadarArchitecture {
         attribute :>> specificEnergy default = 240 [W*h/kg];
         attribute :>> coldCapacity default = 0.75;
     }
-    part def Charger {
-        doc /* A Li-ion charge controller fed from USB-C, charging at 1 A, about
-             * 3.7 W into the cell. The constant-voltage phase at the end of a
-             * charge stretches it by about a third. */
-        attribute mass : MassValue default = 1 [g];
-        attribute chargePower : PowerValue default = 3.7 [W];
-        attribute constantVoltageStretch : Real default = 1.3;
+    part def PowerManager {
+        doc /* Nordic nPM1300: a linear Li-ion charger fed from USB-C, which
+             * reads the USB-C CC pins itself; a 1.8 V buck for the MCU; and a
+             * fuel gauge the MCU reads over I2C. Its two bucks give 200 mA
+             * each, too little for the radar, which has bucks of its own. It
+             * charges at 800 mA, so S7 was relaxed to 3.5 h. The constant-
+             * voltage phase at the end of a charge stretches it by about a
+             * third. A discrete 1 A charger would keep a 3 h charge. */
+        @Datasheet {
+            source = "Nordic nPM1300 product brief v1.2";
+            preliminary = false;
+        }
+        #Assumption attribute mass : MassValue default = 1 [g];
+        attribute chargeCurrent : ElectricCurrentValue default = 0.8 [A];
+        #Assumption attribute cellNominalVoltage : ElectricPotentialDifferenceValue default = 3.7 [V];
+        attribute chargePower : PowerValue default = chargeCurrent * cellNominalVoltage;
+        #Assumption attribute constantVoltageStretch : Real default = 1.3;
+        attribute mcuRailVoltage : ElectricPotentialDifferenceValue default = 1.8 [V];
+        attribute mcuRailMaxCurrent : ElectricCurrentValue default = 0.2 [A];
+        #Assumption attribute mcuRailEfficiency : Real default = 0.9;
         port input : UsbCPort;
         port charge : ChargePort;
+        port cell : ~CellPort;
+        port cellSense : ~CellSensePort;
+        port fuelGauge : FuelGaugePort;
+        port mcuRail : RailPort;
     }
     part def UsbCReceptacle {
-        doc /* A sealed USB-C socket, power pins only. */
+        doc /* GCT USB4715: a 6-pin, power-only USB-C socket, IP67 with its
+             * gasket. Its CC pins go to the power manager. */
         attribute mass : MassValue default = 1 [g];
         port plug : UsbCPort;
         port board : ~UsbCPort;
@@ -443,10 +526,11 @@ package BikeRadarArchitecture {
         part button : Button;
         part ledDriver : LedDriver;
         part leds : RearLeds;
-        part regulator : Regulator;
+        part radarCoreBuck : RadarCoreBuck;
+        part radarIoBuck : RadarIoBuck;
         // The cell the battery trade study chose.
         part battery : LowTemperaturePouchCell;
-        part charger : Charger;
+        part powerManager : PowerManager;
         part usbCReceptacle : UsbCReceptacle;
         part enclosure : Enclosure;
         part clamp : SeatpostClamp;
@@ -464,23 +548,27 @@ package BikeRadarArchitecture {
 
         // Control
         flow buttonPress of ButtonPress from button.press.press to mcu.button.press;
-        flow cellVoltage of CellVoltage from battery.sense.voltage to mcu.cellSense.voltage;
+        flow cellVoltage of CellVoltage from battery.sense.voltage to powerManager.cellSense.voltage;
+        flow fuelGauge of FuelGauge from powerManager.fuelGauge.reading to mcu.fuelGauge.reading;
 
         // Light
         flow ledControl of LedControl from mcu.led.pwm to ledDriver.control.pwm;
         flow ledCurrent of LedCurrent from ledDriver.drive.current to leds.drive.current;
 
         // Power
-        flow usbPower of ChargingPower from usbCReceptacle.board.power to charger.input.power;
-        flow chargeCurrent of ChargeCurrent from charger.charge.current to battery.charge.current;
-        flow regulatorSupply of CellPower from battery.supply.power to regulator.input.power;
+        flow usbPower of ChargingPower from usbCReceptacle.board.power to powerManager.input.power;
+        flow chargeCurrent of ChargeCurrent from powerManager.charge.current to battery.charge.current;
+        flow managerSupply of CellPower from battery.supply.power to powerManager.cell.power;
+        flow coreBuckSupply of CellPower from battery.supply.power to radarCoreBuck.input.power;
+        flow ioBuckSupply of CellPower from battery.supply.power to radarIoBuck.input.power;
         flow ledSupply of CellPower from battery.supply.power to ledDriver.supply.power;
-        flow radarSupply of RailPower from regulator.output.power to radarModule.supply.power;
-        flow mcuSupply of RailPower from regulator.output.power to mcu.supply.power;
+        flow radarCoreRail of RailPower from radarCoreBuck.output.power to radarModule.coreSupply.power;
+        flow radarIoRail of RailPower from radarIoBuck.output.power to radarModule.ioSupply.power;
+        flow mcuRail of RailPower from powerManager.mcuRail.power to mcu.supply.power;
 
         // Budgets: the black box's attributes, from the parts' Model Values.
         attribute :>> mass = radarModule.mass + mcu.mass + button.mass + ledDriver.mass
-            + leds.mass + regulator.mass + battery.mass + charger.mass
+            + leds.mass + radarCoreBuck.mass + radarIoBuck.mass + battery.mass + powerManager.mass
             + usbCReceptacle.mass + enclosure.mass + clamp.mass;
         // Judged with the mounting tilted as far as it can be.
         attribute riderSag : PlaneAngleValue default = 2 ['°'] {
@@ -505,28 +593,34 @@ package BikeRadarArchitecture {
         attribute :>> minOperatingTemperature = battery.minDischargeTemperature;
         attribute :>> maxOperatingTemperature = battery.maxDischargeTemperature;
 
-        // Power drawn from the cell in each mode that is on.
-        attribute railPower : PowerValue = radarModule.power + mcu.power;
-        attribute radarOnlyPower : PowerValue = railPower + regulator.power;
-        attribute dayFlashPower : PowerValue =
-            radarOnlyPower + ledDriver.dayFlashPower + leds.dayFlashPower;
-        attribute nightSolidPower : PowerValue =
-            radarOnlyPower + ledDriver.nightSolidPower + leds.nightSolidPower;
+        // Power drawn from the cell in each mode that is on, losses included.
+        // Both radar bucks are taken as equally efficient, so how the radar
+        // splits its power between the rails does not matter.
+        attribute radarOnlyPower : PowerValue =
+            radarModule.power / radarCoreBuck.efficiency + mcu.power / powerManager.mcuRailEfficiency;
+        attribute dayFlashPower : PowerValue = radarOnlyPower + leds.dayFlashPower / ledDriver.efficiency;
+        attribute nightSolidPower : PowerValue = radarOnlyPower + leds.nightSolidPower / ledDriver.efficiency;
 
         // Runtime in each mode on a cold, aged cell, and the time to charge it.
         attribute :>> runtimeDayFlash = Runtime(battery.usableEnergy, dayFlashPower);
         attribute :>> runtimeNightSolid = Runtime(battery.usableEnergy, nightSolidPower);
         attribute :>> chargeTime =
-            Runtime(battery.energy, charger.chargePower) * charger.constantVoltageStretch;
+            Runtime(battery.energy, powerManager.chargePower) * powerManager.constantVoltageStretch;
 
-        assert constraint regulatorWithinRating {
-            doc /* The regulator can supply the radar and the MCU. */
-            railPower <= regulator.maxOutputPower
+        assert constraint railsMatchRadar {
+            doc /* Each radar buck makes the voltage its rail needs. */
+            radarCoreBuck.outputVoltage == radarModule.coreVoltage and
+            radarIoBuck.outputVoltage == radarModule.ioVoltage
         }
-        assert constraint regulatorCoversBurst {
-            doc /* The regulator can supply the radar's chirp burst and the MCU
-             * at once, not just their average over a frame. */
-            radarModule.activePower + mcu.power <= regulator.maxOutputPower
+        assert constraint radarBucksCoverPeak {
+            doc /* Each radar buck supplies its rail's peak current in a chirp
+             * burst, not just the average over a frame. */
+            radarModule.corePeakCurrent <= radarCoreBuck.maxOutputCurrent and
+            radarModule.ioPeakCurrent <= radarIoBuck.maxOutputCurrent
+        }
+        assert constraint mcuRailCoversPeak {
+            doc /* The power manager's buck supplies the MCU at its peak. */
+            mcu.peakCurrent <= powerManager.mcuRailMaxCurrent
         }
         assert constraint alertWithinLatency {
             doc /* A track is confirmed over two radar frames, which must fit in

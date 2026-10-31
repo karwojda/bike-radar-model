@@ -88,9 +88,8 @@ last 16 h of day flash cold and at the end of its life, which made the unit
 88 g against the 75 g of S8. The battery trade study chose a 29 g
 low-temperature pouch cell instead, and the unit now weighs about 74 g. The
 radar trade study chose a 60 GHz radar chip, turned down to the band's
-European limit, which leaves S1 a margin of only 3.5 m. The regulator cannot supply the
-radar's chirp burst, so one constraint is violated until the power chain is
-chosen.
+European limit, which leaves S1 a margin of only 3.5 m. The electronics
+are now real parts, and the unit weighs about 73 g.
 
 ## Open in the viewer
 

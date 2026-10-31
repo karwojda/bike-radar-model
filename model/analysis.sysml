@@ -137,10 +137,10 @@ package BikeRadarAnalysis {
              * S6, S8, S12, S14 or S15, on the cell the battery study chose. */
         in part radar : RadarModule;
         in part unit : RearUnitDesign;
-        attribute dayFlashPower : PowerValue =
-            unit.dayFlashPower - unit.radarModule.power + radar.power;
-        attribute nightSolidPower : PowerValue =
-            unit.nightSolidPower - unit.radarModule.power + radar.power;
+        attribute dayFlashPower : PowerValue = unit.dayFlashPower
+            + (radar.power - unit.radarModule.power) / unit.radarCoreBuck.efficiency;
+        attribute nightSolidPower : PowerValue = unit.nightSolidPower
+            + (radar.power - unit.radarModule.power) / unit.radarCoreBuck.efficiency;
         attribute mass : MassValue = unit.mass - unit.radarModule.mass + radar.mass;
         return : Real =
             if TiltedDetectionRange(radar, radar.designTargetRcs, unit.worstCaseTilt) >= 140 [m]
@@ -170,7 +170,7 @@ package BikeRadarAnalysis {
          * most range for the least power, though under the cap it meets S1
          * by only 3.5 m. The AWRL1432 at 77 GHz may transmit at full power,
          * yet its noisier receiver meets S1 by only 2.6 m, and at 168 mW the
-         * cell runs out after 14.6 h of day flash, short of S6. The 24 GHz
+         * cell runs out after 14.1 h of day flash, short of S6. The 24 GHz
          * BGT24MTR12 draws 138 mW and sees farthest, by 58 m, but its
          * antennas take five times the area and it needs a DSP MCU of its
          * own: 5 g more, and the unit breaks S8.

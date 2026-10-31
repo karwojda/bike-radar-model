@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="623" height="4984" viewBox="0 0 623 4984" font-family="sans-serif">
-<rect x="0" y="0" width="623" height="4984" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="623" height="5080" viewBox="0 0 623 5080" font-family="sans-serif">
+<rect x="0" y="0" width="623" height="5080" fill="#ffffff"/>
 <polygon points="172,117 166,126 172,135 178,126" fill="#000000" stroke="#000000"/>
 <polyline points="172,135 172,3088" fill="none" stroke="#000000"/>
 <polyline points="172,262 196,262" fill="none" stroke="#000000"/>
@@ -18,71 +18,71 @@
 <polyline points="172,2719 196,2719" fill="none" stroke="#000000"/>
 <polyline points="172,2918.5 196,2918.5" fill="none" stroke="#000000"/>
 <polyline points="172,3088 196,3088" fill="none" stroke="#000000"/>
-<polyline points="174.34,3223 182,368 196,360.21" fill="none" stroke="#000000"/>
+<polyline points="174.43,3223 182,368 196,360.21" fill="none" stroke="#000000"/>
 <polyline points="187.66,374.01 196,360.21 179.88,360.03" fill="none" stroke="#000000"/>
 <text x="176" y="371.67" text-anchor="end" font-size="11">«satisfy» ✓</text>
-<polyline points="188.34,3223 182,544 196,537.71" fill="none" stroke="#000000"/>
+<polyline points="188.43,3223 182,544 196,537.71" fill="none" stroke="#000000"/>
 <polyline points="186.51,550.74 196,537.71 179.95,536.15" fill="none" stroke="#000000"/>
 <text x="176" y="547.67" text-anchor="end" font-size="11">«satisfy» ✓</text>
-<polyline points="202.34,3223 182,704 196,698.66" fill="none" stroke="#000000"/>
+<polyline points="202.43,3223 182,704 196,698.66" fill="none" stroke="#000000"/>
 <polyline points="185.77,711.12 196,698.66 180.07,696.17" fill="none" stroke="#000000"/>
 <text x="176" y="707.67" text-anchor="end" font-size="11">«satisfy» ✓</text>
-<polyline points="244.34,3223 182,1279 196,1271.72" fill="none" stroke="#000000"/>
+<polyline points="244.43,3223 182,1279 196,1271.72" fill="none" stroke="#000000"/>
 <polyline points="187.27,1285.28 196,1271.72 179.89,1271.08" fill="none" stroke="#000000"/>
 <text x="176" y="1282.67" text-anchor="end" font-size="11">«satisfy» ✓</text>
-<polyline points="216.34,3223 182,880 196,874.2" fill="none" stroke="#000000"/>
+<polyline points="216.43,3223 182,880 196,874.2" fill="none" stroke="#000000"/>
 <polyline points="186.13,886.95 196,874.2 180,872.17" fill="none" stroke="#000000"/>
 <text x="176" y="883.67" text-anchor="end" font-size="11">«satisfy» ✓</text>
-<polyline points="230.34,3223 182,1072 196,1065.64" fill="none" stroke="#000000"/>
+<polyline points="230.43,3223 182,1072 196,1065.64" fill="none" stroke="#000000"/>
 <polyline points="186.57,1078.71 196,1065.64 179.94,1064.15" fill="none" stroke="#000000"/>
 <text x="176" y="1075.67" text-anchor="end" font-size="11">«satisfy» ✓</text>
-<polyline points="258.34,3223 182,1633 196,1626.88" fill="none" stroke="#000000"/>
+<polyline points="258.43,3223 182,1633 196,1626.88" fill="none" stroke="#000000"/>
 <polyline points="186.37,1639.82 196,1626.88 179.97,1625.16" fill="none" stroke="#000000"/>
 <text x="176" y="1636.67" text-anchor="end" font-size="11">«satisfy» ✓</text>
-<polyline points="314.34,3223 182,2369 196,2362.92" fill="none" stroke="#000000"/>
+<polyline points="314.43,3223 182,2369 196,2362.92" fill="none" stroke="#000000"/>
 <polyline points="186.34,2375.84 196,2362.92 179.97,2361.16" fill="none" stroke="#000000"/>
 <text x="176" y="2372.67" text-anchor="end" font-size="11">«satisfy» ✓</text>
 <polyline points="322,3223 182,2577 196,2569.31" fill="none" stroke="#000000"/>
 <polyline points="187.58,2583.06 196,2569.31 179.88,2569.04" fill="none" stroke="#000000"/>
 <text x="176" y="2580.67" text-anchor="end" font-size="11">«satisfy» ✓</text>
-<polyline points="272.34,3223 182,1825 196,1818.76" fill="none" stroke="#000000"/>
+<polyline points="272.43,3223 182,1825 196,1818.76" fill="none" stroke="#000000"/>
 <polyline points="186.47,1831.77 196,1818.76 179.96,1817.15" fill="none" stroke="#000000"/>
 <text x="176" y="1828.67" text-anchor="end" font-size="11">«satisfy» ✓</text>
-<polyline points="286.34,3223 182,2001 196,1995.08" fill="none" stroke="#000000"/>
+<polyline points="286.43,3223 182,2001 196,1995.08" fill="none" stroke="#000000"/>
 <polyline points="186.22,2007.9 196,1995.08 179.99,1993.16" fill="none" stroke="#000000"/>
 <text x="176" y="2004.67" text-anchor="end" font-size="11">«satisfy» ✓</text>
-<polyline points="300.34,3223 182,2209 196,2201.36" fill="none" stroke="#000000"/>
+<polyline points="300.43,3223 182,2209 196,2201.36" fill="none" stroke="#000000"/>
 <polyline points="187.55,2215.09 196,2201.36 179.88,2201.04" fill="none" stroke="#000000"/>
 <text x="176" y="2212.67" text-anchor="end" font-size="11">«satisfy» ✓</text>
-<polyline points="322,3430.53 377.78,3184" fill="none" stroke="#000000"/>
-<polyline points="382.49,3199.42 377.78,3184 366.89,3195.89" fill="none" stroke="#000000"/>
-<text x="355.89" y="3310.93" text-anchor="start" font-size="11">«satisfy» ✓</text>
+<polyline points="322,3446.88 378.77,3184" fill="none" stroke="#000000"/>
+<polyline points="383.63,3199.37 378.77,3184 367.99,3196" fill="none" stroke="#000000"/>
+<text x="356.38" y="3319.11" text-anchor="start" font-size="11">«satisfy» ✓</text>
 <polyline points="322,3223 182,2848 196,2838.69" fill="none" stroke="#000000"/>
 <polyline points="188.77,2853.1 196,2838.69 179.91,2839.78" fill="none" stroke="#000000"/>
 <text x="176" y="2851.67" text-anchor="end" font-size="11">«satisfy» ✓</text>
-<rect x="22" y="3223" width="300" height="1741" rx="10" fill="#ffffff" stroke="#000000"/>
+<rect x="22" y="3223" width="300" height="1837" rx="10" fill="#ffffff" stroke="#000000"/>
 <text x="172" y="3245" text-anchor="middle" font-size="12">«part»</text>
 <text x="172" y="3263" text-anchor="middle" font-size="14">rearUnit:RearUnitDesign</text>
 <polyline points="22,3273 322,3273" fill="none" stroke="#000000"/>
 <text x="172" y="3294" text-anchor="middle" font-size="11" font-style="italic">attributes</text>
 <text x="32" y="3310" text-anchor="start" font-size="12" font-style="italic">^alertLatency = mcu.alertLatency</text>
 <text x="32" y="3326" text-anchor="start" font-size="12" font-style="italic">^chargeTime = Runtime(battery.energy,</text>
-<text x="32" y="3342" text-anchor="start" font-size="12">  charger.chargePower) *</text>
-<text x="32" y="3358" text-anchor="start" font-size="12">  charger.constantVoltageStretch</text>
+<text x="32" y="3342" text-anchor="start" font-size="12">  powerManager.chargePower) *</text>
+<text x="32" y="3358" text-anchor="start" font-size="12">  powerManager.constantVoltageStretch</text>
 <text x="32" y="3374" text-anchor="start" font-size="12" font-style="italic">^dayFlashPower:PowerValue =</text>
-<text x="32" y="3390" text-anchor="start" font-size="12">  radarOnlyPower +</text>
-<text x="32" y="3406" text-anchor="start" font-size="12">  ledDriver.dayFlashPower +</text>
-<text x="32" y="3422" text-anchor="start" font-size="12">  leds.dayFlashPower</text>
-<text x="32" y="3438" text-anchor="start" font-size="12" font-style="italic">^daylightVisibility =</text>
-<text x="32" y="3454" text-anchor="start" font-size="12">  leds.daylightVisibility</text>
-<text x="32" y="3470" text-anchor="start" font-size="12" font-style="italic">^detectionRange =</text>
-<text x="32" y="3486" text-anchor="start" font-size="12">  TiltedDetectionRange(radarModule,</text>
-<text x="32" y="3502" text-anchor="start" font-size="12">  radarModule.designTargetRcs,</text>
-<text x="32" y="3518" text-anchor="start" font-size="12">  worstCaseTilt)</text>
-<text x="32" y="3534" text-anchor="start" font-size="12" font-style="italic">^mass = radarModule.mass + mcu.mass +</text>
-<text x="32" y="3550" text-anchor="start" font-size="12">  button.mass + ledDriver.mass +</text>
-<text x="32" y="3566" text-anchor="start" font-size="12">  leds.mass + regulator.mass +</text>
-<text x="32" y="3582" text-anchor="start" font-size="12">  battery.mass + charger.mass +</text>
+<text x="32" y="3390" text-anchor="start" font-size="12">  radarOnlyPower + leds.dayFlashPower /</text>
+<text x="32" y="3406" text-anchor="start" font-size="12">  ledDriver.efficiency</text>
+<text x="32" y="3422" text-anchor="start" font-size="12" font-style="italic">^daylightVisibility =</text>
+<text x="32" y="3438" text-anchor="start" font-size="12">  leds.daylightVisibility</text>
+<text x="32" y="3454" text-anchor="start" font-size="12" font-style="italic">^detectionRange =</text>
+<text x="32" y="3470" text-anchor="start" font-size="12">  TiltedDetectionRange(radarModule,</text>
+<text x="32" y="3486" text-anchor="start" font-size="12">  radarModule.designTargetRcs,</text>
+<text x="32" y="3502" text-anchor="start" font-size="12">  worstCaseTilt)</text>
+<text x="32" y="3518" text-anchor="start" font-size="12" font-style="italic">^mass = radarModule.mass + mcu.mass +</text>
+<text x="32" y="3534" text-anchor="start" font-size="12">  button.mass + ledDriver.mass +</text>
+<text x="32" y="3550" text-anchor="start" font-size="12">  leds.mass + radarCoreBuck.mass +</text>
+<text x="32" y="3566" text-anchor="start" font-size="12">  radarIoBuck.mass + battery.mass +</text>
+<text x="32" y="3582" text-anchor="start" font-size="12">  powerManager.mass +</text>
 <text x="32" y="3598" text-anchor="start" font-size="12">  usbCReceptacle.mass + enclosure.mass +</text>
 <text x="32" y="3614" text-anchor="start" font-size="12">  clamp.mass</text>
 <text x="32" y="3630" text-anchor="start" font-size="12" font-style="italic">^maxClosingSpeed =</text>
@@ -96,79 +96,85 @@
 <text x="32" y="3758" text-anchor="start" font-size="12">  battery.minDischargeTemperature</text>
 <text x="32" y="3774" text-anchor="start" font-size="12" font-style="italic">^minSeatpostDiameter = clamp.minDiameter</text>
 <text x="32" y="3790" text-anchor="start" font-size="12" font-style="italic">^nightSolidPower:PowerValue =</text>
-<text x="32" y="3806" text-anchor="start" font-size="12">  radarOnlyPower +</text>
-<text x="32" y="3822" text-anchor="start" font-size="12">  ledDriver.nightSolidPower +</text>
-<text x="32" y="3838" text-anchor="start" font-size="12">  leds.nightSolidPower</text>
-<text x="32" y="3854" text-anchor="start" font-size="12" font-style="italic">^radarEirp = radarModule.eirp</text>
-<text x="32" y="3870" text-anchor="start" font-size="12" font-style="italic">^radarMaxEirp = radarModule.bandMaxEirp</text>
-<text x="32" y="3886" text-anchor="start" font-size="12" font-style="italic">^radarMaxOutputPower =</text>
-<text x="32" y="3902" text-anchor="start" font-size="12">  radarModule.bandMaxOutputPower</text>
-<text x="32" y="3918" text-anchor="start" font-size="12" font-style="italic">^radarOnlyPower:PowerValue = railPower +</text>
-<text x="32" y="3934" text-anchor="start" font-size="12">  regulator.power</text>
-<text x="32" y="3950" text-anchor="start" font-size="12" font-style="italic">^radarOutputPower = radarModule.txPower</text>
-<text x="32" y="3966" text-anchor="start" font-size="12" font-style="italic">^railPower:PowerValue =</text>
-<text x="32" y="3982" text-anchor="start" font-size="12">  radarModule.power + mcu.power</text>
-<text x="32" y="3998" text-anchor="start" font-size="12" font-style="italic">^rangeResolution =</text>
-<text x="32" y="4014" text-anchor="start" font-size="12">  radarModule.rangeResolution</text>
-<text x="32" y="4030" text-anchor="start" font-size="12" font-style="italic">^riderSag:AngularMeasureValue default</text>
-<text x="32" y="4046" text-anchor="start" font-size="12">  2 ['°']</text>
-<text x="32" y="4062" text-anchor="start" font-size="12" font-style="italic">^runtimeDayFlash =</text>
-<text x="32" y="4078" text-anchor="start" font-size="12">  Runtime(battery.usableEnergy,</text>
-<text x="32" y="4094" text-anchor="start" font-size="12">  dayFlashPower)</text>
-<text x="32" y="4110" text-anchor="start" font-size="12" font-style="italic">^runtimeNightSolid =</text>
-<text x="32" y="4126" text-anchor="start" font-size="12">  Runtime(battery.usableEnergy,</text>
-<text x="32" y="4142" text-anchor="start" font-size="12">  nightSolidPower)</text>
-<text x="32" y="4158" text-anchor="start" font-size="12" font-style="italic">^speedResolution =</text>
-<text x="32" y="4174" text-anchor="start" font-size="12">  radarModule.speedResolution</text>
-<text x="32" y="4190" text-anchor="start" font-size="12" font-style="italic">^worstCaseTilt:AngularMeasureValue =</text>
-<text x="32" y="4206" text-anchor="start" font-size="12">  clamp.aimError + clamp.slipAngle +</text>
-<text x="32" y="4222" text-anchor="start" font-size="12">  riderSag</text>
-<polyline points="22,4232 322,4232" fill="none" stroke="#000000"/>
-<text x="172" y="4253" text-anchor="middle" font-size="11" font-style="italic">assert constraints</text>
-<text x="32" y="4269" text-anchor="start" font-size="12" font-style="italic">^{2 * radarModule.framePeriod &lt;=</text>
-<text x="32" y="4285" text-anchor="start" font-size="12">  mcu.alertLatency} ✓</text>
-<text x="32" y="4301" text-anchor="start" font-size="12" font-style="italic">^{nightSolidPower &lt;=</text>
-<text x="32" y="4317" text-anchor="start" font-size="12">  battery.maxDischargePower} ✓</text>
-<text x="32" y="4333" text-anchor="start" font-size="12" font-style="italic">^{radarModule.activePower + mcu.power &lt;=</text>
-<text x="32" y="4349" text-anchor="start" font-size="12">  regulator.maxOutputPower} ✗</text>
-<text x="32" y="4365" text-anchor="start" font-size="12" font-style="italic">^{railPower &lt;=</text>
-<text x="32" y="4381" text-anchor="start" font-size="12">  regulator.maxOutputPower} ✓</text>
-<polyline points="22,4391 322,4391" fill="none" stroke="#000000"/>
-<text x="172" y="4412" text-anchor="middle" font-size="11" font-style="italic">ports</text>
-<text x="32" y="4428" text-anchor="start" font-size="12" font-style="italic">^ble:BlePort</text>
-<text x="32" y="4444" text-anchor="start" font-size="12" font-style="italic">^mount:SeatpostMount</text>
-<text x="32" y="4460" text-anchor="start" font-size="12" font-style="italic">^radar:RadarPort</text>
-<text x="32" y="4476" text-anchor="start" font-size="12" font-style="italic">^rearLight:LightPort</text>
-<text x="32" y="4492" text-anchor="start" font-size="12" font-style="italic">^usbC:UsbCPort</text>
-<polyline points="22,4502 322,4502" fill="none" stroke="#000000"/>
-<text x="172" y="4523" text-anchor="middle" font-size="11" font-style="italic">parts</text>
-<text x="32" y="4539" text-anchor="start" font-size="12" font-style="italic">^battery:LowTemperaturePouchCell</text>
-<text x="32" y="4555" text-anchor="start" font-size="12" font-style="italic">^button:Button</text>
-<text x="32" y="4571" text-anchor="start" font-size="12" font-style="italic">^charger:Charger</text>
-<text x="32" y="4587" text-anchor="start" font-size="12" font-style="italic">^clamp:SeatpostClamp</text>
-<text x="32" y="4603" text-anchor="start" font-size="12" font-style="italic">^enclosure:Enclosure</text>
-<text x="32" y="4619" text-anchor="start" font-size="12" font-style="italic">^ledDriver:LedDriver</text>
-<text x="32" y="4635" text-anchor="start" font-size="12" font-style="italic">^leds:RearLeds</text>
-<text x="32" y="4651" text-anchor="start" font-size="12" font-style="italic">^mcu:Mcu</text>
-<text x="32" y="4667" text-anchor="start" font-size="12" font-style="italic">^radarModule:Awrl6432Radar</text>
-<text x="32" y="4683" text-anchor="start" font-size="12" font-style="italic">^regulator:Regulator</text>
-<text x="32" y="4699" text-anchor="start" font-size="12" font-style="italic">^usbCReceptacle:UsbCReceptacle</text>
-<polyline points="22,4709 322,4709" fill="none" stroke="#000000"/>
-<text x="172" y="4730" text-anchor="middle" font-size="11" font-style="italic">requirements</text>
-<text x="32" y="4746" text-anchor="start" font-size="12">satisfy detectionRange ✓</text>
-<text x="32" y="4762" text-anchor="start" font-size="12">satisfy alertLatency ✓</text>
-<text x="32" y="4778" text-anchor="start" font-size="12">satisfy trackedVehicles ✓</text>
-<text x="32" y="4794" text-anchor="start" font-size="12">satisfy closingSpeed ✓</text>
-<text x="32" y="4810" text-anchor="start" font-size="12">satisfy rangeResolution ✓</text>
-<text x="32" y="4826" text-anchor="start" font-size="12">satisfy speedResolution ✓</text>
-<text x="32" y="4842" text-anchor="start" font-size="12">satisfy daylightVisibility ✓</text>
-<text x="32" y="4858" text-anchor="start" font-size="12">satisfy totalMass ✓</text>
-<text x="32" y="4874" text-anchor="start" font-size="12">satisfy seatpostFit ✓</text>
-<text x="32" y="4890" text-anchor="start" font-size="12">satisfy runtimeNightSolid ✓</text>
-<text x="32" y="4906" text-anchor="start" font-size="12">satisfy runtimeDayFlash ✓</text>
-<text x="32" y="4922" text-anchor="start" font-size="12">satisfy chargeTime ✓</text>
-<text x="32" y="4938" text-anchor="start" font-size="12">satisfy operatingTemperature ✓</text>
-<text x="32" y="4954" text-anchor="start" font-size="12">satisfy radioEmissions ✓</text>
+<text x="32" y="3806" text-anchor="start" font-size="12">  radarOnlyPower + leds.nightSolidPower</text>
+<text x="32" y="3822" text-anchor="start" font-size="12">  / ledDriver.efficiency</text>
+<text x="32" y="3838" text-anchor="start" font-size="12" font-style="italic">^radarEirp = radarModule.eirp</text>
+<text x="32" y="3854" text-anchor="start" font-size="12" font-style="italic">^radarMaxEirp = radarModule.bandMaxEirp</text>
+<text x="32" y="3870" text-anchor="start" font-size="12" font-style="italic">^radarMaxOutputPower =</text>
+<text x="32" y="3886" text-anchor="start" font-size="12">  radarModule.bandMaxOutputPower</text>
+<text x="32" y="3902" text-anchor="start" font-size="12" font-style="italic">^radarOnlyPower:PowerValue =</text>
+<text x="32" y="3918" text-anchor="start" font-size="12">  radarModule.power /</text>
+<text x="32" y="3934" text-anchor="start" font-size="12">  radarCoreBuck.efficiency + mcu.power /</text>
+<text x="32" y="3950" text-anchor="start" font-size="12">  powerManager.mcuRailEfficiency</text>
+<text x="32" y="3966" text-anchor="start" font-size="12" font-style="italic">^radarOutputPower = radarModule.txPower</text>
+<text x="32" y="3982" text-anchor="start" font-size="12" font-style="italic">^rangeResolution =</text>
+<text x="32" y="3998" text-anchor="start" font-size="12">  radarModule.rangeResolution</text>
+<text x="32" y="4014" text-anchor="start" font-size="12" font-style="italic">^riderSag:AngularMeasureValue default</text>
+<text x="32" y="4030" text-anchor="start" font-size="12">  2 ['°']</text>
+<text x="32" y="4046" text-anchor="start" font-size="12" font-style="italic">^runtimeDayFlash =</text>
+<text x="32" y="4062" text-anchor="start" font-size="12">  Runtime(battery.usableEnergy,</text>
+<text x="32" y="4078" text-anchor="start" font-size="12">  dayFlashPower)</text>
+<text x="32" y="4094" text-anchor="start" font-size="12" font-style="italic">^runtimeNightSolid =</text>
+<text x="32" y="4110" text-anchor="start" font-size="12">  Runtime(battery.usableEnergy,</text>
+<text x="32" y="4126" text-anchor="start" font-size="12">  nightSolidPower)</text>
+<text x="32" y="4142" text-anchor="start" font-size="12" font-style="italic">^speedResolution =</text>
+<text x="32" y="4158" text-anchor="start" font-size="12">  radarModule.speedResolution</text>
+<text x="32" y="4174" text-anchor="start" font-size="12" font-style="italic">^worstCaseTilt:AngularMeasureValue =</text>
+<text x="32" y="4190" text-anchor="start" font-size="12">  clamp.aimError + clamp.slipAngle +</text>
+<text x="32" y="4206" text-anchor="start" font-size="12">  riderSag</text>
+<polyline points="22,4216 322,4216" fill="none" stroke="#000000"/>
+<text x="172" y="4237" text-anchor="middle" font-size="11" font-style="italic">assert constraints</text>
+<text x="32" y="4253" text-anchor="start" font-size="12" font-style="italic">^{2 * radarModule.framePeriod &lt;=</text>
+<text x="32" y="4269" text-anchor="start" font-size="12">  mcu.alertLatency} ✓</text>
+<text x="32" y="4285" text-anchor="start" font-size="12" font-style="italic">^{nightSolidPower &lt;=</text>
+<text x="32" y="4301" text-anchor="start" font-size="12">  battery.maxDischargePower} ✓</text>
+<text x="32" y="4317" text-anchor="start" font-size="12" font-style="italic">^{mcu.peakCurrent &lt;=</text>
+<text x="32" y="4333" text-anchor="start" font-size="12">  powerManager.mcuRailMaxCurrent} ✓</text>
+<text x="32" y="4349" text-anchor="start" font-size="12" font-style="italic">^{radarModule.corePeakCurrent &lt;=</text>
+<text x="32" y="4365" text-anchor="start" font-size="12">  radarCoreBuck.maxOutputCurrent and</text>
+<text x="32" y="4381" text-anchor="start" font-size="12">  radarModule.ioPeakCurrent &lt;=</text>
+<text x="32" y="4397" text-anchor="start" font-size="12">  radarIoBuck.maxOutputCurrent} ✓</text>
+<text x="32" y="4413" text-anchor="start" font-size="12" font-style="italic">^{radarCoreBuck.outputVoltage ==</text>
+<text x="32" y="4429" text-anchor="start" font-size="12">  radarModule.coreVoltage and</text>
+<text x="32" y="4445" text-anchor="start" font-size="12">  radarIoBuck.outputVoltage ==</text>
+<text x="32" y="4461" text-anchor="start" font-size="12">  radarModule.ioVoltage} ✓</text>
+<polyline points="22,4471 322,4471" fill="none" stroke="#000000"/>
+<text x="172" y="4492" text-anchor="middle" font-size="11" font-style="italic">ports</text>
+<text x="32" y="4508" text-anchor="start" font-size="12" font-style="italic">^ble:BlePort</text>
+<text x="32" y="4524" text-anchor="start" font-size="12" font-style="italic">^mount:SeatpostMount</text>
+<text x="32" y="4540" text-anchor="start" font-size="12" font-style="italic">^radar:RadarPort</text>
+<text x="32" y="4556" text-anchor="start" font-size="12" font-style="italic">^rearLight:LightPort</text>
+<text x="32" y="4572" text-anchor="start" font-size="12" font-style="italic">^usbC:UsbCPort</text>
+<polyline points="22,4582 322,4582" fill="none" stroke="#000000"/>
+<text x="172" y="4603" text-anchor="middle" font-size="11" font-style="italic">parts</text>
+<text x="32" y="4619" text-anchor="start" font-size="12" font-style="italic">^battery:LowTemperaturePouchCell</text>
+<text x="32" y="4635" text-anchor="start" font-size="12" font-style="italic">^button:Button</text>
+<text x="32" y="4651" text-anchor="start" font-size="12" font-style="italic">^clamp:SeatpostClamp</text>
+<text x="32" y="4667" text-anchor="start" font-size="12" font-style="italic">^enclosure:Enclosure</text>
+<text x="32" y="4683" text-anchor="start" font-size="12" font-style="italic">^ledDriver:LedDriver</text>
+<text x="32" y="4699" text-anchor="start" font-size="12" font-style="italic">^leds:RearLeds</text>
+<text x="32" y="4715" text-anchor="start" font-size="12" font-style="italic">^mcu:Mcu</text>
+<text x="32" y="4731" text-anchor="start" font-size="12" font-style="italic">^powerManager:PowerManager</text>
+<text x="32" y="4747" text-anchor="start" font-size="12" font-style="italic">^radarCoreBuck:RadarCoreBuck</text>
+<text x="32" y="4763" text-anchor="start" font-size="12" font-style="italic">^radarIoBuck:RadarIoBuck</text>
+<text x="32" y="4779" text-anchor="start" font-size="12" font-style="italic">^radarModule:Awrl6432Radar</text>
+<text x="32" y="4795" text-anchor="start" font-size="12" font-style="italic">^usbCReceptacle:UsbCReceptacle</text>
+<polyline points="22,4805 322,4805" fill="none" stroke="#000000"/>
+<text x="172" y="4826" text-anchor="middle" font-size="11" font-style="italic">requirements</text>
+<text x="32" y="4842" text-anchor="start" font-size="12">satisfy detectionRange ✓</text>
+<text x="32" y="4858" text-anchor="start" font-size="12">satisfy alertLatency ✓</text>
+<text x="32" y="4874" text-anchor="start" font-size="12">satisfy trackedVehicles ✓</text>
+<text x="32" y="4890" text-anchor="start" font-size="12">satisfy closingSpeed ✓</text>
+<text x="32" y="4906" text-anchor="start" font-size="12">satisfy rangeResolution ✓</text>
+<text x="32" y="4922" text-anchor="start" font-size="12">satisfy speedResolution ✓</text>
+<text x="32" y="4938" text-anchor="start" font-size="12">satisfy daylightVisibility ✓</text>
+<text x="32" y="4954" text-anchor="start" font-size="12">satisfy totalMass ✓</text>
+<text x="32" y="4970" text-anchor="start" font-size="12">satisfy seatpostFit ✓</text>
+<text x="32" y="4986" text-anchor="start" font-size="12">satisfy runtimeNightSolid ✓</text>
+<text x="32" y="5002" text-anchor="start" font-size="12">satisfy runtimeDayFlash ✓</text>
+<text x="32" y="5018" text-anchor="start" font-size="12">satisfy chargeTime ✓</text>
+<text x="32" y="5034" text-anchor="start" font-size="12">satisfy operatingTemperature ✓</text>
+<text x="32" y="5050" text-anchor="start" font-size="12">satisfy radioEmissions ✓</text>
 <rect x="20" y="20" width="304" height="97" rx="10" fill="#ffffff" stroke="#000000"/>
 <text x="172" y="42" text-anchor="middle" font-size="12">«requirement»</text>
 <text x="172" y="60" text-anchor="middle" font-size="14">systemSpec:SystemRequirement</text>

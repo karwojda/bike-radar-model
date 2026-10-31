@@ -23,7 +23,7 @@ package BikeRadarModes {
         entry; then off;
 
         state off {
-            doc /* Everything is off except the button and the charger. */
+            doc /* Everything is off except the button and the power manager. */
         }
 
         state on {

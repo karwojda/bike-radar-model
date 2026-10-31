@@ -1,48 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="617" height="1974" viewBox="0 0 617 1974" font-family="sans-serif">
-<rect x="0" y="0" width="617" height="1974" fill="#ffffff"/>
-<polyline points="163.46,1356 176.76,1284" fill="none" stroke="#000000" stroke-dasharray="6 4"/>
-<polyline points="182.08,1299.22 176.76,1284 166.35,1296.31" fill="none" stroke="#000000"/>
-<text x="176.11" y="1323.67" text-anchor="start" font-size="11">«subject»</text>
-<polyline points="425.72,1324 417.85,1284" fill="none" stroke="#000000" stroke-dasharray="6 4"/>
-<polyline points="428.4,1296.19 417.85,1284 412.7,1299.28" fill="none" stroke="#000000"/>
-<text x="427.78" y="1307.67" text-anchor="start" font-size="11">«subject»</text>
-<rect x="20" y="1356" width="240" height="254" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="140" y="1378" text-anchor="middle" font-size="12">«analysis»</text>
-<text x="140" y="1396" text-anchor="middle" font-size="14">worstCaseTiltRange:TiltRange</text>
-<polyline points="20,1406 260,1406" fill="none" stroke="#000000"/>
-<text x="140" y="1427" text-anchor="middle" font-size="11" font-style="italic">subject</text>
-<text x="30" y="1443" text-anchor="start" font-size="12">radar = rearUnit.radarModule</text>
-<polyline points="20,1453 260,1453" fill="none" stroke="#000000"/>
-<text x="140" y="1474" text-anchor="middle" font-size="11" font-style="italic">parameters</text>
-<text x="30" y="1490" text-anchor="start" font-size="12">in tilt = rearUnit.worstCaseTilt</text>
-<polyline points="20,1500 260,1500" fill="none" stroke="#000000"/>
-<text x="140" y="1521" text-anchor="middle" font-size="11" font-style="italic">results</text>
-<text x="30" y="1537" text-anchor="start" font-size="12">return range:LengthValue =</text>
-<text x="30" y="1553" text-anchor="start" font-size="12">  143.4507256810789 [m]</text>
-<polyline points="20,1563 260,1563" fill="none" stroke="#000000"/>
-<text x="140" y="1584" text-anchor="middle" font-size="11" font-style="italic">attributes</text>
-<text x="30" y="1600" text-anchor="start" font-size="12">in tilt = rearUnit.worstCaseTilt</text>
-<rect x="317" y="1324" width="280" height="318" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="457" y="1346" text-anchor="middle" font-size="12">«analysis»</text>
-<text x="457" y="1364" text-anchor="middle" font-size="14">likelyTiltRange:TiltRange</text>
-<polyline points="317,1374 597,1374" fill="none" stroke="#000000"/>
-<text x="457" y="1395" text-anchor="middle" font-size="11" font-style="italic">subject</text>
-<text x="327" y="1411" text-anchor="start" font-size="12">radar = rearUnit.radarModule</text>
-<polyline points="317,1421 597,1421" fill="none" stroke="#000000"/>
-<text x="457" y="1442" text-anchor="middle" font-size="11" font-style="italic">parameters</text>
-<text x="327" y="1458" text-anchor="start" font-size="12">in tilt = (rearUnit.clamp.aimError **</text>
-<text x="327" y="1474" text-anchor="start" font-size="12">  2 + rearUnit.clamp.slipAngle ** 2 +</text>
-<text x="327" y="1490" text-anchor="start" font-size="12">  rearUnit.riderSag ** 2) ** 0.5</text>
-<polyline points="317,1500 597,1500" fill="none" stroke="#000000"/>
-<text x="457" y="1521" text-anchor="middle" font-size="11" font-style="italic">results</text>
-<text x="327" y="1537" text-anchor="start" font-size="12">return range:LengthValue =</text>
-<text x="327" y="1553" text-anchor="start" font-size="12">  147.6115147575925 [m]</text>
-<polyline points="317,1563 597,1563" fill="none" stroke="#000000"/>
-<text x="457" y="1584" text-anchor="middle" font-size="11" font-style="italic">attributes</text>
-<text x="327" y="1600" text-anchor="start" font-size="12">in tilt = (rearUnit.clamp.aimError **</text>
-<text x="327" y="1616" text-anchor="start" font-size="12">  2 + rearUnit.clamp.slipAngle ** 2 +</text>
-<text x="327" y="1632" text-anchor="start" font-size="12">  rearUnit.riderSag ** 2) ** 0.5</text>
-<rect x="147" y="20" width="293" height="1264" rx="10" fill="#ffffff" stroke="#000000"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="617" height="2054" viewBox="0 0 617 2054" font-family="sans-serif">
+<rect x="0" y="0" width="617" height="2054" fill="#ffffff"/>
+<polyline points="162.38,1436 175.07,1364" fill="none" stroke="#000000" stroke-dasharray="6 4"/>
+<polyline points="180.52,1379.18 175.07,1364 164.76,1376.4" fill="none" stroke="#000000"/>
+<text x="174.73" y="1403.67" text-anchor="start" font-size="11">«subject»</text>
+<polyline points="427.15,1404 419.64,1364" fill="none" stroke="#000000" stroke-dasharray="6 4"/>
+<polyline points="430.09,1376.28 419.64,1364 414.36,1379.24" fill="none" stroke="#000000"/>
+<text x="429.4" y="1387.67" text-anchor="start" font-size="11">«subject»</text>
+<rect x="20" y="1436" width="240" height="254" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="140" y="1458" text-anchor="middle" font-size="12">«analysis»</text>
+<text x="140" y="1476" text-anchor="middle" font-size="14">worstCaseTiltRange:TiltRange</text>
+<polyline points="20,1486 260,1486" fill="none" stroke="#000000"/>
+<text x="140" y="1507" text-anchor="middle" font-size="11" font-style="italic">subject</text>
+<text x="30" y="1523" text-anchor="start" font-size="12">radar = rearUnit.radarModule</text>
+<polyline points="20,1533 260,1533" fill="none" stroke="#000000"/>
+<text x="140" y="1554" text-anchor="middle" font-size="11" font-style="italic">parameters</text>
+<text x="30" y="1570" text-anchor="start" font-size="12">in tilt = rearUnit.worstCaseTilt</text>
+<polyline points="20,1580 260,1580" fill="none" stroke="#000000"/>
+<text x="140" y="1601" text-anchor="middle" font-size="11" font-style="italic">results</text>
+<text x="30" y="1617" text-anchor="start" font-size="12">return range:LengthValue =</text>
+<text x="30" y="1633" text-anchor="start" font-size="12">  143.4507256810789 [m]</text>
+<polyline points="20,1643 260,1643" fill="none" stroke="#000000"/>
+<text x="140" y="1664" text-anchor="middle" font-size="11" font-style="italic">attributes</text>
+<text x="30" y="1680" text-anchor="start" font-size="12">in tilt = rearUnit.worstCaseTilt</text>
+<rect x="317" y="1404" width="280" height="318" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="457" y="1426" text-anchor="middle" font-size="12">«analysis»</text>
+<text x="457" y="1444" text-anchor="middle" font-size="14">likelyTiltRange:TiltRange</text>
+<polyline points="317,1454 597,1454" fill="none" stroke="#000000"/>
+<text x="457" y="1475" text-anchor="middle" font-size="11" font-style="italic">subject</text>
+<text x="327" y="1491" text-anchor="start" font-size="12">radar = rearUnit.radarModule</text>
+<polyline points="317,1501 597,1501" fill="none" stroke="#000000"/>
+<text x="457" y="1522" text-anchor="middle" font-size="11" font-style="italic">parameters</text>
+<text x="327" y="1538" text-anchor="start" font-size="12">in tilt = (rearUnit.clamp.aimError **</text>
+<text x="327" y="1554" text-anchor="start" font-size="12">  2 + rearUnit.clamp.slipAngle ** 2 +</text>
+<text x="327" y="1570" text-anchor="start" font-size="12">  rearUnit.riderSag ** 2) ** 0.5</text>
+<polyline points="317,1580 597,1580" fill="none" stroke="#000000"/>
+<text x="457" y="1601" text-anchor="middle" font-size="11" font-style="italic">results</text>
+<text x="327" y="1617" text-anchor="start" font-size="12">return range:LengthValue =</text>
+<text x="327" y="1633" text-anchor="start" font-size="12">  147.6115147575925 [m]</text>
+<polyline points="317,1643 597,1643" fill="none" stroke="#000000"/>
+<text x="457" y="1664" text-anchor="middle" font-size="11" font-style="italic">attributes</text>
+<text x="327" y="1680" text-anchor="start" font-size="12">in tilt = (rearUnit.clamp.aimError **</text>
+<text x="327" y="1696" text-anchor="start" font-size="12">  2 + rearUnit.clamp.slipAngle ** 2 +</text>
+<text x="327" y="1712" text-anchor="start" font-size="12">  rearUnit.riderSag ** 2) ** 0.5</text>
+<rect x="147" y="20" width="293" height="1344" rx="10" fill="#ffffff" stroke="#000000"/>
 <text x="293.5" y="42" text-anchor="middle" font-size="12">«part»</text>
 <text x="293.5" y="60" text-anchor="middle" font-size="14">radarModule:Awrl6432Radar</text>
 <polyline points="147,70 440,70" fill="none" stroke="#000000"/>
@@ -54,88 +54,93 @@
 <text x="157" y="171" text-anchor="start" font-size="12" font-style="italic">^chipTxPower default 0.0126 [W]</text>
 <text x="157" y="187" text-anchor="start" font-size="12" font-style="italic">^chirpDuration default 0.00004 [s]</text>
 <text x="157" y="203" text-anchor="start" font-size="12" font-style="italic">^chirpsPerFrame default 221</text>
-<text x="157" y="219" text-anchor="start" font-size="12" font-style="italic">^frequency default 60500000000.0 [Hz]</text>
-<text x="157" y="235" text-anchor="start" font-size="12" font-style="italic">^idlePower default 0.011 [W]</text>
-<text x="157" y="251" text-anchor="start" font-size="12" font-style="italic">^maxIfBandwidth default 5000000.0 [Hz]</text>
-<text x="157" y="267" text-anchor="start" font-size="12" font-style="italic">^noiseFigure default 12.6</text>
-<text x="157" y="283" text-anchor="start" font-size="12" font-style="italic">^processingPower default 0.159 [W]</text>
-<text x="157" y="299" text-anchor="start" font-size="12" font-style="italic">^rxChannels default 3</text>
-<text x="157" y="315" text-anchor="start" font-size="12" font-style="italic">^activeTime:DurationValue default</text>
-<text x="157" y="331" text-anchor="start" font-size="12">  chirpsPerFrame * chirpPeriod</text>
-<text x="157" y="347" text-anchor="start" font-size="12" font-style="italic">^antennaArea:AreaValue default (1 +</text>
-<text x="157" y="363" text-anchor="start" font-size="12">  rxChannels) * txGain * wavelength **</text>
-<text x="157" y="379" text-anchor="start" font-size="12">  2 / (4 * pi * apertureEfficiency)</text>
-<text x="157" y="395" text-anchor="start" font-size="12" font-style="italic">^antennaArealMass:ScalarQuantityValue</text>
-<text x="157" y="411" text-anchor="start" font-size="12">  default 3 [kg / m ** 2]</text>
-<text x="157" y="427" text-anchor="start" font-size="12" font-style="italic">^apertureEfficiency:Real default 0.6</text>
-<text x="157" y="443" text-anchor="start" font-size="12" font-style="italic">^azimuthBeamwidth:AngularMeasureValue</text>
-<text x="157" y="459" text-anchor="start" font-size="12">  default 60 ['°']</text>
-<text x="157" y="475" text-anchor="start" font-size="12" font-style="italic">^chirpIdleTime:DurationValue default</text>
-<text x="157" y="491" text-anchor="start" font-size="12">  7e-6 [s]</text>
-<text x="157" y="507" text-anchor="start" font-size="12" font-style="italic">^chirpPeriod:DurationValue default</text>
-<text x="157" y="523" text-anchor="start" font-size="12">  chirpDuration + chirpIdleTime</text>
-<text x="157" y="539" text-anchor="start" font-size="12" font-style="italic">^designTargetRcs:AreaValue default</text>
-<text x="157" y="555" text-anchor="start" font-size="12">  10 [m ** 2]</text>
-<text x="157" y="571" text-anchor="start" font-size="12" font-style="italic">^detectionRange:LengthValue default</text>
-<text x="157" y="587" text-anchor="start" font-size="12">  DetectionRange(self, designTargetRcs)</text>
-<text x="157" y="603" text-anchor="start" font-size="12" font-style="italic">^eirp:PowerValue default txPower *</text>
-<text x="157" y="619" text-anchor="start" font-size="12">  txGain</text>
-<text x="157" y="635" text-anchor="start" font-size="12" font-style="italic">^elevationBeamwidth:AngularMeasureValue</text>
-<text x="157" y="651" text-anchor="start" font-size="12">  default 20 ['°']</text>
-<text x="157" y="667" text-anchor="start" font-size="12" font-style="italic">^framePeriod:DurationValue default</text>
-<text x="157" y="683" text-anchor="start" font-size="12">  0.1 [s]</text>
-<text x="157" y="699" text-anchor="start" font-size="12" font-style="italic">^ifLimitedRange:LengthValue default</text>
-<text x="157" y="715" text-anchor="start" font-size="12">  maxIfBandwidth * speedOfLight *</text>
-<text x="157" y="731" text-anchor="start" font-size="12">  chirpDuration / (2 * sweepBandwidth)</text>
-<text x="157" y="747" text-anchor="start" font-size="12" font-style="italic">^losses:Real default 10.0</text>
-<text x="157" y="763" text-anchor="start" font-size="12" font-style="italic">^mass:MassValue default boardMass +</text>
-<text x="157" y="779" text-anchor="start" font-size="12">  antennaArea * antennaArealMass</text>
-<text x="157" y="795" text-anchor="start" font-size="12" font-style="italic">^maxClosingSpeed:SpeedValue default</text>
-<text x="157" y="811" text-anchor="start" font-size="12">  wavelength / (2 * chirpPeriod)</text>
-<text x="157" y="827" text-anchor="start" font-size="12" font-style="italic">^minSnr:Real default 31.6</text>
-<text x="157" y="843" text-anchor="start" font-size="12" font-style="italic">^observationTime:DurationValue default</text>
-<text x="157" y="859" text-anchor="start" font-size="12">  chirpsPerFrame * chirpDuration</text>
-<text x="157" y="875" text-anchor="start" font-size="12" font-style="italic">^power:PowerValue default (activePower *</text>
-<text x="157" y="891" text-anchor="start" font-size="12">  activeTime + processingPower *</text>
-<text x="157" y="907" text-anchor="start" font-size="12">  processingTime + idlePower *</text>
-<text x="157" y="923" text-anchor="start" font-size="12">  (framePeriod - activeTime -</text>
-<text x="157" y="939" text-anchor="start" font-size="12">  processingTime)) / framePeriod</text>
-<text x="157" y="955" text-anchor="start" font-size="12" font-style="italic">^processingTime:DurationValue default</text>
-<text x="157" y="971" text-anchor="start" font-size="12">  0.01 [s]</text>
-<text x="157" y="987" text-anchor="start" font-size="12" font-style="italic">^rangeResolution:LengthValue default</text>
-<text x="157" y="1003" text-anchor="start" font-size="12">  speedOfLight / (2 * sweepBandwidth)</text>
-<text x="157" y="1019" text-anchor="start" font-size="12" font-style="italic">^rxGain:Real default 25.0</text>
-<text x="157" y="1035" text-anchor="start" font-size="12" font-style="italic">^speedResolution:SpeedValue default</text>
-<text x="157" y="1051" text-anchor="start" font-size="12">  wavelength / (2 * activeTime)</text>
-<text x="157" y="1067" text-anchor="start" font-size="12" font-style="italic">^sweepBandwidth:FrequencyValue default</text>
-<text x="157" y="1083" text-anchor="start" font-size="12">  150000000.0 [Hz]</text>
-<text x="157" y="1099" text-anchor="start" font-size="12" font-style="italic">^txGain:Real default 25.0</text>
-<text x="157" y="1115" text-anchor="start" font-size="12" font-style="italic">^txPower:PowerValue default</text>
-<text x="157" y="1131" text-anchor="start" font-size="12">  LowerOf(LowerOf(chipTxPower,</text>
-<text x="157" y="1147" text-anchor="start" font-size="12">  bandMaxOutputPower), bandMaxEirp /</text>
-<text x="157" y="1163" text-anchor="start" font-size="12">  txGain)</text>
-<text x="157" y="1179" text-anchor="start" font-size="12" font-style="italic">^wavelength:LengthValue default</text>
-<text x="157" y="1195" text-anchor="start" font-size="12">  speedOfLight / frequency</text>
-<polyline points="147,1205 440,1205" fill="none" stroke="#000000"/>
-<text x="293.5" y="1226" text-anchor="middle" font-size="11" font-style="italic">ports</text>
-<text x="157" y="1242" text-anchor="start" font-size="12" font-style="italic">^antenna:RadarPort</text>
-<text x="157" y="1258" text-anchor="start" font-size="12" font-style="italic">^data:RadarDataPort</text>
-<text x="157" y="1274" text-anchor="start" font-size="12" font-style="italic">^supply:~RailPort</text>
-<rect x="20" y="1682" width="289" height="272" rx="10" fill="#ffffff" stroke="#000000"/>
-<text x="164.5" y="1704" text-anchor="middle" font-size="12">«part»</text>
-<text x="164.5" y="1722" text-anchor="middle" font-size="14">clamp:SeatpostClamp</text>
-<polyline points="20,1732 309,1732" fill="none" stroke="#000000"/>
-<text x="164.5" y="1753" text-anchor="middle" font-size="11" font-style="italic">attributes</text>
-<text x="30" y="1769" text-anchor="start" font-size="12" font-style="italic">^adjustmentStep:AngularMeasureValue</text>
-<text x="30" y="1785" text-anchor="start" font-size="12">  default 2.5 ['°']</text>
-<text x="30" y="1801" text-anchor="start" font-size="12" font-style="italic">^aimError:AngularMeasureValue default</text>
-<text x="30" y="1817" text-anchor="start" font-size="12">  adjustmentStep / 2 = 1.25 [°]</text>
-<text x="30" y="1833" text-anchor="start" font-size="12" font-style="italic">^mass:MassValue default 10 [g]</text>
-<text x="30" y="1849" text-anchor="start" font-size="12" font-style="italic">^maxDiameter:LengthValue default 35 [mm]</text>
-<text x="30" y="1865" text-anchor="start" font-size="12" font-style="italic">^minDiameter:LengthValue default 22 [mm]</text>
-<text x="30" y="1881" text-anchor="start" font-size="12" font-style="italic">^slipAngle:AngularMeasureValue default</text>
-<text x="30" y="1897" text-anchor="start" font-size="12">  0.5 ['°']</text>
-<polyline points="20,1907 309,1907" fill="none" stroke="#000000"/>
-<text x="164.5" y="1928" text-anchor="middle" font-size="11" font-style="italic">ports</text>
-<text x="30" y="1944" text-anchor="start" font-size="12" font-style="italic">^seatpost:SeatpostMount</text>
+<text x="157" y="219" text-anchor="start" font-size="12" font-style="italic">^corePeakCurrent default 1.1 [A]</text>
+<text x="157" y="235" text-anchor="start" font-size="12" font-style="italic">^coreVoltage default 1.2 [V]</text>
+<text x="157" y="251" text-anchor="start" font-size="12" font-style="italic">^frequency default 60500000000.0 [Hz]</text>
+<text x="157" y="267" text-anchor="start" font-size="12" font-style="italic">^idlePower default 0.011 [W]</text>
+<text x="157" y="283" text-anchor="start" font-size="12" font-style="italic">^ioPeakCurrent default 0.36 [A]</text>
+<text x="157" y="299" text-anchor="start" font-size="12" font-style="italic">^ioVoltage default 1.8 [V]</text>
+<text x="157" y="315" text-anchor="start" font-size="12" font-style="italic">^maxIfBandwidth default 5000000.0 [Hz]</text>
+<text x="157" y="331" text-anchor="start" font-size="12" font-style="italic">^noiseFigure default 12.6</text>
+<text x="157" y="347" text-anchor="start" font-size="12" font-style="italic">^processingPower default 0.159 [W]</text>
+<text x="157" y="363" text-anchor="start" font-size="12" font-style="italic">^rxChannels default 3</text>
+<text x="157" y="379" text-anchor="start" font-size="12" font-style="italic">^activeTime:DurationValue default</text>
+<text x="157" y="395" text-anchor="start" font-size="12">  chirpsPerFrame * chirpPeriod</text>
+<text x="157" y="411" text-anchor="start" font-size="12" font-style="italic">^antennaArea:AreaValue default (1 +</text>
+<text x="157" y="427" text-anchor="start" font-size="12">  rxChannels) * txGain * wavelength **</text>
+<text x="157" y="443" text-anchor="start" font-size="12">  2 / (4 * pi * apertureEfficiency)</text>
+<text x="157" y="459" text-anchor="start" font-size="12" font-style="italic">^antennaArealMass:ScalarQuantityValue</text>
+<text x="157" y="475" text-anchor="start" font-size="12">  default 3 [kg / m ** 2]</text>
+<text x="157" y="491" text-anchor="start" font-size="12" font-style="italic">^apertureEfficiency:Real default 0.6</text>
+<text x="157" y="507" text-anchor="start" font-size="12" font-style="italic">^azimuthBeamwidth:AngularMeasureValue</text>
+<text x="157" y="523" text-anchor="start" font-size="12">  default 60 ['°']</text>
+<text x="157" y="539" text-anchor="start" font-size="12" font-style="italic">^chirpIdleTime:DurationValue default</text>
+<text x="157" y="555" text-anchor="start" font-size="12">  7e-6 [s]</text>
+<text x="157" y="571" text-anchor="start" font-size="12" font-style="italic">^chirpPeriod:DurationValue default</text>
+<text x="157" y="587" text-anchor="start" font-size="12">  chirpDuration + chirpIdleTime</text>
+<text x="157" y="603" text-anchor="start" font-size="12" font-style="italic">^designTargetRcs:AreaValue default</text>
+<text x="157" y="619" text-anchor="start" font-size="12">  10 [m ** 2]</text>
+<text x="157" y="635" text-anchor="start" font-size="12" font-style="italic">^detectionRange:LengthValue default</text>
+<text x="157" y="651" text-anchor="start" font-size="12">  DetectionRange(self, designTargetRcs)</text>
+<text x="157" y="667" text-anchor="start" font-size="12" font-style="italic">^eirp:PowerValue default txPower *</text>
+<text x="157" y="683" text-anchor="start" font-size="12">  txGain</text>
+<text x="157" y="699" text-anchor="start" font-size="12" font-style="italic">^elevationBeamwidth:AngularMeasureValue</text>
+<text x="157" y="715" text-anchor="start" font-size="12">  default 20 ['°']</text>
+<text x="157" y="731" text-anchor="start" font-size="12" font-style="italic">^framePeriod:DurationValue default</text>
+<text x="157" y="747" text-anchor="start" font-size="12">  0.1 [s]</text>
+<text x="157" y="763" text-anchor="start" font-size="12" font-style="italic">^ifLimitedRange:LengthValue default</text>
+<text x="157" y="779" text-anchor="start" font-size="12">  maxIfBandwidth * speedOfLight *</text>
+<text x="157" y="795" text-anchor="start" font-size="12">  chirpDuration / (2 * sweepBandwidth)</text>
+<text x="157" y="811" text-anchor="start" font-size="12" font-style="italic">^losses:Real default 10.0</text>
+<text x="157" y="827" text-anchor="start" font-size="12" font-style="italic">^mass:MassValue default boardMass +</text>
+<text x="157" y="843" text-anchor="start" font-size="12">  antennaArea * antennaArealMass</text>
+<text x="157" y="859" text-anchor="start" font-size="12" font-style="italic">^maxClosingSpeed:SpeedValue default</text>
+<text x="157" y="875" text-anchor="start" font-size="12">  wavelength / (2 * chirpPeriod)</text>
+<text x="157" y="891" text-anchor="start" font-size="12" font-style="italic">^minSnr:Real default 31.6</text>
+<text x="157" y="907" text-anchor="start" font-size="12" font-style="italic">^observationTime:DurationValue default</text>
+<text x="157" y="923" text-anchor="start" font-size="12">  chirpsPerFrame * chirpDuration</text>
+<text x="157" y="939" text-anchor="start" font-size="12" font-style="italic">^power:PowerValue default (activePower *</text>
+<text x="157" y="955" text-anchor="start" font-size="12">  activeTime + processingPower *</text>
+<text x="157" y="971" text-anchor="start" font-size="12">  processingTime + idlePower *</text>
+<text x="157" y="987" text-anchor="start" font-size="12">  (framePeriod - activeTime -</text>
+<text x="157" y="1003" text-anchor="start" font-size="12">  processingTime)) / framePeriod</text>
+<text x="157" y="1019" text-anchor="start" font-size="12" font-style="italic">^processingTime:DurationValue default</text>
+<text x="157" y="1035" text-anchor="start" font-size="12">  0.01 [s]</text>
+<text x="157" y="1051" text-anchor="start" font-size="12" font-style="italic">^rangeResolution:LengthValue default</text>
+<text x="157" y="1067" text-anchor="start" font-size="12">  speedOfLight / (2 * sweepBandwidth)</text>
+<text x="157" y="1083" text-anchor="start" font-size="12" font-style="italic">^rxGain:Real default 25.0</text>
+<text x="157" y="1099" text-anchor="start" font-size="12" font-style="italic">^speedResolution:SpeedValue default</text>
+<text x="157" y="1115" text-anchor="start" font-size="12">  wavelength / (2 * activeTime)</text>
+<text x="157" y="1131" text-anchor="start" font-size="12" font-style="italic">^sweepBandwidth:FrequencyValue default</text>
+<text x="157" y="1147" text-anchor="start" font-size="12">  150000000.0 [Hz]</text>
+<text x="157" y="1163" text-anchor="start" font-size="12" font-style="italic">^txGain:Real default 25.0</text>
+<text x="157" y="1179" text-anchor="start" font-size="12" font-style="italic">^txPower:PowerValue default</text>
+<text x="157" y="1195" text-anchor="start" font-size="12">  LowerOf(LowerOf(chipTxPower,</text>
+<text x="157" y="1211" text-anchor="start" font-size="12">  bandMaxOutputPower), bandMaxEirp /</text>
+<text x="157" y="1227" text-anchor="start" font-size="12">  txGain)</text>
+<text x="157" y="1243" text-anchor="start" font-size="12" font-style="italic">^wavelength:LengthValue default</text>
+<text x="157" y="1259" text-anchor="start" font-size="12">  speedOfLight / frequency</text>
+<polyline points="147,1269 440,1269" fill="none" stroke="#000000"/>
+<text x="293.5" y="1290" text-anchor="middle" font-size="11" font-style="italic">ports</text>
+<text x="157" y="1306" text-anchor="start" font-size="12" font-style="italic">^antenna:RadarPort</text>
+<text x="157" y="1322" text-anchor="start" font-size="12" font-style="italic">^coreSupply:~RailPort</text>
+<text x="157" y="1338" text-anchor="start" font-size="12" font-style="italic">^data:RadarDataPort</text>
+<text x="157" y="1354" text-anchor="start" font-size="12" font-style="italic">^ioSupply:~RailPort</text>
+<rect x="20" y="1762" width="289" height="272" rx="10" fill="#ffffff" stroke="#000000"/>
+<text x="164.5" y="1784" text-anchor="middle" font-size="12">«part»</text>
+<text x="164.5" y="1802" text-anchor="middle" font-size="14">clamp:SeatpostClamp</text>
+<polyline points="20,1812 309,1812" fill="none" stroke="#000000"/>
+<text x="164.5" y="1833" text-anchor="middle" font-size="11" font-style="italic">attributes</text>
+<text x="30" y="1849" text-anchor="start" font-size="12" font-style="italic">^adjustmentStep:AngularMeasureValue</text>
+<text x="30" y="1865" text-anchor="start" font-size="12">  default 2.5 ['°']</text>
+<text x="30" y="1881" text-anchor="start" font-size="12" font-style="italic">^aimError:AngularMeasureValue default</text>
+<text x="30" y="1897" text-anchor="start" font-size="12">  adjustmentStep / 2 = 1.25 [°]</text>
+<text x="30" y="1913" text-anchor="start" font-size="12" font-style="italic">^mass:MassValue default 10 [g]</text>
+<text x="30" y="1929" text-anchor="start" font-size="12" font-style="italic">^maxDiameter:LengthValue default 35 [mm]</text>
+<text x="30" y="1945" text-anchor="start" font-size="12" font-style="italic">^minDiameter:LengthValue default 22 [mm]</text>
+<text x="30" y="1961" text-anchor="start" font-size="12" font-style="italic">^slipAngle:AngularMeasureValue default</text>
+<text x="30" y="1977" text-anchor="start" font-size="12">  0.5 ['°']</text>
+<polyline points="20,1987 309,1987" fill="none" stroke="#000000"/>
+<text x="164.5" y="2008" text-anchor="middle" font-size="11" font-style="italic">ports</text>
+<text x="30" y="2024" text-anchor="start" font-size="12" font-style="italic">^seatpost:SeatpostMount</text>
 </svg>
